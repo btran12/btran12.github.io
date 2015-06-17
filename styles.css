@@ -1,5 +1,30 @@
 hr {
 	width:50%;
+	margin-bottom: 5%;
+	margin-top: 5%;
+}
+
+table {
+	border-collapse: collapse;
+}
+h1#nameHeader {
+	font-size:300%;
+}
+
+h3#experienceHeader{
+	text-align: left;
+	margin-left: 25%;
+	color: black;
+}
+
+#listExperience{
+	text-align: left;
+	margin-left: 25%;
+}
+
+p#experience {
+	text-align: left;
+	margin-left: 30%;
 }
 
 #intro {
