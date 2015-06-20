@@ -8,17 +8,21 @@
 	</head>	
 
 	<body>
+
 		
 		<div class="module mid">
   			<h2>Bao Tran</h2>
   			<h4>An Enthusiastic Programmer, with a Passion to Helping Others</h4>
-  			<span style="cursor:pointer">
-  				<img class="scroll" src="./images/scrollDown.png">
-  			</span>
+  			<!--Smooth Scrolling-->
+  			<a href="#about" class="smoothScroll">
+	  			<span style="cursor:pointer">
+	  				<img class="scrollBtn" src="./images/scrollDown.png">
+	  			</span>
+  			</a>
 		</div>
 
 		<div id="intro">
-			
+			<a name="about"></a>
 			<h1>About Me</h1>
 			<p>An Undergraduate Computer Science student at Westfield State University '17</p>
 			<div class="university">
@@ -67,8 +71,7 @@
 			<hr>
 
 			<h1>Projects</h1>
-			
-			
+				
 			<table  style="width:60%" align="center" border="0">
 				
 				<tr>
@@ -104,9 +107,14 @@
 
 			</table>
 
+			<hr>
+
+			<h1>Contacts</h1>
+
 		</div>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="app.js"></script>
+		<script src="events.js"></script>
+		<script type="text/javascript" src="smoothscroll.js"></script>
 	</body>
 </html>

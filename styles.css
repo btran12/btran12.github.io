@@ -8,9 +8,9 @@
     ),
     url(./images/imageHeader.jpg);
   background-size: cover;
-  width: 1285px;
-  height: 500px;
-  margin: -10px;
+  width: 100hh;
+  height: 70vh;
+  margin: 0%;
   position: relative;
 }
 
