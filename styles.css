@@ -1,3 +1,52 @@
+@import url(http://fonts.googleapis.com/css?family=Oxygen|Open+Sans);
+
+.module {
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url(./images/imageHeader.jpg);
+  background-size: cover;
+  width: 1285px;
+  height: 500px;
+  margin: -10px;
+  position: relative;
+}
+
+.mid h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: white;
+	margin: 0;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	font-size: 600%;
+	transform: translate(-50%, -50%);
+}
+
+.mid h4{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 100;
+	color: white;
+	margin: 0;
+	position: absolute;
+	top: 60%;
+	left: 40%;
+	font-size: 150%;
+	transform: translate(-30%, -50%);
+}
+
+.mid img{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 hr {
 	width:50%;
 	margin-bottom: 5%;
@@ -6,9 +55,6 @@ hr {
 
 table {
 	border-collapse: collapse;
-}
-h1#nameHeader {
-	font-size:300%;
 }
 
 h3#experienceHeader{
