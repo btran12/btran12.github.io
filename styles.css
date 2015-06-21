@@ -1,5 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Oxygen|Open+Sans);
 
+body{
+	font-family:Open Sans;
+}
+
 .module {
   background: 
     linear-gradient(
@@ -10,7 +14,7 @@
   background-size: cover;
   width: 100hh;
   height: 70vh;
-  margin: 0%;
+  margin: -8px;
   position: relative;
 }
 
@@ -58,9 +62,8 @@ table {
 }
 
 h3#experienceHeader{
-	text-align: left;
-	margin-left: 25%;
-	color: black;
+	left: 25%;
+	position: relative;
 }
 
 #listExperience{
@@ -68,13 +71,7 @@ h3#experienceHeader{
 	margin-left: 25%;
 }
 
-p#experience {
-	text-align: left;
-	margin-left: 30%;
+.document h1{
+	text-align: center;
 }
 
-#intro {
-	text-align:center;
-	font-family:Open Sans;
-	color:black;
-}
