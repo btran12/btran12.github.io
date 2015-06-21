@@ -37,9 +37,9 @@ body{
 	margin: auto;
 	position: absolute;
 	top: 60%;
-	left: 40%;
-	font-size: 150%;
-	transform: translate(-30%, -50%);
+	left: 50%;
+	font-size: 130%;
+	transform: translate(-50%, -50%);
 }
 
 .mid img{
