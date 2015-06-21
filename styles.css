@@ -24,11 +24,15 @@ body{
 	color: white;
 	margin: auto;
 	position: absolute;
-	top: 40%;
+	top: 20%;
 	left:50%;
 	font-size: 600%;
 	vertical-align: middle;
-	transform: translate(-50%, -50%);
+	transform:translate(-50%);
+	-webkit-transform:translate(-50%);
+	-ms-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
 }
 
 .mid h4{
@@ -37,11 +41,15 @@ body{
 	color: white;
 	margin: auto;
 	position: absolute;
-	top: 60%;
+	top: 50%;
 	left: 50%;
 	font-size: 130%;
 	vertical-align: middle;
-	transform: translate(-50%, -50%);
+	transform:translate(-50%);
+	-webkit-transform:translate(-50%);
+	-ms-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
 }
 
 .mid img{
@@ -50,7 +58,11 @@ body{
 	position: absolute;
 	top: 90%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform:translate(-50%);
+	-webkit-transform:translate(-50%);
+	-ms-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
 }
 
 hr {
