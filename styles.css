@@ -62,8 +62,8 @@ table {
 }
 
 h3#experienceHeader{
-	left: 25%;
-	position: relative;
+	text-align: left;
+	margin-left: 25%;
 }
 
 #listExperience{
