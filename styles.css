@@ -24,15 +24,15 @@ body{
 	color: white;
 	margin: auto;
 	position: absolute;
-	top: 20%;
+	top: 30%;
 	left:50%;
 	font-size: 600%;
 	vertical-align: middle;
 	transform:translate(-50%);
 	-webkit-transform:translate(-50%);
-	-ms-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	-o-transform: translateY(-50%);
+	-ms-transform: translate(-50%);
+	-moz-transform: translate(-50%);
+	-o-transform: translate(-50%);
 }
 
 .mid h4{
@@ -41,15 +41,15 @@ body{
 	color: white;
 	margin: auto;
 	position: absolute;
-	top: 50%;
+	top: 60%;
 	left: 50%;
 	font-size: 130%;
 	vertical-align: middle;
 	transform:translate(-50%);
 	-webkit-transform:translate(-50%);
-	-ms-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	-o-transform: translateY(-50%);
+	-ms-transform: translate(-50%);
+	-moz-transform: translate(-50%);
+	-o-transform: translate(-50%);
 }
 
 .mid img{
@@ -60,9 +60,9 @@ body{
 	left: 50%;
 	transform:translate(-50%);
 	-webkit-transform:translate(-50%);
-	-ms-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	-o-transform: translateY(-50%);
+	-ms-transform: translate(-50%);
+	-moz-transform: translate(-50%);
+	-o-transform: translate(-50%);
 }
 
 hr {
@@ -88,5 +88,6 @@ h4#experienceHeader{
 
 .document h1{
 	text-align: center;
+	font-size: 250%;
 }
 
