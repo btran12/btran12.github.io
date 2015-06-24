@@ -7,8 +7,8 @@ body{
 .module {
   background: 
     linear-gradient(
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4)
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
     ),
     url(./images/imageHeader.jpg);
   background-size: cover;
@@ -65,6 +65,29 @@ body{
 	-o-transform: translate(-50%);
 }
 
+.mid a{
+	width: 100px;
+	float: right;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	color: #CCCCCC;
+}
+
+.mid a:hover{
+	color: white;
+	background-color: #484848;
+	border-style: solid;
+	border-color: white;
+	width: 93.5px;
+}
+
+.mid a#scroll:hover{
+	background-color: transparent;
+	border-style: none;
+	border-color: transparent;
+}
+
 hr {
 	width:50%;
 	margin-bottom: 5%;
@@ -78,7 +101,6 @@ table {
 h4#experienceHeader{
 	text-align: left;
 	margin-left: 25%;
-	color:#007ACC;
 }
 
 #listExperience{
