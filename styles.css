@@ -88,6 +88,15 @@ body{
 	border-color: transparent;
 }
 
+a#demo{
+	text-decoration: none;
+	color: #005C99;
+}
+
+a#demo:hover{
+	color:#FF4719;
+}
+
 hr {
 	width:50%;
 	margin-bottom: 5%;
