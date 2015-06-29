@@ -14,6 +14,26 @@
 
 </head>
 <body style="margin:0;padding:0;">
+   
+    <!--Script to Disable Scrolling with Arrow Keys-->
+    <script>
+        var keys = {};
+        window.addEventListener("keydown",
+            function(e){
+                keys[e.keyCode] = true;
+                switch(e.keyCode){
+                    case 37: case 39: case 38:  case 40: // Arrow keys
+                    case 32: e.preventDefault(); break; // Space
+                    default: break; // do not block other keys
+                }
+            },
+        false);
+        window.addEventListener('keyup',
+            function(e){
+                keys[e.keyCode] = false;
+            },
+        false);
+    </script>
 	<div id="Stage" class="EDGE-103807847">
 	
         <div id="Stage_Barrier" class="edgeLoad-EDGE-103807847">
