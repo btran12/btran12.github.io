@@ -79,6 +79,7 @@ body{
 	background-color: #484848;
 	border-style: solid;
 	border-color: white;
+	text-decoration: none;
 	width: 93.5px;
 }
 
@@ -110,11 +111,6 @@ table{
 }
 
 h4#experienceHeader{
-	text-align: left;
-	margin-left: 25%;
-}
-
-#listExperience{
 	text-align: left;
 	margin-left: 25%;
 }
