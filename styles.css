@@ -2,15 +2,18 @@
 
 body{
 	font-family:Open Sans;
+	background-color: #E9E0D6;
 }
 
 .module {
+	/**
   background: 
     linear-gradient(
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.6)
     ),
-    url(./images/imageHeader.jpg);
+    url(http://googledrive.com/host/0B7NQNB0bh8DcflhGa2tRRVhXUGZXVkRPaVIySkplY3JIYktzdDdtemE5clRPc1J0bkdkc3M/imageHeader.jpg);**/
+  background-color: #354458;
   background-size: cover;
   width: 100hh;
   height: 70vh;
@@ -95,11 +98,11 @@ body{
 
 a#demo{
 	text-decoration: none;
-	color: #005C99;
+	color: #29ABA4;
 }
 
 a#demo:hover{
-	color:#FF4719;
+	color:#EA7360;
 }
 
 .document h1{
@@ -111,6 +114,7 @@ hr {
 	width:50%;
 	margin-bottom: 5%;
 	margin-top: 5%;
+	border-color: #EA7360;
 }
 
 table{
