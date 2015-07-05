@@ -29,7 +29,7 @@ body{
 	position: absolute;
 	top: 30%;
 	left:50%;
-	font-size: 600%;
+	font-size: 700%;
 	vertical-align: middle;
 	transform:translate(-50%);
 	-webkit-transform:translate(-50%);
@@ -44,7 +44,7 @@ body{
 	color: white;
 	margin: auto;
 	position: absolute;
-	top: 60%;
+	top: 65%;
 	left: 50%;
 	font-size: 130%;
 	vertical-align: middle;
@@ -82,7 +82,7 @@ body{
 }
 
 .mid a:hover{
-	color:black;
+	color:#354458;
 	background-color: white;
 }
 
