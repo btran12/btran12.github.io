@@ -1,6 +1,11 @@
 var main = function(){
-	$('.university').click(function(){
-		window.open("http://www.westfield.ma.edu");
+	$('.scrollBtn').on({
+		mouseover: function(){
+			$(this).animate({ top: '87%' });
+		},
+		mouseout: function(){
+			$(this).animate({ top: '85%' });
+		}
 	});
 
 }
