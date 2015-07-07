@@ -12,7 +12,7 @@ var main = function(){
 	});
 
 	$('#sendMail').click(function(){
-		$('#mailForm').toggle();
+		$('#mailForm').slideToggle();
 	});
 }
 

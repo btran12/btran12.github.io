@@ -110,7 +110,7 @@ a#demo:hover{
 	font-size: 250%;
 }
 
-hr {
+.document hr {
 	width:50%;
 	margin-bottom: 5%;
 	margin-top: 5%;
