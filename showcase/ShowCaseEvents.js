@@ -1,6 +1,6 @@
 var linkToProjects = new Array(
-	"http://baotran.space/projects/Escape/PigScape.html",
-	"http://baotran.space/projects/History-Timeline/Timeline.html");
+	"http://baotran.xyz/projects/Escape",
+	"http://baotran.xyz/projects/History-Timeline");
 
 //Iframe
 var switchTarget$ = $('.switch-project');
