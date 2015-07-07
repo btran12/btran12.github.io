@@ -20,11 +20,11 @@
 		<div class="module mid">
 
 			<!-- Navigations -->
-			<a href="#contact" class="smoothScroll">Contact</a>
-			<a type="application/pdf" href="./resume/resume.pdf" target="_blank">Resume</a>
-			<a href="#project" class="smoothScroll">Projects</a>
-			<a href="#experience" class="smoothScroll">Experiences</a>
-			<a href="#about" class="smoothScroll">About</a>
+			<a href="#contact" class="smoothScroll">CONTACT</a>
+			<a type="application/pdf" href="./resume/resume.pdf" target="_blank">RESUME</a>
+			<a href="#project" class="smoothScroll">PROJECTS</a>
+			<a href="#experience" class="smoothScroll">EXPERIENCES</a>
+			<a href="#about" class="smoothScroll">ABOUT</a>
 
   			<h2>Bao Tran</h2>
   			<h4>An Enthusiastic Programmer, with a Passion to Helping Others</h4>
@@ -32,7 +32,7 @@
   			
   			<span style="cursor:pointer">
   				<a id="scroll" href="#about" class="smoothScroll">
-  					<img class="scrollBtn" src="./images/scrollDown.png" alt="Arrow to Scroll Down">
+  					<img id="scrollBtn" src="./images/scrollDown.png" alt="Arrow to Scroll Down">
   				</a>
   			</span>
   			
@@ -72,7 +72,7 @@
 							<li>Learning Objects are interactive animation aimed to help promote learning</li>
 							<li>Assist faculties build their online classes</li>
 							<li>Here are some of the projects: 
-								<a id="demo" href="http://baotran.space/projects/History-Timeline/Timeline.html" target="_blank">History Timeline</a> 
+								<a id="demo" href="http://baotran.space/projects/History-Timeline" target="_blank">History Timeline</a> 
 								- Queue Visualization</li>
 						</ul>
 					</td>
@@ -92,7 +92,7 @@
 							<li>The objective of the game is to escape from the enclosed environment</li>
 							<li>Leverage the user's key presses to control the game</li>
 							<li>Built in Adobe Edge Animate; Coded in Javascript</li>
-							<li>Link to demo: <a id="demo" href="http://baotran.space/showcase/index.html">SquareScape</a></li>
+							<li>Link to demo: <a id="demo" href="http://baotran.space/showcase">SquareScape</a></li>
 						</ul>
 					</td>
 				</tr>
@@ -105,13 +105,53 @@
 				<tr>
 					<td>
 						<a href="https://github.com/btran12" target="_blank">
-							<img src="./images/GitHubLogo.png" style = "width:70px; height:70px;" alt="Github Logo">
+							<img src="./images/GitHubLogo.png" alt="Github Logo">
 						</a>
 					</td>
 					<td>
+						<span style="cursor:pointer"><img src="./images/mailIcon.png" id="sendMail" alt="Send Me an Email"></span>
+					</td>
+					<td>
 						<a href="https://linkedin.com/in/baoqtran" target="_blank">
-						<img src="./images/LinkedInLogo.png" style = "width:70px; height:70px;" alt="Linkedin Logo">
+							<img src="./images/LinkedInLogo.png" alt="Linkedin Logo">
 						</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<form id="mailForm" name="contactform" method="post" action="index.php">
+							<table width="450px">
+								<tr>
+									<td valign="top">
+										<label for="name">Name:</label>
+									</td>
+									<td valign="top">
+										<input  type="text" name="name" maxlength="50" size="30">
+									</td>
+								</tr>
+								<tr>
+									<td valign="top">
+										<label for="email">Email:</label>
+									</td>
+									<td valign="top">
+										<input  type="text" name="email" maxlength="80" size="30">
+									</td>
+								</tr>
+								<tr>
+									<td valign="top">
+										<label for="comments">Message:</label>
+									</td>
+									<td valign="top">
+										<textarea  id="comment" name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2" style="text-align:center">
+										<input type="submit" value="Send">
+									</td>
+								</tr>
+							</table>
+						</form>
 					</td>
 				</tr>
 			</table>

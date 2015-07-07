@@ -1,5 +1,8 @@
 var main = function(){
-	$('.scrollBtn').on({
+	//Hide the mail form when site starts;
+	$('#mailForm').hide();
+
+	$('#scrollBtn').on({
 		mouseover: function(){
 			$(this).animate({ top: '87%' });
 		},
@@ -8,6 +11,9 @@ var main = function(){
 		}
 	});
 
+	$('#sendMail').click(function(){
+		$('#mailForm').toggle();
+	});
 }
 
 $(document).ready(main);
