@@ -11,7 +11,7 @@ var main = function(){
 		}
 	});
 
-	$('#sendMail').click(function(){
+	$('#sendMailIcon').click(function(){
 		$('#mailForm').slideToggle();
 	});
 }
