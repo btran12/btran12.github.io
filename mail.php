@@ -1,6 +1,6 @@
 <?php
  
-if(isset($_GET['email'])) {
+if(isset($_POST['email'])) {
  
      
  
@@ -32,11 +32,11 @@ if(isset($_GET['email'])) {
  
     // validation expected data exists
  
-    if(!isset($_GET['name']) ||
+    if(!isset($_POST['name']) ||
  
-        !isset($_GET['email']) ||
+        !isset($_POST['email']) ||
  
-        !isset($_GET['comments'])) {
+        !isset($_POST['comments'])) {
  
         died('We are sorry, but there appears to be a problem with the form you submitted.');       
  
@@ -44,11 +44,11 @@ if(isset($_GET['email'])) {
  
      
  
-    $name = $_GET['name']; // required
+    $name = $_POST['name']; // required
  
-    $email_from = $_GET['email']; // required
+    $email_from = $_POST['email']; // required
  
-    $comments = $_GET['comments']; // required
+    $comments = $_POST['comments']; // required
  
      
  
