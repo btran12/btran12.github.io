@@ -107,7 +107,7 @@
 						</a>
 					</td>
 					<td>
-						<span style="cursor:pointer"><img src="./images/mailIcon.png" id="sendMailIcon" alt="Send Me an Email"></span>
+						<span style="cursor:pointer"><img src="./images/mailIcon.png" id="sendMailIcon" title="Contact me directly at: contact@baotran.xyz" alt="Send Me an Email"></span>
 					</td>
 					<td>
 						<a href="https://linkedin.com/in/baoqtran" target="_blank">
@@ -118,33 +118,33 @@
 				<tr>	<!--Email Form-->
 					<td colspan="3">
 						<form id="mailForm" method="POST" action="http://formspree.io/contact@baotran.xyz">
+							<!--Page to direct to after form submission-->
+							<input type="hidden" name="_next" value="" />
+							<!--Prevent Spam-->
+							<input type="text" name="_gotcha" style="display:none" />
 							<table align="center">
 								<tr>
-									<td valign="top" align="right">
-										<label for="name">Name<span style="color:red">*</span>:</label>
+									<td rowspan="3" align="left" style="padding-right:20px">
+										<p style="font-size:110%">Send me an email at <a href="mailto:contact@baotran.xyz">contact@baotran.xyz</a> or use the form on the right.</p>
 									</td>
 									<td valign="top" align="left">
-										<input id="nameField" type="text" name="name" maxlength="50" size="20">
+										<input id="nameField" type="text" name="name" placeholder="Your Name" maxlength="50" size="20">
 									</td>
 								</tr>
 								<tr>
-									<td valign="top" align="right">
-										<label for="email">Email<span style="color:red">*</span>:</label>
-									</td>
 									<td valign="top" align="left">
-										<input id="emailField" type="text" name="email" maxlength="80" size="30">
+										<input id="emailField" type="text" name="_replyto" placeholder="Your Email" maxlength="80" size="30">
 									</td>
 								</tr>
 								<tr>
-									<td valign="top" align="right">
-										<label for="comments">Message<span style="color:red">*</span>:</label>
-									</td>
 									<td valign="top" align="left">
-										<textarea id="messageField" name="message" maxlength="1000" cols="25" rows="6"></textarea>
+										<textarea id="messageField" name="message" placeholder="Your Message" maxlength="1000" cols="25" rows="6"></textarea>
 									</td>
 								</tr>
 								<tr>
-									<td style="text-align:center" colspan="2">
+									<td>
+									</td>
+									<td style="text-align:center">
 										<input id="sendBtn" type="submit" value="Send">
 									</td>
 								</tr>
@@ -159,7 +159,7 @@
 		<hr style="border-color:transparent;margin-top:5%;"><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 		<footer>
-			<p align="center" style="padding-top:50px;color:#B2B2B2;">Constructed by Bao Tran</p>
+			<p align="center" style="padding-top:10px;color:#B2B2B2;">Constructed by Bao Tran</p>
 		</footer>
 
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
