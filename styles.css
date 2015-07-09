@@ -2,7 +2,6 @@
 
 body{
 	font-family:Open Sans;
-	background-color: white;
 }
 
 .module {
@@ -121,5 +120,23 @@ table{
 	width: 50%;
 	text-align: center;
 	border-collapse: collapse;
+}
+
+input, textarea {
+	font-family: inherit;
+	font-size: 80%;
+}
+
+#sendButton {
+	font-family: inherit;
+	font-size: 80%;
+	border: 1px solid #777777;
+	background: #29ABA4;
+	color: white;
+	font: bold 12px;
+	padding: 5px;
+	cursor: pointer;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
 }
 

@@ -14,6 +14,15 @@ var main = function(){
 	$('#sendMailIcon').click(function(){
 		$('#mailForm').slideToggle();
 	});
+
+	$('#sendButton').mouseover(function(){
+		var email = $('#emailField').val();
+		var message = $('#messageField').val();
+
+		if (email.length < 1 || message.length < 1){
+			alert("The Email, or Message cannot be blank!");
+		}
+	})
 }
 
 $(document).ready(main);
