@@ -5,17 +5,17 @@ body{
 }
 
 .module {
-	/**
+
   background: 
     linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6)
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
     ),
-    url(http://googledrive.com/host/0B7NQNB0bh8DcflhGa2tRRVhXUGZXVkRPaVIySkplY3JIYktzdDdtemE5clRPc1J0bkdkc3M/imageHeader.jpg);**/
-  background-color: #354458;
+    url(./images/headerBackground.jpg);
+  /**background-color: #354458;**/
   background-size: cover;
   width: 100hh;
-  height: 70vh;
+  height: 500px;
   margin: -8px;
   position: relative;
 }
