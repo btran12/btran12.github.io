@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--
+ created with Free Online Sitemap Generator www.xml-sitemaps.com 
+-->
 <url>
-  <loc>http://www.baotran.space/</loc>
-  <lastmod>2015-06-29T21:43:41+00:00</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>1.00</priority>
+<loc>http://www.baotran.xyz/</loc>
+<lastmod>2015-07-09T12:58:11+00:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.00</priority>
 </url>
 <url>
-  <loc>http://www.baotran.space/resume/resume.pdf</loc>
-  <lastmod>2015-06-29T21:43:41+00:00</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
+<loc>http://www.baotran.xyz/resume/resume.pdf</loc>
+<lastmod>2015-07-09T12:58:11+00:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.baotran.space/projects/PigScape.html</loc>
-  <lastmod>2015-06-29T21:43:41+00:00</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
+<loc>http://www.baotran.xyz/projects/History-Timeline/</loc>
+<lastmod>2015-07-09T12:58:11+00:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>http://www.baotran.xyz/showcase/</loc>
+<lastmod>2015-07-09T12:58:11+00:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.80</priority>
 </url>
 </urlset>
