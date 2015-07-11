@@ -24,12 +24,13 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	color: white;
-	margin: auto;
+	margin: 0;
 	position: absolute;
 	top: 30%;
 	left:50%;
 	font-size: 700%;
 	vertical-align: middle;
+	white-space: nowrap;
 	transform:translate(-50%);
 	-webkit-transform:translate(-50%);
 	-ms-transform: translate(-50%);
@@ -47,6 +48,7 @@ body{
 	left: 50%;
 	font-size: 130%;
 	vertical-align: middle;
+	white-space: nowrap;
 	transform:translate(-50%);
 	-webkit-transform:translate(-50%);
 	-ms-transform: translate(-50%);
@@ -141,5 +143,16 @@ input, textarea {
 	-webkit-border-radius: 4px;
 	-ms-border-radius: 4px;
 	-o-border-radius: 4px;
+}
+
+@media screen and (max-width: 700px) {
+	.mid h2{
+		font-size: 550%;
+		top: 45%;
+	}
+	.mid h4{
+		font-size: 80%;
+		top: 70%;
+	}
 }
 
