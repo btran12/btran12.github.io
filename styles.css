@@ -111,6 +111,16 @@ a#demo:hover{
 	font-size: 250%;
 }
 
+.document th{
+	font-size: 150%;
+	font-weight: 800;
+}
+
+.document p{
+	font-size: 110%;
+	font-weight: 500;
+}
+
 .document hr {
 	width:50%;
 	margin-bottom: 5%;
@@ -152,6 +162,12 @@ input, textarea {
 	.mid h4{
 		font-size: 150%;
 	}
+	.document h1{
+		font-size: 260%;
+	}
+	.document p{
+		font-size: 120%;
+	}
 }
 
 @media screen and (max-width: 1024px) {
@@ -159,21 +175,40 @@ input, textarea {
 		font-size: 650%;
 	}
 	.mid h4{
-		font-size: 110%;
+		font-size: 120%;
 	}
 	.document h1{
 		font-size: 240%;
 	}
 
 	.document hr {
-		width:80%;
+		width:70%;
 	}
 
 	table{
-		width: 100%;
+		width: 70%;
 	}
 }
 @media screen and (max-width: 768px) {
+	.mid h2{
+		font-size: 600%;
+	}
+	.mid h4{
+		font-size: 100%;
+	}
+	.document h1{
+		font-size: 230%;
+	}
+	.document hr {
+		width:100%;
+	}
+	table{
+		width: 100%;
+	}
+
+}
+
+@media screen and (max-width: 480px) {
 	.mid h2{
 		font-size: 500%;
 		top: 40%;
@@ -181,15 +216,6 @@ input, textarea {
 	.mid h4{
 		font-size: 80%;
 	}
-	.document h1{
-		font-size: 230%;
-	}
-	
-	.document hr {
-		width:100%;
-	}
-
 }
-
 
 
