@@ -210,11 +210,11 @@ input, textarea {
 
 @media screen and (max-width: 480px) {
 	.mid h2{
-		font-size: 500%;
+		font-size: 470%;
 		top: 40%;
 	}
 	.mid h4{
-		font-size: 80%;
+		font-size: 75%;
 	}
 }
 
