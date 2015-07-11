@@ -8,8 +8,8 @@ body{
 
   background: 
     linear-gradient(
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
     ),
     url(./images/headerBackground.jpg);
   /**background-color: #354458;**/
@@ -145,14 +145,51 @@ input, textarea {
 	-o-border-radius: 4px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 1440px) {
 	.mid h2{
-		font-size: 550%;
-		top: 45%;
+		font-size: 800%;
+	}
+	.mid h4{
+		font-size: 150%;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.mid h2{
+		font-size: 650%;
+	}
+	.mid h4{
+		font-size: 110%;
+	}
+	.document h1{
+		font-size: 240%;
+	}
+
+	.document hr {
+		width:80%;
+	}
+
+	table{
+		width: 100%;
+	}
+}
+@media screen and (max-width: 768px) {
+	.mid h2{
+		font-size: 500%;
+		top: 40%;
 	}
 	.mid h4{
 		font-size: 80%;
-		top: 70%;
 	}
+	.document h1{
+		font-size: 230%;
+	}
+	
+	.document hr {
+		width:100%;
+	}
+
 }
+
+
 
