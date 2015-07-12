@@ -2,6 +2,7 @@
 
 body{
 	font-family:Open Sans;
+	color: #3B3A35;
 }
 
 .module {
@@ -99,7 +100,7 @@ body{
 
 a#demo{
 	text-decoration: none;
-	color: #29ABA4;
+	color: #4298B5;
 }
 
 a#demo:hover{
@@ -109,11 +110,12 @@ a#demo:hover{
 .document h1{
 	text-align: center;
 	font-size: 250%;
+
 }
 
 .document th{
-	font-size: 150%;
-	font-weight: 800;
+	font-size: 160%;
+	font-weight: 700;
 }
 
 .document p{
