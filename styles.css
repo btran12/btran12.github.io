@@ -37,8 +37,16 @@ body{
 	-ms-transform: translate(-50%);
 	-moz-transform: translate(-50%);
 	-o-transform: translate(-50%);
+	text-align: center;
+    width: 10em;
+    overflow:hidden;
+    -webkit-animation: type 3s steps(70, end);
+    animation: type 3s steps(70, end);
 }
 
+.mid span {
+	animation: blink 1s infinite;
+}
 .mid h4{
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 100;
@@ -55,6 +63,7 @@ body{
 	-ms-transform: translate(-50%);
 	-moz-transform: translate(-50%);
 	-o-transform: translate(-50%);
+
 }
 
 .mid img{
@@ -106,6 +115,16 @@ body{
 	background-color: transparent;
 	border-style: none;
 	border-color: transparent;
+}
+@keyframes blink{
+  to{opacity: .0;}
+}
+@keyframes type{
+    from { width: 0; }
+}
+
+@-webkit-keyframes type{
+    from { width: 0; }
 }
 
 a#demo{
