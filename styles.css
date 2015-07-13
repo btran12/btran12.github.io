@@ -24,13 +24,12 @@ body{
 .mid h2 {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
+	font-size: 700%;
 	color: white;
 	margin: 0;
 	position: absolute;
 	top: 30%;
 	left:50%;
-	font-size: 700%;
-	vertical-align: middle;
 	white-space: nowrap;
 	transform:translate(-50%);
 	-webkit-transform:translate(-50%);
@@ -40,13 +39,15 @@ body{
 	text-align: center;
     width: 10em;
     overflow:hidden;
-    -webkit-animation: type 3s steps(70, end);
-    animation: type 3s steps(70, end);
+    -webkit-animation: type 4s steps(60, end);
+    animation: type 4s steps(60, end);
 }
 
 .mid span {
 	animation: blink 1s infinite;
+	-webkit-animation: blink 1s infinite;
 }
+
 .mid h4{
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 100;
@@ -116,16 +117,6 @@ body{
 	border-style: none;
 	border-color: transparent;
 }
-@keyframes blink{
-  to{opacity: .0;}
-}
-@keyframes type{
-    from { width: 0; }
-}
-
-@-webkit-keyframes type{
-    from { width: 0; }
-}
 
 a#demo{
 	text-decoration: none;
@@ -185,6 +176,22 @@ input, textarea {
 	-ms-border-radius: 4px;
 	-o-border-radius: 4px;
 }
+
+/*---- Animation ----*/
+
+@keyframes blink{
+  to{opacity: .0;}
+}
+
+@keyframes type{
+    from { width: 0; }
+}
+
+@-webkit-keyframes type{
+    from { width: 0; }
+}
+
+/*---- Responsiveness ----*/
 
 @media screen and (min-width: 1440px) {
 	.mid h2{
