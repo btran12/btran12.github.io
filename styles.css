@@ -9,8 +9,8 @@ body{
 
   background: 
     linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
     ),
     url(./images/headerBackground.jpg);
   /**background-color: #354458;**/
@@ -36,13 +36,14 @@ body{
 	-ms-transform: translate(-50%);
 	-moz-transform: translate(-50%);
 	text-align: center;
-    width: 10em;
+    width: 8em;
     overflow:hidden;
     -webkit-animation: type 4s steps(60, end);
     animation: type 4s steps(60, end);
 }
 
 .mid span {
+	border-left: .1em solid white;
 	animation: blink 1s infinite;
 	-webkit-animation: blink 1s infinite;
 }
