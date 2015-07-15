@@ -1,10 +1,10 @@
-	var captionLength = 0;
-	var caption = '';
-	var text = new Array("I am a student", "I am a learner", "I am an achiever", "A Student | A Learner | An Achiever");
-	var i = 0;
-	var captionEl = $('#secondaryText');
+var secondaryTextLength = 0;
+var secondaryText = '';
+var text = new Array("I'm a Student", "I'm a Learner", "I'm an Achiever", "Student | Learner | Achiever");
+var i = 0;
+var subTextElement = $('#secondaryText');
 
-	var main = function(){
+var main = function(){
 	//Hide the mail form when site starts;
 	$('#mailForm').hide();
 
@@ -19,8 +19,14 @@
 	});
 
 	//Open up the form
-	$('#sendMailIcon').click(function(){
-		$('#mailForm').slideToggle();
+	$('#sendMailIcon').on({
+		click: function(){
+			$('#mailForm').slideToggle();
+		},
+		mouseover: function(){
+			//$(this).animate({ transform:  });
+		}
+		
 	});
 
 	//The Send Button
@@ -77,7 +83,7 @@
 var TypingEffect = function() {
 
 	if (i < text.length) {
-		caption = text[i];
+		secondaryText = text[i];
 		type();
 		if (i < 3) {
 			setTimeout('ErasingEffect()', 2000);
@@ -88,30 +94,30 @@ var TypingEffect = function() {
 }
 
 var type = function() {
-	captionEl.html(caption.substr(0, captionLength++));
-	if (captionLength < caption.length + 1) {
+	subTextElement.html(secondaryText.substr(0, secondaryTextLength++));
+	if (secondaryTextLength < secondaryText.length + 1) {
 		setTimeout('type()', 50);
 	} else {
-		captionLength = 0;
-		caption = '';
+		secondaryTextLength = 0;
+		secondaryText = '';
 	}
 }
 
 var ErasingEffect = function() {
-	caption = captionEl.html();
-	captionLength = caption.length;
-	if (captionLength > 0) {
+	secondaryText = subTextElement.html();
+	secondaryTextLength = secondaryText.length;
+	if (secondaryTextLength > 0) {
 		erase();
 	}
 }
 
 var erase = function() {
-	captionEl.html(caption.substr(0, captionLength--));
-	if (captionLength >= 0) {
+	subTextElement.html(secondaryText.substr(0, secondaryTextLength--));
+	if (secondaryTextLength >= 0) {
 		setTimeout('erase()', 50);
 	} else {
-		captionLength = 0;
-		caption = '';
+		secondaryTextLength = 0;
+		secondaryText = '';
 	}
 }
 
@@ -119,8 +125,8 @@ var erase = function() {
 // 	$('#textCursor').animate({
 // 		opacity: 0
 // 	}, 'fast', 'swing').animate({
-// 		opacity: 1
-// 	}, 'fast', 'swing');
+// 			opacity: 1
+// 		}, 'fast', 'swing');
 // }
 
 $(document).ready(main);
