@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 
 body{
 	font-family:Open Sans;
@@ -144,6 +144,30 @@ a#demo:hover{
 	margin-top: 5%;
 	border-color: #3B3A35;
 	border-radius: 50%;
+}
+hr#underliner1 {
+	position: relative;
+	width: 50px;
+	margin-top: -25px;
+	margin-bottom: 50px;
+}
+hr#underliner2 {
+	position: relative;
+	width: 50px;
+	margin-top: -25px;
+	margin-bottom: 50px;
+}
+hr#underliner3 {
+	position: relative;
+	width: 50px;
+	margin-top: -25px;
+	margin-bottom: 50px;
+}
+hr#underliner4 {
+	position: relative;
+	width: 50px;
+	margin-top: -25px;
+	margin-bottom: 50px;
 }
 
 table{
