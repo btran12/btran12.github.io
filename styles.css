@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Oxygen|Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
 body{
 	font-family:Open Sans;
@@ -38,8 +38,8 @@ body{
 	text-align: center;
     width: 4.3em;
     overflow:hidden;
-    -webkit-animation: type 1s steps(7, end);
-    animation: type 1s steps(7, end);
+    -webkit-animation: type 1s steps(9, end);
+    animation: type 1s steps(9, end);
 }
 
 .mid span {
@@ -124,30 +124,26 @@ a#demo:hover{
 
 .document h1{
 	text-align: center;
-	font-size: 260%;
-	color: black;
+	font-size: 300%;
+	font-weight: 600;
 }
 
 .document th{
 	font-size: 160%;
-	font-weight: 700;
+	font-weight: 400;
 }
 
 .document p{
-	font-size: 110%;
-	font-weight: 500;
+	font-size: 115%;
+	font-weight: 300;
 }
 
 .document hr {
 	width:50%;
 	margin-bottom: 5%;
 	margin-top: 5%;
-	border-color: #EA7360;
-}
-
-#text{
-	text-align: left;
-	padding: 0 5% 0 5%;
+	border-color: #3B3A35;
+	border-radius: 50%;
 }
 
 table{
@@ -196,6 +192,9 @@ input, textarea {
 /*---- Responsiveness ----*/
 
 @media screen and (min-width: 1440px) {
+	.module {
+		height: 550px;
+	}
 	.mid h2{
 		font-size: 800%;
 	}
@@ -211,6 +210,9 @@ input, textarea {
 }
 
 @media screen and (max-width: 1024px) {
+	.module{
+		height:450px;
+	}
 	.mid h2{
 		font-size: 650%;
 	}
@@ -230,11 +232,14 @@ input, textarea {
 	}
 }
 @media screen and (max-width: 768px) {
+	.module{
+		height: 400px;
+	}
 	.mid h2{
 		font-size: 600%;
 	}
 	.mid h4{
-		font-size: 100%;
+		font-size: 110%;
 	}
 	.document h1{
 		font-size: 230%;
@@ -261,9 +266,6 @@ input, textarea {
 	    white-space: normal;
 	    width: 100%;
 	    text-align: center;
-	}
-	#text{
-		padding: 0;
 	}
 	
 }
