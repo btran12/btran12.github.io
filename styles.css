@@ -22,9 +22,8 @@ body{
 }
 
 .mid h2 {
-	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
-	font-size: 112px;
+	font-size: 130px;
 	color: white;
 	margin: 0;
 	position: absolute;
@@ -38,25 +37,24 @@ body{
 	text-align: center;
     width: 4.3em;
     overflow:hidden;
-    -webkit-animation: type 1s steps(9, end);
-    animation: type 1s steps(9, end);
+    /*-webkit-animation: type 1s steps(9, end);
+    animation: type 1s steps(9, end);*/
 }
 
-.mid span {
+/*.mid span {
 	border-left: 8px solid white;
 	animation: blink 1s infinite;
 	-webkit-animation: blink 1s infinite;
-}
+}*/
 
 .mid h4{
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 100;
+	font-weight: 300;
 	color: white;
 	margin: auto;
 	position: absolute;
 	top: 65%;
 	left: 50%;
-	font-size: 130%;
+	font-size: 150%;
 	vertical-align: middle;
 	white-space: nowrap;
 	transform:translate(-50%);

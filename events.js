@@ -1,4 +1,10 @@
-var main = function(){
+	var captionLength = 0;
+	var caption = '';
+	var text = new Array("I am a student", "I am a learner", "I am an achiever", "A Student | A Learner | An Achiever");
+	var i = 0;
+	var captionEl = $('#secondaryText');
+
+	var main = function(){
 	//Hide the mail form when site starts;
 	$('#mailForm').hide();
 
@@ -61,6 +67,60 @@ var main = function(){
 			$('#underliner4').animate({ width: '50px' });
 		}
 	});
+
+//-- ANIMATE SECONDARY TEXT --
+	//setInterval('cursorAnimation()', 600);
+	TypingEffect();
+
 }
+
+var TypingEffect = function() {
+
+	if (i < text.length) {
+		caption = text[i];
+		type();
+		if (i < 3) {
+			setTimeout('ErasingEffect()', 2000);
+		}
+		i++;
+		setTimeout('TypingEffect()', 3000);
+	}
+}
+
+var type = function() {
+	captionEl.html(caption.substr(0, captionLength++));
+	if (captionLength < caption.length + 1) {
+		setTimeout('type()', 50);
+	} else {
+		captionLength = 0;
+		caption = '';
+	}
+}
+
+var ErasingEffect = function() {
+	caption = captionEl.html();
+	captionLength = caption.length;
+	if (captionLength > 0) {
+		erase();
+	}
+}
+
+var erase = function() {
+	captionEl.html(caption.substr(0, captionLength--));
+	if (captionLength >= 0) {
+		setTimeout('erase()', 50);
+	} else {
+		captionLength = 0;
+		caption = '';
+	}
+}
+
+// function cursorAnimation() {
+// 	$('#textCursor').animate({
+// 		opacity: 0
+// 	}, 'fast', 'swing').animate({
+// 		opacity: 1
+// 	}, 'fast', 'swing');
+// }
 
 $(document).ready(main);
