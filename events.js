@@ -18,27 +18,6 @@ var main = function(){
 		}
 	});
 
-	//Open up the form
-	$('#sendMailIcon').on({
-		click: function(){
-			$('#mailForm').slideToggle();
-		},
-		mouseover: function(){
-			//$(this).animate({ transform:  });
-		}
-		
-	});
-
-	//The Send Button
-	$('#sendButton').mouseover(function(){
-		var email = $('#emailField').val();
-		var message = $('#messageField').val();
-
-		if (email.length < 1 || message.length < 1){
-			alert("The Email, or Message cannot be blank!");
-		}
-	})
-
 	//Mouse over Sections
 	//TODO Make code more efficient
 	$('#aboutSection').on({
@@ -73,6 +52,66 @@ var main = function(){
 			$('#underliner4').animate({ width: '50px' });
 		}
 	});
+
+	//Open up the form
+	$('#sendMailIcon').on({
+		click: function(){
+			$('#mailForm').slideToggle();
+		},
+		mouseover: function(){
+			$(this).animate({  
+				width: '60px',
+				height: '60px'
+			}, 300);
+		},
+		mouseout: function(){
+			$(this).animate({  
+				width: '70px',
+				height: '70px'
+			}, 300);
+		}
+	});
+
+	//The Send Button
+	$('#sendButton').mouseover(function(){
+		var email = $('#emailField').val();
+		var message = $('#messageField').val();
+
+		if (email.length < 1 || message.length < 1){
+			alert("The Email, or Message cannot be blank!");
+		}
+	})
+
+	$('#githubIcon').on({
+		mouseover: function(){
+			$(this).animate({  
+				width: '60px',
+				height: '60px'
+			}, 300);
+		},
+		mouseout: function(){
+			$(this).animate({  
+				width: '70px',
+				height: '70px'
+			}, 300);
+		}
+	});
+
+	$('#linkedinIcon').on({
+		mouseover: function(){
+			$(this).animate({  
+				width: '67px',
+				height: '60px'
+			}, 300);
+		},
+		mouseout: function(){
+			$(this).animate({  
+				width: '77px',
+				height: '70px'
+			}, 300);
+		}
+	});
+
 
 //-- ANIMATE SECONDARY TEXT --
 	//setInterval('cursorAnimation()', 600);

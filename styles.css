@@ -172,6 +172,7 @@ table{
 	width: 50%;
 	text-align: center;
 	border-collapse: collapse;
+	table-layout: fixed;
 }
 
 input, textarea {
@@ -265,6 +266,9 @@ input, textarea {
 	}
 	.document h1{
 		font-size: 230%;
+	}
+	.document p{
+		font-size: 100%;
 	}
 	.document hr {
 		width: 80%;
