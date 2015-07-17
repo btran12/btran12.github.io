@@ -3,6 +3,7 @@
 body{
 	font-family:Open Sans;
 	color: #3B3A35;
+	border-bottom: 1px solid transparent;
 }
 
 .module {
@@ -179,6 +180,12 @@ input, textarea {
 	font-family: inherit;
 	font-size: 80%;
 }
+
+/*footer{
+	height: 250px;
+	background-color: black;
+	margin: -8px;
+}*/
 
 #sendButton {
 	font-family: inherit;
