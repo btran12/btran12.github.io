@@ -3,7 +3,6 @@
 body{
 	font-family:Open Sans;
 	color: #3B3A35;
-	border-bottom: 1px solid transparent;
 }
 
 .module {
@@ -19,7 +18,7 @@ body{
 	width: 100hh;
 	height: 500px;
 	margin: -8px;
-	position: relative;
+	position: inherit;
 }
 
 .mid h2 {
@@ -28,7 +27,7 @@ body{
 	color: white;
 	margin: 0;
 	position: absolute;
-	top: 30%;
+	top: 150px;
 	left:50%;
 	white-space: nowrap;
 	transform:translate(-50%);
@@ -53,7 +52,7 @@ body{
 	color: white;
 	margin: auto;
 	position: absolute;
-	top: 65%;
+	top: 320px;
 	left: 50%;
 	font-size: 150%;
 	vertical-align: middle;
@@ -76,17 +75,26 @@ body{
 	-moz-transform: translate(-50%);
 }
 
+.mid ul{
+	margin: 0;
+	padding: 0;
+}
+
+.mid li{
+	display: inline;
+	float: right;
+	margin: 10px;
+	list-style-type: none;
+}
+
 .mid a{
+	display: block;
 	color: white;
 	width: 100px;
-	float: right;
 	padding: 10px;
 	text-align: center;
 	text-decoration: none;
-	border-style:solid;
-	border-width: 2px;
-	border-color: white;
-	margin: 10px;
+	border: 2px solid white;
 	transition: background-color 1s;
     -ms-transition: background-color 1s; /* IE 10 */
     -moz-transition: background-color 1s; /* Firefox */
@@ -292,11 +300,12 @@ input, textarea {
 	}
 	.mid h2{
 		font-size: 470%;
-		top: 25%;
+		top: 100px;
 	}
 	.mid h4{
-		font-weight: 800;
+		font-weight: 400;
 	    white-space: normal;
+	    top: 200px;
 	    width: 100%;
 	    text-align: center;
 	}
