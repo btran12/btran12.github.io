@@ -75,19 +75,19 @@ body{
 	-moz-transform: translate(-50%);
 }
 
-.mid ul{
+.mid ul#normal-nav{
 	margin: 0;
 	padding: 0;
 }
 
-.mid li{
+.mid ul#normal-nav li{
 	display: inline;
 	float: right;
 	margin: 10px;
 	list-style-type: none;
 }
 
-.mid a{
+.mid ul#normal-nav a{
 	display: block;
 	color: white;
 	width: 100px;
