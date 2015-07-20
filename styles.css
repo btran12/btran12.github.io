@@ -37,15 +37,7 @@ body{
 	text-align: center;
     width: 4.3em;
     overflow:hidden;
-    /*-webkit-animation: type 1s steps(9, end);
-    animation: type 1s steps(9, end);*/
 }
-
-/*.mid span {
-	border-left: 8px solid white;
-	animation: blink 1s infinite;
-	-webkit-animation: blink 1s infinite;
-}*/
 
 .mid h4{
 	font-weight: 300;
@@ -75,9 +67,41 @@ body{
 	-moz-transform: translate(-50%);
 }
 
+.mid ul#condensed-nav{
+	margin: 0;
+	padding: 0;
+	display: none;
+}
+
+.mid ul#condensed-nav li#icon{
+	position: relative;
+	float:left;	
+}
+
+.mid ul#condensed-nav ul#menu-items{
+	list-style-type: none;
+}
+
+.mid ul#condensed-nav a{
+	display: block;
+	text-decoration: none;
+	font-weight: 600;
+	color: black;
+	background: white;
+	width: 100px;
+	padding: 15px 15px 15px 15px;
+	opacity: .8;
+	border-bottom: 1px solid;
+}
+
+.mid ul#condensed-nav a:hover{
+	opacity: 1;
+}
+
 .mid ul#normal-nav{
 	margin: 0;
 	padding: 0;
+	display: block;
 }
 
 .mid ul#normal-nav li{
@@ -101,7 +125,7 @@ body{
     -webkit-transition: background-color 1s; /*safari and chrome */
 }
 
-.mid a:hover{
+.mid ul#normal-nav a:hover{
 	color:#354458;
 	background-color: white;
 	transition: background-color 1s;
@@ -210,23 +234,6 @@ input, textarea {
 	-ms-border-radius: 4px;
 }
 
-/*---- Animation ----*/
-
-@keyframes blink{
-  to{opacity: .0;}
-}
-@-webkit-keyframes blink{
-  to{opacity: .0;}
-}
-@keyframes type{
-    from { width: 0em; }
-    to {width: 3.9em}
-}
-@-webkit-keyframes type{
-    from { width: 0em; }
-    to {width: 3.9em}
-}
-
 /*---- Responsiveness ----*/
 
 @media screen and (min-width: 1440px) {
@@ -267,6 +274,13 @@ input, textarea {
 
 	table{
 		width: 70%;
+	}
+
+	.mid ul#normal-nav{
+		display: none;
+	}
+	.mid ul#condensed-nav{
+		display: block;
 	}
 }
 @media screen and (max-width: 768px) {
