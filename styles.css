@@ -68,29 +68,36 @@ body{
 }
 
 .mid ul#condensed-nav{
+	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	display: none;
+	float: right;
 }
 
-.mid ul#condensed-nav li#icon{
+.mid ul#condensed-nav li#icon img{
+	width: 40px;
+	height: 40px;
 	position: relative;
-	float:left;	
+	cursor: pointer;
+	left: 80%;
 }
 
 .mid ul#condensed-nav ul#menu-items{
 	list-style-type: none;
+	visibility: hidden;
 }
 
 .mid ul#condensed-nav a{
 	display: block;
 	text-decoration: none;
 	font-weight: 600;
+	font-size: 16px;
 	color: black;
 	background: white;
 	width: 100px;
 	padding: 15px 15px 15px 15px;
-	opacity: .8;
+	opacity: .9;
 	border-bottom: 1px solid;
 }
 

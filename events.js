@@ -18,6 +18,18 @@ var main = function(){
 		}
 	});
 
+	$('#menu-icon').on({
+		click: function(){
+			var visible = $('#menu-items').css('visibility');
+			
+			if (visible === "hidden"){
+				$('#menu-items').css('visibility','visible');
+			}else{
+				$('#menu-items').css('visibility','hidden');
+			}
+		}
+	});
+
 	//Mouse over Sections
 	//TODO Make code more efficient
 	$('#aboutSection').on({
