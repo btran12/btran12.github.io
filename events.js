@@ -27,6 +27,9 @@ var main = function(){
 			}else{
 				$('#menu-items').css('visibility','hidden');
 			}
+		},
+		mouseover: function(){
+			$('#menu-items').css('visibility','visible');
 		}
 	});
 
@@ -127,8 +130,10 @@ var main = function(){
 
 //-- ANIMATE SECONDARY TEXT --
 	//setInterval('cursorAnimation()', 600);
-	TypingEffect();
-
+	if (window.innerWidth > 1024){
+		TypingEffect();
+	}
+	
 }
 
 var TypingEffect = function() {
