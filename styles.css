@@ -52,7 +52,6 @@ body{
 	transform:translate(-50%);
 	-webkit-transform:translate(-50%);
 	-ms-transform: translate(-50%);
-	-moz-transform: translate(-50%);
 }
 
 .mid img{
@@ -239,6 +238,15 @@ input, textarea {
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	-ms-border-radius: 4px;
+}
+
+::-moz-selection{
+    background-color:gray;
+    color:#fff;
+}
+::selection {
+    background-color:gray;
+    color:#fff;
 }
 
 /*---- Responsiveness ----*/

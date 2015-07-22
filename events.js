@@ -26,14 +26,7 @@ var main = function(){
 			}else{
 				$('#menu-items').css('visibility','hidden');
 			}
-		},
-		mouseover: function(){
-			$(this).css('border', '2px solid transparent');
-		},
-		mouseout: function(){
-			$(this).css('border', '0px');
 		}
-
 	});
 
 	$('#menu-items').click(function(){
