@@ -1,6 +1,5 @@
 var secondaryTextLength = 0;
 var secondaryText = '';
-var text = new Array("I'm a Student", "I'm a Learner", "I'm an Achiever", "Student | Learner | Achiever");
 var i = 0;
 var subTextElement = $('#secondaryText');
 
@@ -29,11 +28,19 @@ var main = function(){
 			}
 		},
 		mouseover: function(){
-			$('#menu-items').css('visibility','visible');
+			$(this).css('border', '2px solid transparent');
+		},
+		mouseout: function(){
+			$(this).css('border', '0px');
 		}
+
 	});
 
-	//Mouse over Sections
+	$('#menu-items').click(function(){
+		$('#menu-items').css('visibility','hidden');
+	});
+
+	//Mouse over Sections animations
 	//TODO Make code more efficient
 	$('#aboutSection').on({
 		mouseenter: function(){
@@ -136,6 +143,9 @@ var main = function(){
 	
 }
 
+var text = new Array("I'm a Student", "I'm a Learner", "I'm an Achiever", "Student | Learner | Achiever");
+
+//Code from: http://codepen.io/stathisg/pen/Bkvhg
 var TypingEffect = function() {
 
 	if (i < text.length) {
