@@ -86,6 +86,7 @@ body{
 .mid ul#condensed-nav ul#menu-items{
 	list-style-type: none;
 	visibility: hidden;
+	padding-right: 15px;
 }
 
 .mid ul#condensed-nav a{
@@ -301,13 +302,21 @@ input, textarea {
 }
 @media screen and (max-width: 768px) {
 	.module{
-		height: 400px;
+		background: transparent;
+		height: 300px;
 	}
 	.mid h2{
 		font-size: 600%;
+		color: black;
+		top: 50px;
+		left: 30%;
 	}
 	.mid h4{
 		font-size: 110%;
+		color: black;
+		font-weight: 400;
+		top: 130px;
+		left: 75%;
 	}
 	.document h1{
 		font-size: 230%;
@@ -325,15 +334,11 @@ input, textarea {
 }
 
 @media screen and (max-width: 480px) {
-	.module{
-		height: 350px;
-	}
 	.mid h2{
 		font-size: 470%;
 		top: 100px;
 	}
 	.mid h4{
-		font-weight: 400;
 	    white-space: normal;
 	    top: 200px;
 	    width: 100%;

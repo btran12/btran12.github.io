@@ -130,8 +130,10 @@ var main = function(){
 
 //-- ANIMATE SECONDARY TEXT --
 	//setInterval('cursorAnimation()', 600);
-	if (window.innerWidth > 1024){
+	if (window.innerWidth > 768){
 		TypingEffect();
+	}else{
+		$('#secondaryText').html("Student | Learner | Achiever");
 	}
 	
 }
