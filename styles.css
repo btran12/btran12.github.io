@@ -292,13 +292,6 @@ input, textarea {
 	table{
 		width: 70%;
 	}
-
-	.mid ul#normal-nav{
-		display: none;
-	}
-	.mid ul#condensed-nav{
-		display: block;
-	}
 }
 @media screen and (max-width: 768px) {
 	.module{
@@ -310,18 +303,25 @@ input, textarea {
 		color: black;
 		top: 50px;
 		left: 30%;
+		font-weight: 600;
 	}
 	.mid h4{
 		font-size: 130%;
 		color: black;
 		font-weight: 400;
 		top: 130px;
-		left: 75%;
+		left: 80%;
 	}
 	.mid img#scrollBtn{
 		display: none;
 	}
 	/*Navigation*/
+	.mid ul#normal-nav{
+		display: none;
+	}
+	.mid ul#condensed-nav{
+		display: block;
+	}
 	.mid ul#condensed-nav li#icon img{
 		filter: contrast(0);
 		-webkit-filter: contrast(0);
@@ -348,14 +348,18 @@ input, textarea {
 
 @media screen and (max-width: 480px) {
 	.mid h2{
-		font-size: 470%;
+		font-size: 500%;
 		top: 100px;
+		left: 50%;
+		font-weight: 600;
 	}
 	.mid h4{
 	    white-space: normal;
 	    top: 200px;
 	    width: 100%;
-	    text-align: center;
+		text-align: center;
+	    left: 50%;
+	    top: 200px;
 	}
 	table{
 		width: 100%;
