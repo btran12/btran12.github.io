@@ -312,11 +312,25 @@ input, textarea {
 		left: 30%;
 	}
 	.mid h4{
-		font-size: 110%;
+		font-size: 130%;
 		color: black;
 		font-weight: 400;
 		top: 130px;
 		left: 75%;
+	}
+	.mid img#scrollBtn{
+		display: none;
+	}
+	/*Navigation*/
+	.mid ul#condensed-nav li#icon img{
+		filter: contrast(0);
+		-webkit-filter: contrast(0);
+		-moz-filter: contrast(0);
+		-ms-filter: contrast(0);
+	}
+	.mid ul#condensed-nav a{
+		background: black;
+		color: white;
 	}
 	.document h1{
 		font-size: 230%;
@@ -330,7 +344,6 @@ input, textarea {
 	table{
 		width: 80%;
 	}
-
 }
 
 @media screen and (max-width: 480px) {

@@ -6,7 +6,6 @@
  * Date: 10-Sep-2012
  * Version: 1.0.1
  */
-if (!window['jQuery']) alert('The jQuery library must be included before the smoothscroll.js file.  The plugin will not work propery.');
 
 /**
  * jQuery.ScrollTo - Easy element scrolling using jQuery.
