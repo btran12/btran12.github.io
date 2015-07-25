@@ -1,8 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 
+html{
+	margin: 0;
+	padding: 0;
+}
 body{
 	font-family:Open Sans;
 	color: #3B3A35;
+	margin: 0;
+	padding: 0;
 }
 
 .module {
@@ -17,7 +23,6 @@ body{
 	background-size: cover;
 	width: 100hh;
 	height: 500px;
-	margin: -8px;
 	position: inherit;
 }
 
@@ -177,7 +182,7 @@ a#demo:hover{
 	font-weight: 300;
 }
 
-.document hr {
+.document hr{
 	width:50%;
 	margin-bottom: 5%;
 	margin-top: 5%;
@@ -336,7 +341,7 @@ input, textarea {
 		font-size: 230%;
 	}
 	.document p{
-		font-size: 100%;
+		font-size: 130%;
 	}
 	.document hr {
 		width: 80%;
@@ -347,11 +352,16 @@ input, textarea {
 }
 
 @media screen and (max-width: 480px) {
+	body{
+		background-color: #FDF6E3;
+		color: #657B83;
+	}
 	.mid h2{
 		font-size: 500%;
 		top: 100px;
 		left: 50%;
 		font-weight: 600;
+		color: #B58918;
 	}
 	.mid h4{
 	    white-space: normal;
@@ -360,11 +370,29 @@ input, textarea {
 		text-align: center;
 	    left: 50%;
 	    top: 200px;
+	    color: #B58918;
+	}
+	.document h1{
+		color: #B58918;
+	}
+	a#demo{
+		color: #1A5EB3;
 	}
 	table{
 		width: 100%;
 	}
-	
+	hr#underliner1{
+		display: none;
+	}
+	hr#underliner2{
+		display: none;
+	}
+	hr#underliner3{
+		display: none;
+	}
+	hr#underliner4{
+		display: none;
+	}
 }
 
 
