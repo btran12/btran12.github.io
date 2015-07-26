@@ -351,7 +351,7 @@ input, textarea {
 	}
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 605px) {
 	body{
 		background-color: #FDF6E3;
 		color: #657B83;
