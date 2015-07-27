@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bao Tran | Terminal</title>
+<style type="text/css">
+body {
+	
+}
+table {
+	position:relative;
+	left:30px;
+	background-color: #073642;	
+	border-top: 25px solid #979797;
+	border-radius: 10px;
+	box-shadow:5px 5px 5px #888888;
+}
+
+textarea{
+	color:#93a1a1;
+	outline:none;
+	overflow:hidden;
+	resize:none;
+	background-color:transparent;
+	border:5px solid transparent;
+	font-size:14px;
+}
+
+input{
+	color:#93a1a1;
+	outline:none;
+	background-color:transparent;
+	border:5px solid transparent;
+	font-size:14px;
+	left:5px;
+	position:relative;
+}
+
+</style>
+</head>
+
+<body>
+<p style="position:absolute;z-index:1;left:370px;top:-5px;font-size:18px;font-weight:600">Terminal ̶ Bash ̶ 110x30</p>
+<table>
+    <tr>
+        <td>
+        	<textarea readonly name=" " cols="100" rows="30" id="terminalText" onClick="focusField()"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        	<!--The onfocus move the cursor to the end of the textfield, so always after the >-->
+        	<input autofocus id="commandField" type="text" size="110px" value="&gt;" onfocus="this.value = this.value;" onkeypress="onEnter(event)" onKeyUp="keyUp()">
+        </td>
+    </tr>
+</table>
+
+
+
+<script>
+
+	//Get Date
+	var d = new Date();
+	var weekDays = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+	var weekday = weekDays[d.getDay()];
+	var day = d.getDate();
+	var month = d.getMonth()+1;
+	var year = d.getFullYear();
+	var hour = d.getHours();
+	var minute = d.getMinutes();
+	var second = d.getSeconds();
+	var time = hour+":"+minute+":"+second+"  "+month+"/"+day+"/"+year;
+	
+	var terminalElement = document.getElementById("terminalText");
+	
+	//Initial terminal message
+	terminalText.value = "Last Login: " + time + " on System Terminal\nExecute 'help' for a list of commands";
+	
+	function focusField(){
+		document.getElementById("commandField").focus();
+	}
+    function keyUp(){
+		//Cannot remove > at the beginning
+		var fieldLength = document.getElementById("commandField").value.length;
+		if (fieldLength === 0){
+			document.getElementById("commandField").value = ">";
+		}
+	}
+	
+	function onEnter(event){
+		var commandFieldElement = document.getElementById("commandField");
+		
+		if (event.which === 13){
+			var terminal = terminalElement.value;
+			var input = commandFieldElement.value;
+			input = input.substring(1);	//substring remove the > at the beginning
+			var splitter = input.split(" ");
+
+			command = splitter[0];
+			parameter = splitter[1];
+
+			//Print the command
+			terminal += "\n$ " + input +"\n";
+			
+			switch(command){
+				case "help":
+					terminal += "Commands:\t\t\t\t\t\tDescription:\n-ls\t\t\t\t\t\t\t-List the available sections\n-explore [about][experience][project][contact]\t\t-Navigate to and explore one of the sections\n-open [website][university][github][linkedin]\t\t-Open one of the sites in a new tab\n-time\t\t\t\t\t\t\t-Print out the current date and time";
+					break;
+				case "ls":
+					terminal += "about  experience  project  contact";
+					break;
+				case "explore":
+					if (parameter === "about"){
+						terminal += "I'm an undergraduate student at Westfield State University Class of 2017\nI major in Computer Science, and Minor in Mathematics\nI enjoy nature, soccer, and programming\nI aspire to explore, and learn new things";
+					}else if (parameter === "experience"){
+						terminal += "";
+					}else if (parameter === "project"){
+						terminal += "";
+					}else if (parameter === "contact"){
+						terminal += "You can email me at:\ncontact@baotran.xyz\nThank you for your considerations. I'll get back to you soon.";
+					}else{
+						terminal += input + ": command not found";
+					}
+					break;
+				case "open":
+					if (parameter === "website"){
+						terminal += "Opened Bao Tran's personal website";
+						window.open("http://www.baotran.xyz");
+					}else if (parameter === "university"){
+						terminal += "Opened Bao Tran's university";
+						window.open("http://www.westfield.ma.edu");
+					}else if (parameter === "github"){
+						terminal += "Opened Bao Tran's Github page";
+						window.open("http://www.github.com/btran12");
+					}else if (parameter === "linkedin"){
+						terminal += "Opened Bao Tran's Linkedin profile";
+						window.open("http://www.linkedin.com/in/baoqtran");
+					}else{
+						terminal += input + ": command not found";
+					}
+					break;
+				case "time":
+					terminal += "The current time is: " + time;
+					break;
+				default:
+					terminal += input + ": command not found"
+			}
+			
+			//Set the text
+			terminalElement.value = terminal;
+			terminalElement.scrollTop = terminalElement.scrollHeight;
+			
+			//Clear the field
+			commandFieldElement.value = "";
+		}
+	}
+		
+</script>
+</body>
+</html>

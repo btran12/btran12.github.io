@@ -74,16 +74,10 @@ var main = function(){
 			$('#mailForm').slideToggle();
 		},
 		mouseover: function(){
-			$(this).animate({  
-				width: '60px',
-				height: '60px'
-			}, 300);
+			
 		},
 		mouseout: function(){
-			$(this).animate({  
-				width: '70px',
-				height: '70px'
-			}, 300);
+			
 		}
 	});
 
@@ -99,31 +93,31 @@ var main = function(){
 
 	$('#githubIcon').on({
 		mouseover: function(){
-			$(this).animate({  
-				width: '60px',
-				height: '60px'
-			}, 300);
+			$(this).fadeOut(300, function() {
+		        $(this).attr("src","./images/github-on.png");
+		        $(this).fadeIn(500);
+	    	});
 		},
 		mouseout: function(){
-			$(this).animate({  
-				width: '70px',
-				height: '70px'
-			}, 300);
+			$(this).fadeOut(300, function() {
+		        $(this).attr("src","./images/github-off.png");
+		        $(this).fadeIn(500);
+	    	});
 		}
 	});
 
 	$('#linkedinIcon').on({
 		mouseover: function(){
-			$(this).animate({  
-				width: '67px',
-				height: '60px'
-			}, 300);
+			$(this).fadeOut(300, function() {
+		        $(this).attr("src","./images/linkedin-on.png");
+		        $(this).fadeIn(500);
+	    	});
 		},
 		mouseout: function(){
-			$(this).animate({  
-				width: '77px',
-				height: '70px'
-			}, 300);
+			$(this).fadeOut(300, function() {
+		        $(this).attr("src","./images/linkedin-off.png");
+		        $(this).fadeIn(500);
+	        });
 		}
 	});
 
