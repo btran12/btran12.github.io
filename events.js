@@ -74,10 +74,10 @@ var main = function(){
 			$('#mailForm').slideToggle();
 		},
 		mouseover: function(){
-			
+			$(this).attr("src","./images/mail-open.png");
 		},
 		mouseout: function(){
-			
+			$(this).attr("src","./images/mail-closed.png");
 		}
 	});
 
@@ -93,31 +93,19 @@ var main = function(){
 
 	$('#githubIcon').on({
 		mouseover: function(){
-			$(this).fadeOut(300, function() {
-		        $(this).attr("src","./images/github-on.png");
-		        $(this).fadeIn(500);
-	    	});
+			$(this).attr("src","./images/github-on.png");
 		},
 		mouseout: function(){
-			$(this).fadeOut(300, function() {
-		        $(this).attr("src","./images/github-off.png");
-		        $(this).fadeIn(500);
-	    	});
+			 $(this).attr("src","./images/github-off.png");
 		}
 	});
 
 	$('#linkedinIcon').on({
 		mouseover: function(){
-			$(this).fadeOut(300, function() {
-		        $(this).attr("src","./images/linkedin-on.png");
-		        $(this).fadeIn(500);
-	    	});
+			$(this).attr("src","./images/linkedin-on.png");
 		},
 		mouseout: function(){
-			$(this).fadeOut(300, function() {
-		        $(this).attr("src","./images/linkedin-off.png");
-		        $(this).fadeIn(500);
-	        });
+			$(this).attr("src","./images/linkedin-off.png");
 		}
 	});
 
