@@ -11,9 +11,14 @@ table {
 	position:relative;
 	left:30px;
 	background-color: #073642;	
-	border-top: 25px solid #979797;
-	border-radius: 10px;
+	border-top: 25px solid #D6D6D6;
+	border-radius: 15px;
+	table-layout:fixed;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
 	box-shadow:5px 5px 5px #888888;
+	-webkit-box-shadow:5px 5px 5px #888888;
+	-moz-box-shadow:5px 5px 5px #888888;
 }
 
 textarea{
@@ -36,21 +41,26 @@ input{
 	position:relative;
 }
 
+/*IE remove x button*/
+::-ms-clear {
+    display: none;
+}
+
 </style>
 </head>
 
 <body>
-<p style="position:absolute;z-index:1;left:370px;top:-5px;font-size:18px;font-weight:600">Terminal ̶ Bash ̶ 110x30</p>
+<p style="position:absolute;z-index:1;left:330px;top:-10px;font-size:18px;font-weight:600;font-family:'Trebuchet MS';white-space:nowrap">Terminal - Bash - 110x30</p>
 <table>
     <tr>
         <td>
-        	<textarea readonly name=" " cols="100" rows="30" id="terminalText" onClick="focusField()"></textarea>
+        	<textarea readonly name=" " cols="90" rows="20" id="terminalText" onClick="focusField()"></textarea>
         </td>
     </tr>
     <tr>
         <td>
-        	<!--The onfocus move the cursor to the end of the textfield, so always after the >-->
-        	<input autofocus id="commandField" type="text" size="110px" value="&gt;" onfocus="this.value = this.value;" onkeypress="onEnter(event)" onKeyUp="keyUp()">
+        	<!--The onfocus move the cursor to the end of the textfield, so always after the > -->
+        	<input autofocus id="commandField" type="text" size="100px" maxlength="100" value=">" onfocus="this.value = this.value;" onkeypress="onEnter(event)" onKeyUp="keyUp()">
         </td>
     </tr>
 </table>
@@ -73,12 +83,14 @@ input{
 	
 	var terminalElement = document.getElementById("terminalText");
 	
-	//Initial terminal message
+	//Initial terminal message on startup
 	terminalText.value = "Last Login: " + time + " on System Terminal\nExecute 'help' for a list of commands";
 	
+	//If click on the terminal focus on the command field
 	function focusField(){
 		document.getElementById("commandField").focus();
 	}
+	
     function keyUp(){
 		//Cannot remove > at the beginning
 		var fieldLength = document.getElementById("commandField").value.length;
@@ -96,30 +108,60 @@ input{
 			input = input.substring(1);	//substring remove the > at the beginning
 			var splitter = input.split(" ");
 
-			command = splitter[0];
-			parameter = splitter[1];
+			command = (splitter[0]+"").toLowerCase();
+			parameter = (splitter[1]+"").toLowerCase();
 
 			//Print the command
-			terminal += "\n$ " + input +"\n";
+			terminal += "\n\n$ " + input +"\n";
 			
 			switch(command){
 				case "help":
-					terminal += "Commands:\t\t\t\t\t\tDescription:\n-ls\t\t\t\t\t\t\t-List the available sections\n-explore [about][experience][project][contact]\t\t-Navigate to and explore one of the sections\n-open [website][university][github][linkedin]\t\t-Open one of the sites in a new tab\n-time\t\t\t\t\t\t\t-Print out the current date and time";
+					if (parameter === "list"){
+						
+					}
+					else if (parameter === "explore"){
+						
+					}
+					else if (parameter === "open"){
+						
+					}
+					else if (parameter === "time"){
+						terminal += "Show the current time and date";
+					}
+					else if (parameter === "clear"){
+						terminal += "Clear the terminal screen of text";
+						
+					}else if (parameter === "undefined"){
+						terminal += "For more information on a specific command, execute 'HELP command-name'\n";
+						terminal += "LIST\t\tList the available sections\n";
+						terminal += "EXPLORE\t\tExplore information if sepecified section\n";
+						terminal += "OPEN\t\tOpen a specified website in a new tab\n";
+						terminal += "TIME\t\tPrint out the current date and time\n";
+						terminal += "CLEAR\t\tClear the terminal screen";
+					}else{
+						terminal += "'" + input + " " + parameter + "' command's parameter is not recognizable";	
+					}
 					break;
-				case "ls":
+				case "list":
 					terminal += "about  experience  project  contact";
 					break;
 				case "explore":
 					if (parameter === "about"){
 						terminal += "I'm an undergraduate student at Westfield State University Class of 2017\nI major in Computer Science, and Minor in Mathematics\nI enjoy nature, soccer, and programming\nI aspire to explore, and learn new things";
-					}else if (parameter === "experience"){
-						terminal += "";
-					}else if (parameter === "project"){
-						terminal += "";
-					}else if (parameter === "contact"){
-						terminal += "You can email me at:\ncontact@baotran.xyz\nThank you for your considerations. I'll get back to you soon.";
+					}
+					else if (parameter === "experience"){
+						terminal += "<Center for Instructional Technology>\nAt CIT I was tasked with the construction of interactive learning objects.Learning objects are animated HTML, JavaScript projects that are aimed to promote online learning. These objects were particularly useful to teachers with online classes, since they does a better job at conveying the concepts that are being taught. Most of my projects were built in Adobe Edge Animate. I utilized the tools and libaries available (HTML, JavaScript, and JQuery) to build some of the most interesting ideas I had.";
+					}
+					else if (parameter === "project"){
+						terminal += "<SquareScape>\nSquareScape takes the concept of Pacman and further simplifies it.\n   The game leverages the user key presses for movement.\n   It was built with Adobe Edge Animate, and coded in JavaScript.\n<Digit>\n   Digit is a simple Android game that relies on the user's reflex and responsiveness in order to be successful.\n   It was built with Android Studio, and coded in Java.";
+					}
+					else if (parameter === "contact"){
+						terminal += "You can get in touch with me through:\nEmail: contact@baotran.xyz\nLinkedin: www.linkedin.com/in/baoqtran\nThank you for your considerations. I'll get back to you as soon as possible.";
+					}
+					else if (parameter === "undefined"){
+						terminal += "'" + input + "' command missing an argument";
 					}else{
-						terminal += input + ": command not found";
+						terminal += "'" + input + " " + parameter + "' command's parameter is not recognizable";	
 					}
 					break;
 				case "open":
@@ -136,18 +178,23 @@ input{
 						terminal += "Opened Bao Tran's Linkedin profile";
 						window.open("http://www.linkedin.com/in/baoqtran");
 					}else{
-						terminal += input + ": command not found";
+						terminal += "'" + input + "' command missing an argument";
 					}
 					break;
 				case "time":
 					terminal += "The current time is: " + time;
 					break;
+				case "clear":
+					terminal = "";
+					break;
 				default:
-					terminal += input + ": command not found"
+					terminal += "'" + input + "' is not a recognizable command";
 			}
 			
 			//Set the text
 			terminalElement.value = terminal;
+			
+			//Always see the most recent input
 			terminalElement.scrollTop = terminalElement.scrollHeight;
 			
 			//Clear the field
