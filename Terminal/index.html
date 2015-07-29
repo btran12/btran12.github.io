@@ -1,15 +1,16 @@
-<doctype html>
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Bao Tran | Terminal</title>
 <style type="text/css">
 body {
-	
+	background-color:#191919;
 }
 table {
 	position:relative;
 	left:30px;
+	top: 0px;
 	background-color: #073642;	
 	border-top: 25px solid #DCDCDC;
 	border-radius: 15px;
@@ -29,6 +30,9 @@ textarea{
 	background-color:transparent;
 	border:5px solid transparent;
 	font-size:14px;
+	tab-size: 8;
+	-moz-tab-size: 8;
+	-webkit-tab-size: 8;
 }
 
 input{
@@ -41,6 +45,21 @@ input{
 	position:relative;
 	font-weight: 300;
 }
+p {
+	position:absolute;
+	z-index:1;	
+	left:250px;
+	top:-10px;
+	font-size:18px;
+	font-family:"Trebuchet MS";
+	white-space:nowrap;
+}
+
+img{
+	left:-200px;
+	top:2px;
+	position:relative;
+}
 
 /*IE remove x button*/
 ::-ms-clear {
@@ -51,7 +70,7 @@ input{
 </head>
 
 <body>
-<p style="position:absolute;z-index:1;left:250px;top:-10px;font-size:18px;font-weight:300;font-family:'Trebuchet MS';white-space:nowrap"><img src="../images/icons.PNG" width="65" height="15" style="left:-200px;top:2px;position:relative"/>Terminal - Bash - 110x30</p>
+<p><img src="../images/icons.png" width="65" height="15"/>Terminal - Bash - 110x30</p>
 <table>
     <tr>
         <td>
@@ -122,7 +141,7 @@ input{
 							terminal += "List the available sections of the page";	
 							break;
 						case "explore":
-							terminal += "Explore a section in details\n";
+							terminal += "Explore a section in details\n\n";
 							terminal += "Options:\n";
 							terminal += "ABOUT\t\tA little something about myself\n";
 							terminal += "EXPERIENCE\tMy current and previous experiences working as an intern\n";
@@ -165,7 +184,7 @@ input{
 					}
 					break;
 				case "list":
-					terminal += "about  experience  project  contact";
+					terminal += "about  experiences  projects  contact";
 					break;
 				case "explore":
 					switch (parameter){
@@ -175,7 +194,7 @@ input{
 							terminal += "I enjoy nature, soccer, and programming\n";
 							terminal += "I aspire to explore, and learn beyond my capabilities";
 							break;
-						case "experience":
+						case "experiences":
 							terminal += "<Center for Instructional Technology>\n";
 							terminal += "At CIT I was tasked with the construction of interactive learning objects.";
 							terminal += " Learning objects are animated HTML, JavaScript projects that are aimed to promote online learning."; 
@@ -183,7 +202,7 @@ input{
 							terminal += " Most of my projects were built in Adobe Edge Animate.";
 							terminal += " I utilized the tools and libaries available (HTML, JavaScript, and JQuery) to construct my most interesting ideas.";
 							break;
-						case "project":
+						case "projects":
 							terminal += "<SquareScape>\n";
 							terminal += "SquareScape takes the concept of Pacman and simplifies it to a pixel on a 500 pixel radius.\n";
 							terminal += "The game leverages the user key presses for movements on a 2D plane.\n";
