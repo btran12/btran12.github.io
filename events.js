@@ -10,10 +10,10 @@ var main = function(){
 	//Move it up and down
 	$('#scrollBtn').on({
 		mouseover: function(){
-			$(this).animate({ top: '87%' });
+			$(this).animate({ top: '450px' });
 		},
 		mouseout: function(){
-			$(this).animate({ top: '85%' });
+			$(this).animate({ top: '440px' });
 		}
 	});
 
