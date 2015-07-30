@@ -70,17 +70,17 @@ img{
 </head>
 
 <body>
-<p><img src="../images/icons.PNG" width="65" height="15"/>Terminal - Bash - 110x30</p>
+<p><img src="http://baotran.xyz/images/icons.PNG" width="65" height="15"/>Terminal - Bash - 770x430</p>
 <table>
     <tr>
         <td>
-        	<textarea readonly name=" " cols="90" rows="20" id="terminalText" onClick="focusField()"></textarea>
+        	<textarea readonly name=" " cols="90" rows="20" id="terminalText" onKeyDown="terminalKeyDown()"></textarea>
         </td>
     </tr>
     <tr>
         <td>
         	<!--The onfocus move the cursor to the end of the textfield, so always after the > -->
-        	<input autofocus id="commandField" type="text" size="100px" maxlength="100" value=">" onfocus="this.value = this.value" onkeypress="onEnter(event)" onKeyUp="keyUp()">
+        	<input autofocus id="commandField" type="text" size="100px" maxlength="100" value=">" onfocus="this.value = this.value" onKeyPress="commandFieldEnter()" onKeyDown="commandFieldKeyDown()" onKeyUp="commandFieldKeyUp()">
         </td>
     </tr>
 </table>
@@ -88,7 +88,11 @@ img{
 
 
 <script>
-
+	//Keep track of the commands
+	var commandsHistory = new Array();
+	var historyIndex = 0;
+	var tempIndex;
+	
 	//Get Date and Time
 	var d = new Date();
 	var weekDays = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
@@ -106,25 +110,60 @@ img{
 	//Initial terminal message on startup
 	terminalText.value = "Last Login: " + time + " on System Terminal\nExecute 'help' for a list of commands";
 	
-	//If click on the terminal focus on the command field
-	function focusField(){
-		document.getElementById("commandField").focus();
-	}
-	
-    function keyUp(){
-		//Cannot remove > at the beginning
-		var fieldLength = document.getElementById("commandField").value.length;
-		if (fieldLength === 0){
-			document.getElementById("commandField").value = ">";
+	function commandFieldKeyDown(){
+		
+		if ([38,40].indexOf(event.which) !== -1){ event.preventDefault(); }
+		
+		//Traverse through the commands from history
+		if (commandsHistory.length > 0){
+			if (event.which === 38){
+				if (tempIndex === commandsHistory.length){ tempIndex--; }			
+				document.getElementById("commandField").value = commandsHistory[tempIndex];
+				if (tempIndex > 0){ tempIndex--; }
+			}
+			else if (event.which === 40){
+				if (tempIndex < commandsHistory.length){ tempIndex++; }
+				if (tempIndex !== commandsHistory.length){
+					document.getElementById("commandField").value = commandsHistory[tempIndex];
+				}else{
+					document.getElementById("commandField").value = ">";
+				}				
+			}
+			
 		}
 	}
 	
-	function onEnter(event){
+	function commandFieldKeyUp(){
+		//Cannot remove > at the beginning
+		//Check only for DELETE key and ENTER key
+		if (event.which === 8 || event.which === 13){
+			var fieldLength = document.getElementById("commandField").value.length;
+			if (fieldLength === 0){
+				document.getElementById("commandField").value = ">";
+			}
+		}
+	}
+	
+	function terminalKeyDown(){
+		if ([38,74].indexOf(event.which) !== -1){ //Up, J Scroll up
+			document.getElementById("terminalText").scrollTop -= 15;
+		}else if ([40,75].indexOf(event.which) !== -1){ //Down, K Scroll down
+			document.getElementById("terminalText").scrollTop += 15;
+		}
+	}
+	
+	function commandFieldEnter(){
 		var commandFieldElement = document.getElementById("commandField");
 		
 		if (event.which === 13){
 			var terminal = terminalElement.value;
 			var input = commandFieldElement.value;
+			
+			//Add to history
+			commandsHistory[historyIndex] = input;
+			tempIndex = historyIndex; //Use for traversing
+			historyIndex++;
+			
 			input = input.substring(1);	//substring remove the > at the beginning
 			var splitter = input.split(" ");
 
@@ -141,21 +180,23 @@ img{
 							terminal += "List the available sections of the page";	
 							break;
 						case "explore":
-							terminal += "Explore a section in details\n\n";
-							terminal += "Options:\n";
+							terminal += "Explore a section under LIST in details\n\n";
+							terminal += "Arguments:\n";
 							terminal += "ABOUT\t\tA little something about myself\n";
+							terminal += "CONTACT\t\tList ways for you to get in touch with me\n";
 							terminal += "EXPERIENCE\tMy current and previous experiences working as an intern\n";
-							terminal += "PROJECT\t\tThe list of projects that I have worked on, and is currently working on\n";
-							terminal += "CONTACT\t\tList ways for you to get in touch with me";
+							terminal += "PROJECT\t\tThe list of projects that I have worked on, and is currently working on";
+							
 							break;
 						case "open":
 							terminal += "Open my social or personal website\n\n";
-							terminal += "Options:\n";
-							terminal += "WEBSITE\t\tOpen up my personal website in a new tab. Access my resume, projects' demo.\n";
-							terminal += "UNIVERSITY\tOpen up my university's website in a new tab\n";
+							terminal += "Arguments:\n";
 							terminal += "GITHUB\t\tOpen up my Github repositories in a new tab. My previous, and current \n\t\tprojects can be seen here\n";
 							terminal += "LINKEDIN\tOpen up my linkedin profile in a new tab\n";
-							terminal += "RESUME\t\tOpen a new tab with my resume in PDF format";
+							terminal += "RESUME\t\tOpen a new tab with my resume in PDF format\n";
+							terminal += "UNIVERSITY\tOpen up my university's website in a new tab\n";
+							terminal += "WEBSITE\t\tOpen up my personal website in a new tab. Access my resume, projects' demo";
+							
 							break;
 						case "time":
 							terminal += "Show the current time and date in the format (hh:mm:ss  mm/dd/yyyy)";
@@ -167,20 +208,23 @@ img{
 							terminal += "Exit out of the terminal and redirect to the main page www.baotran.xyz";
 							break;
 						case "help":
-							terminal += "Show a list of the available commands";	
+							terminal += "List of the available commands";	
 							break;
 						case "undefined":	//If no argument is given
-							terminal += "For more information on a specific command, execute 'HELP COMMAND-NAME'\n\n";
-							terminal += "LIST\t\tList the available sections\n";
-							terminal += "EXPLORE\t\tExplore information if sepecified section\n";
+							terminal += "\nCLEAR\t\tClear the terminal screen\n";
+							terminal += "EXIT\t\tRedirect to the main page www.baotran.xyz\n";
+							terminal += "EXPLORE\t\tExplore detailed information of sepecified section under LIST\n";
+							terminal += "HELP\t\tList the available commands\n";
+							terminal += "LIST\t\tList the sections to EXPLORE\n";
 							terminal += "OPEN\t\tOpen a specified website in a new tab\n";
 							terminal += "TIME\t\tPrint out the current date and time\n";
-							terminal += "CLEAR\t\tClear the terminal screen\n";
-							terminal += "EXIT\t\tRedirect to the main page www.baotran.xyz\n";
-							terminal += "HELP\t\tList the available commands";
+							terminal += "\n*Useful Tips:\n";
+							terminal += "For more information on a specific command, execute 'HELP COMMAND-NAME'.\n";
+							terminal += "To scroll, click on the display area, and use the up/down arrow keys to scroll.\n";
+							terminal += "Commands are not case sensitive.";
 							break;
 						default:	//If argument is incorrect
-							terminal += "'" + input + " " + parameter + "' command's parameter is not recognizable";
+							terminal += "'" + input + "' command's parameter is not recognizable";
 					}
 					break;
 				case "list":
@@ -221,7 +265,7 @@ img{
 							terminal += "'" + input + "' command missing an argument";
 							break;
 						default:
-							terminal += "'" + input + " " + parameter + "' command's parameter is not recognizable";	
+							terminal += "'" + input + "' command's parameter is not recognizable";	
 					}
 					break;
 				case "open":
@@ -250,7 +294,7 @@ img{
 							terminal += "'" + input + "' command missing an argument";
 							break;
 						default:
-							terminal += "'" + input + " " + parameter + "' command's parameter is not recognizable";
+							terminal += "'" + input + "' command's parameter is not recognizable";
 					}
 					break;
 				case "time":
@@ -261,7 +305,7 @@ img{
 					break;
 				case "exit":
 					terminal += "Terminating session..."
-					//Go to the main site
+					//Go to the main site after 2 seconds
 					setTimeout(function(){window.open("http://www.baotran.xyz", "_self");},2000);
 					break;
 				default:
@@ -275,7 +319,7 @@ img{
 			terminalElement.scrollTop = terminalElement.scrollHeight;
 			
 			//Clear the field
-			commandFieldElement.value = "";
+			commandFieldElement.value = ">";
 		}
 	}
 		
