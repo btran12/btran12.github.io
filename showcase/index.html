@@ -6,7 +6,12 @@
 
 	<style type="text/css">
 		@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
-		div{
+		body{
+			padding: 0;
+			margin: 0;
+			font-family: Open Sans;
+		}
+		div#overlay{
 			z-index: 2;
 			width: 100%;
 			height: 680px;
@@ -24,31 +29,59 @@
 			font-size: 40px;
 			padding: 0;
 			margin: 0;
-			font-family: Open Sans;
 		}
+		.carousel{
+
+		}
+
+		.carousel .images{
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.carousel .images li{
+			display: inline;
+		}
+
+		iframe{
+			border: none;
+			margin: 5px;
+			overflow: hidden;
+		}
+
 	</style>
 
 </head>
 
 <body>
-	<div>
+	<div id="overlay">
 		<p id="msg">A new design is being implemented. Check back at a later time.<p>
 	<table id="layout" style="border:1px solid" width="100%">
 		<tr>
 		<td>
 			<table style="border:1px solid" width="100%" height="650px">
 				<tr>
-					<td colspan="2" height="100px" align="center">
-						<img src="http://vignette4.wikia.nocookie.net/lego/images/1/15/Storm_Trooper_.png/revision/latest?cb=20100829075411" width="90px" height="90px" style="border:5px outset;">
+					<td colspan="2" height="100px" align="center" style="border:1px solid;">
+						<div class="carousel">
+							<ul class="images">
+								<li>
+									<img src="http://vignette4.wikia.nocookie.net/lego/images/1/15/Storm_Trooper_.png/revision/latest?cb=20100829075411" width="90px" height="90px" style="border:5px outset;margin:5px">
+								</li>
+								<li>
+									<img src="http://vignette4.wikia.nocookie.net/lego/images/5/52/Sw272.jpg/revision/latest?cb=20121116233545" width="90px" height="90px" style="border:5px outset;margin:5px">
+								</li>
+							</ul>
+						</div>
 					</td>
 				</tr>
 				<tr>
-				<td style="border:1px solid;padding:0px 15px 0px 15px;" width="30%" valign="top" align="justify">
-					<h3>What is Lorem Ipsum?</h3>
+				<td style="border:1px solid;padding:0px 15px 0px 15px;" height="550px" width="30%" valign="top" align="justify">
+					<h3 style="font-size:28px">Escape</h3>
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 				</td>	
-				<td style="border:1px solid;padding:0px 15px 0px 15px;" align="center">
-					Blah
+				<td style="border:1px solid;padding:0px 15px 0px 15px;" height="550px" align="center">
+					<iframe src="../projects/Escape/index.html" scrolling="no" width="100%" height="550px"></iframe>
 				</td>
 				</tr>
 			</table>
