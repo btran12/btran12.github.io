@@ -7,6 +7,7 @@ var projectsDescriptions = new Array(
 	The difficulty of the game increases over time. Good luck.!",
 	"A timeline from 1865 to 1880. Hover over an event to get a better look into the period."
 	);
+var projectsTitle = new Array("No Escape", "History Timeline 1865 - 1880", "Queue Visualization", "Digit");
 
 //Iframe
 // var switchTarget$ = $('.switch-project');
@@ -24,21 +25,40 @@ var main = function(){
 	// 	switchIframeSrc(linkToProjects[1]);
 	// });
 
-	$(".snapshots").on("mouseover", "img", function(e){
+	$(".snapshots").on("click", "img", function(e){
+		
     	var $target = $(e.currentTarget);
     	$target.animate({
     		width: '90px',
     		height: '90px'
     	}, 200);
-	});
-	$(".snapshots").on("mouseout", "img", function(e){
-    	var $target = $(e.currentTarget);
-    	$target.animate({
-    		width: '80px',
-    		height: '80px'
-    	}, 200);
+    	$(".snapshots").children("li").css({"width": "100px", "height":"100px"});
 	});
 
+	$("#left-arrow").hover(
+		function(){
+			$(this).animate({
+				opacity: '1'
+			},200);
+		},
+		function(){
+			 $(this).animate({
+				opacity: '.4'
+			},200);
+		}
+	);
+	$("#right-arrow").hover(
+		function(){
+			$(this).animate({
+				opacity: '1'
+			},200);
+		},
+		function(){
+			 $(this).animate({
+				opacity: '.4'
+			},200);
+		}
+	);
 }
 
 $(document).ready(main);
