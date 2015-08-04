@@ -52,12 +52,7 @@
 			width: 80px;
 			height: 80px;
 			margin: 0px 15px 0px 15px;
-		}
-
-		iframe{
-			border: none;
-			margin: 5px;
-			overflow: hidden;
+			opacity: .7;
 		}
 
 		.arrow{
@@ -80,11 +75,22 @@
 			background-color: #006BB2;
 			border-radius: 10px;
 			box-shadow: 0px 3px 3px 1px #888888;
+			opacity: .7;
+		}
+
+		a#view-github:hover{
+			opacity: 1;
 		}
 
 		a#view-github:active{
 			border: 2px inset white;
 			box-shadow: inset 0px 0px 10px #262626;
+		}
+
+		iframe{
+			border: none;
+			margin: 5px;
+			overflow: hidden;
 		}
 
 	</style>
@@ -98,20 +104,20 @@
 		<tr>
 		<td>
 			<table style="border:1px solid;table-layout:fixed" width="100%" height="650px">
-				<tr>
+				<tr class="project-navigator">
 					<td align="right"><img class="arrow" id="left-arrow" src="../images/leftArrow.png"></td>
 
 					<td width="400px" height="100px" align="center">
 						<div class="carousel">
 							<ul class="snapshots">
 								<li>
-									<img src="../images/EscapeSS.png">
+									<img src="../images/EscapeSS.png" alt="NoEscape">
 								</li>
 								<li>
-									<img src="../images/TimelineSS.png">
+									<img src="../images/TimelineSS.png" alt="Timeline">
 								</li>
 								<li>
-									<img src="../images/wscLogo.png">
+									<img src="../images/QueueSS.png" alt="Queue">
 								</li>	
 							</ul>
 						</div>
@@ -121,12 +127,12 @@
 				</tr>
 				<tr>
 					<td style="border:1px solid;padding:0px 15px 0px 15px;" height="550px" width="30%" valign="top" align="justify">
-						<h3 id="project-title" style="font-size:28px">No Escape</h3>
-						<p id="project-description">A basic avoid the enemies game. The game takes the concept of Pacman and simplifies it down to the bare of the bones. The objective of the game is to stay alive for as long as possible. The player can move around with the arrow keys. The difficulty of the game increases over time. Good luck.!</p><br>
+						<h3 class="project-title" style="font-size:28px">No Escape</h3>
+						<p class="project-description">A basic avoid the enemies game. The game takes the concept of Pacman and simplifies it down to the bare of the bones. The objective of the game is to stay alive for as long as possible. The player can move around with the arrow keys. The difficulty of the game increases over time. Good luck.!</p><br>
 						<a id="view-github" href="#">View on Github</a>
 					</td>	
 					<td colspan="2" style="border:1px solid;padding:0px 15px 0px 15px;" height="550px" align="center">
-						<iframe src="../projects/Escape/index.html" scrolling="no" width="100%" height="550px"></iframe>
+						<iframe class="project-frame" src="../projects/Escape/index.html" scrolling="no" width="100%" height="550px"></iframe>
 					</td>
 				</tr>
 			</table>
