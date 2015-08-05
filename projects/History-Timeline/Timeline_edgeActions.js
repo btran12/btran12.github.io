@@ -1,7 +1,7 @@
 
 (function($,Edge,compId){var Composition=Edge.Composition,Symbol=Edge.Symbol;
 //Edge symbol: 'stage'
-(function(symbolName){Symbol.bindElementAction(compId,symbolName,"document","compositionReady",function(sym,e){this.onMove=function(posX,posY){timelineCtrl=Number(posX)*20;sym.stop(timelineCtrl);}});
+(function(symbolName){Symbol.bindElementAction(compId,symbolName,"document","compositionReady",function(sym,e){var width=window.innerWidth;var half=width/2;var gap=half-287.5;this.onMove=function(posX,posY){timelineCtrl=(Number(posX)-gap)*10;sym.stop(timelineCtrl);}});
 //Edge binding end
 Symbol.bindElementAction(compId,symbolName,"${_Stage}","mousemove",function(sym,e){this.onMove(e.pageX,e.pageY);});
 //Edge binding end
@@ -78,11 +78,7 @@ Symbol.bindElementAction(compId,symbolName,"${_Event4}","mouseout",function(sym,
 //=========================================================
 
 //Edge symbol: 'TimeBar'
-(function(symbolName){Symbol.bindElementAction(compId,symbolName,"${_Period16}","mouseover",function(sym,e){var div=sym.$("Period16")[0];div.style.borderColor="#27ff3b";});
-//Edge binding end
-Symbol.bindElementAction(compId,symbolName,"${_Period16}","mouseout",function(sym,e){var div=sym.$("Period16")[0];div.style.borderColor="#273cff";});
-//Edge binding end
-Symbol.bindElementAction(compId,symbolName,"${_Period1}","mouseover",function(sym,e){var div=sym.$("Period1")[0];div.style.borderColor="#27ff3b";});
+(function(symbolName){Symbol.bindElementAction(compId,symbolName,"${_Period1}","mouseover",function(sym,e){var div=sym.$("Period1")[0];div.style.borderColor="#27ff3b";});
 //Edge binding end
 Symbol.bindElementAction(compId,symbolName,"${_Period1}","mouseout",function(sym,e){var div=sym.$("Period1")[0];div.style.borderColor="#273cff";});
 //Edge binding end
@@ -134,14 +130,6 @@ Symbol.bindElementAction(compId,symbolName,"${_Period9}","mouseover",function(sy
 //Edge binding end
 Symbol.bindElementAction(compId,symbolName,"${_Period9}","mouseout",function(sym,e){var div=sym.$("Period9")[0];div.style.borderColor="#273cff";});
 //Edge binding end
-Symbol.bindElementAction(compId,symbolName,"${_Period15}","mouseover",function(sym,e){var div=sym.$("Period15")[0];div.style.borderColor="#27ff3b";});
-//Edge binding end
-Symbol.bindElementAction(compId,symbolName,"${_Period15}","mouseout",function(sym,e){var div=sym.$("Period15")[0];div.style.borderColor="#273cff";});
-//Edge binding end
-Symbol.bindElementAction(compId,symbolName,"${_Period14}","mouseover",function(sym,e){var div=sym.$("Period14")[0];div.style.borderColor="#27ff3b";});
-//Edge binding end
-Symbol.bindElementAction(compId,symbolName,"${_Period14}","mouseout",function(sym,e){var div=sym.$("Period14")[0];div.style.borderColor="#273cff";});
-//Edge binding end
 Symbol.bindElementAction(compId,symbolName,"${_Period1}","click",function(sym,e){sym.getComposition().getStage().getSymbol("InformationArea").$("Text").html("<ins>Events That Happened</ins>:<br><br> \
           Abraham Lincoln assassinated <br> \
           Andrew Jackson elected as the Seventeenth President <br> \
@@ -188,15 +176,6 @@ Symbol.bindElementAction(compId,symbolName,"${_Period13}","click",function(sym,e
           Rutherford Birchard Hayes elected as the Nineteeth President of the United States <br>\
           Colorado admissioned to the US <br> \
           Nez Perce War");sym.getComposition().getStage().getSymbol("InformationArea").play();});
-//Edge binding end
-Symbol.bindElementAction(compId,symbolName,"${_Period14}","click",function(sym,e){sym.getComposition().getStage().getSymbol("InformationArea").$("Text").html("<ins>Events That Happened</ins>:<br><br> \
-          ");sym.getComposition().getStage().getSymbol("InformationArea").play();});
-//Edge binding end
-Symbol.bindElementAction(compId,symbolName,"${_Period15}","click",function(sym,e){sym.getComposition().getStage().getSymbol("InformationArea").$("Text").html("<ins>Events That Happened</ins>:<br><br> \
-          ");sym.getComposition().getStage().getSymbol("InformationArea").play();});
-//Edge binding end
-Symbol.bindElementAction(compId,symbolName,"${_Period16}","click",function(sym,e){sym.getComposition().getStage().getSymbol("InformationArea").$("Text").html("<ins>Events That Happened</ins>:<br><br> \
-          ");sym.getComposition().getStage().getSymbol("InformationArea").play();});
 //Edge binding end
 })("TimeBar");
 //Edge symbol end:'TimeBar'
