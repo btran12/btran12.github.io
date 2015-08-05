@@ -1,14 +1,14 @@
 var projectSrcs = new Array(
-	"http://baotran.xyz/projects/Escape",
-	"http://baotran.xyz/projects/History-Timeline",
-	"http://www.baotran.xyz/projects/Visualize-Queue");
+	"../projects/Escape/",
+	"../projects/History-Timeline/",
+	"../projects/Visualize-Queue/");
 var projectDescriptions = new Array(
 	"A basic avoid the enemies game. The game takes the concept of Pacman and simplifies it down to the bare of the bones. \
 	The objective of the game is to stay alive for as long as possible. The player can move around with the arrow keys. \
 	The difficulty of the game increases over time. Good luck.!",
-	"A timeline from 1865 to 1880. Hover over an event to get a better look into the period.",
+	"Historical events timeline from 1865 to 1877. Hover over an event to get a better look into the period.",
 	"See how the Queue Data Structure works visually. From enqueue to dequeue, the animation will play through step\
-	by step with accompany code."
+	by step with accompanying code. This was one of the first projects that I tried to replicate from visualgo.net, so the functionalities are very limited."
 	);
 var projectTitles = new Array("No Escape", "History Timeline 1865 - 1880", "Queue Visualization", "Digit");
 
@@ -31,14 +31,22 @@ function switchProject(index){
 }
 
 var main = function(){
+	var rows = $('table.table-contents tr');
+
+	$('.layout').mousemove(function(event){
+		if (event.pageY < 50){
+			rows.filter('.project-navigator').show();
+		}
+		else if (event.pageY > 100){
+			rows.filter('.project-navigator').hide();
+		}
+	});
 
 	$(".snapshots").on("mouseover", "img", function(e){
     	var $target = $(e.currentTarget);
     	$target.animate({
     		opacity: '1'
     	}, 200);
-
-    	console.log($target.attr("alt"));
 	});
 
 	$(".snapshots").on("mouseout", "img", function(e){
@@ -57,12 +65,15 @@ var main = function(){
     	switch(projectName){
     		case "NoEscape":
     			index = 0;
+    			$('#view-github').show();
     			break;
     		case "Timeline":
     			index = 1;
+    			$('#view-github').hide();
     			break;
     		case "Queue":
     			index = 2;
+    			$('#view-github').hide();
     			break;
     	}
 
