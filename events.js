@@ -7,6 +7,15 @@ var main = function(){
 	//Hide the mail form when site starts;
 	$('#mailForm').hide();
 
+	$('#nav-projects').hover(
+		function(){
+			
+		},
+		function(){
+
+		}
+	);
+
 	//Move it up and down
 	$('#scrollBtn').on({
 		mouseover: function(){

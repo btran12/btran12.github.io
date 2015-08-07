@@ -76,7 +76,7 @@ var main = function(){
     			break;
     		case "Queue":
     			projectIndex = 2;
-    			$('#view-github').hide();
+    			$('#view-github').show();
     			break;
     		case "Digit":
     			projectIndex = 3;
