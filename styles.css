@@ -123,6 +123,10 @@ body{
 	margin: 10px;
 	list-style-type: none;
 }
+/*Show Drop Down*/
+.mid ul#normal-nav li:hover > ul{
+	display: block;
+}
 
 .mid ul#normal-nav a{
 	display: block;
@@ -132,21 +136,37 @@ body{
 	text-align: center;
 	text-decoration: none;
 	border: 2px solid white;
-	transition: background-color 1s;
-    -ms-transition: background-color 1s; /* IE 10 */
-    -moz-transition: background-color 1s; /* Firefox */
-    -webkit-transition: background-color 1s; /*safari and chrome */
+	transition: background-color .5s;
+    -ms-transition: background-color .5s; /* IE 10 */
+    -moz-transition: background-color .5s; /* Firefox */
+    -webkit-transition: background-color .5s; /*safari and chrome */
 }
 
 .mid ul#normal-nav a:hover{
 	color:#354458;
 	background-color: white;
-	transition: background-color 1s;
-    -ms-transition: background-color 1s; /* IE 10 */
-    -moz-transition: background-color 1s; /* Firefox */
-    -webkit-transition: background-color 1s; /*safari and chrome */
+	transition: background-color .5s;
+    -ms-transition: background-color .5s; /* IE 10 */
+    -moz-transition: background-color .5s; /* Firefox */
+    -webkit-transition: background-color .5s; /*safari and chrome */
+}
+/*DROP DOWN*/
+.mid ul#normal-nav ul{
+	margin: 0;
+	padding: 0;
+	display: none;
+	position: absolute;
+}
+.mid ul#normal-nav ul li{
+	float: none;
+	margin: 0;
+}
+.mid ul#normal-nav ul a{
+	color: black;
+	background-color: white;
 }
 
+/*Arrow Scroll Down*/
 .mid a#scroll{
 	border-style: none;
 	float: none;
