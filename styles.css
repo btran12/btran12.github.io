@@ -164,6 +164,11 @@ body{
 .mid ul#normal-nav ul a{
 	color: black;
 	background-color: white;
+	opacity: .8;
+}
+
+.mid ul#normal-nav ul a:hover{
+	opacity: 1;
 }
 
 /*Arrow Scroll Down*/
