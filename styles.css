@@ -109,7 +109,6 @@ body {
     list-style-type: none;
 }
 /*Show Drop Down*/
-
 .mid ul#normal-nav li:hover > ul {
     display: block;
 }
@@ -123,29 +122,19 @@ body {
     border: 2px solid white;
     transition: background-color .5s;
     -ms-transition: background-color .5s;
-    /* IE 10 */
-    
     -moz-transition: background-color .5s;
-    /* Firefox */
-    
     -webkit-transition: background-color .5s;
-    /*safari and chrome */
 }
 .mid ul#normal-nav a:hover {
     color: #354458;
     background-color: white;
     transition: background-color .5s;
-    -ms-transition: background-color .5s;
-    /* IE 10 */
-    
-    -moz-transition: background-color .5s;
-    /* Firefox */
-    
-    -webkit-transition: background-color .5s;
-    /*safari and chrome */
+    -ms-transition: background-color .5s;/* IE 10 */    
+    -moz-transition: background-color .5s;/* Firefox */
+    -webkit-transition: background-color .5s;/*safari and chrome */
 }
-/*DROP DOWN*/
 
+/*DROP DOWN*/
 .mid ul#normal-nav ul {
     margin: 0;
     padding: 0;
@@ -165,7 +154,6 @@ body {
     opacity: 1;
 }
 /*Arrow Scroll Down*/
-
 .mid a#scroll {
     border-style: none;
     float: none;
@@ -202,25 +190,7 @@ a#demo:hover {
     border-color: #3B3A35;
     border-radius: 50%;
 }
-hr#underliner1 {
-    position: relative;
-    width: 50px;
-    margin-top: -25px;
-    margin-bottom: 50px;
-}
-hr#underliner2 {
-    position: relative;
-    width: 50px;
-    margin-top: -25px;
-    margin-bottom: 50px;
-}
-hr#underliner3 {
-    position: relative;
-    width: 50px;
-    margin-top: -25px;
-    margin-bottom: 50px;
-}
-hr#underliner4 {
+#underliner1, #underliner2, #underliner3, #underliner4 {
     position: relative;
     width: 50px;
     margin-top: -25px;
@@ -232,10 +202,10 @@ table {
     border-collapse: collapse;
     table-layout: fixed;
 }
-input,
-textarea {
+input, textarea {
     font-family: inherit;
-    font-size: 80%;
+    font-size: 14px;
+    outline-color: #EA7360;
 }
 /*footer{
 	height: 250px;
@@ -245,18 +215,39 @@ textarea {
 
 #sendButton {
     font-family: inherit;
-    font-size: 80%;
+    font-size: 16px;
     border: 1px solid #777777;
-    background: #29ABA4;
+    background: #EA7360;
+    width: 100px;
     color: white;
     font: bold 12px;
     padding: 5px;
     cursor: pointer;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -ms-border-radius: 4px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
+.scroll-top{
+    position: fixed;
+    z-index: 99999;
+    bottom: 8%;
+    right: 8%;
+}
+.scroll-top a{
+    opacity: .5; 
+    transition: all .5s;
+    -ms-transition: all .5s;/* IE 10 */    
+    -moz-transition: all .5s;/* Firefox */
+    -webkit-transition: all .5s;/*safari and chrome */
+}
+.scroll-top a:hover{
+    opacity: 1;
+    transition: all .5s;
+    -ms-transition: all .5s;/* IE 10 */    
+    -moz-transition: all .5s;/* Firefox */
+    -webkit-transition: all .5s;/*safari and chrome */
+}
+
 ::-moz-selection {
     background-color: gray;
     color: #fff;
