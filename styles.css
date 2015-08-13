@@ -247,7 +247,6 @@ input, textarea {
     -moz-transition: all .5s;/* Firefox */
     -webkit-transition: all .5s;/*safari and chrome */
 }
-
 ::-moz-selection {
     background-color: gray;
     color: #fff;
@@ -257,7 +256,6 @@ input, textarea {
     color: #fff;
 }
 /*---- Responsiveness ----*/
-
 @media screen and (min-width: 1440px) {
     .module {
         height: 550px;
