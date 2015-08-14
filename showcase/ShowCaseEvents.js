@@ -12,6 +12,7 @@ var projectDescriptions = new Array(
 	so the functionalities are very limited."
 	);
 var projectTitles = new Array("No Escape", "History Timeline 1865 - 1880", "Queue Visualization", "Digit");
+var previewImages = new Array(["","",""],["","",""],["","",""]);
 var projectIndex = 0;
 
 function switchFrameSrc(source) {
@@ -76,7 +77,7 @@ var main = function(){
     			break;
     		case "Queue":
     			projectIndex = 2;
-    			$('#view-github').show();
+    			$('#view-github').hide();
     			break;
     		case "Digit":
     			projectIndex = 3;
