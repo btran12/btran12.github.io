@@ -114,7 +114,7 @@ var main = function(){
 			$(this).attr("src","./images/logos/linkedin-on.png");
 		},
 		mouseout: function(){
-			$(this).attr("src","./images/logoslinkedin-off.png");
+			$(this).attr("src","./images/logos/linkedin-off.png");
 		}
 	});
 
@@ -138,7 +138,11 @@ var TypingEffect = function() {
 		secondaryText = text[i];
 		type();
 		if (i < 3) {
+			//Animate secondary text
 			setTimeout('ErasingEffect()', 2000);
+		}else{
+			//Show my name
+			$('#name').fadeTo(3500, 1);
 		}
 		i++;
 		setTimeout('TypingEffect()', 3000);

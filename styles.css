@@ -36,6 +36,7 @@ body {
     text-align: center;
     width: 4.3em;
     overflow: hidden;
+    opacity: 0;
 }
 .mid h4 {
     font-weight: 300;
@@ -109,7 +110,7 @@ body {
     list-style-type: none;
 }
 /*Show Drop Down*/
-.mid ul#normal-nav li:hover > ul {
+.mid ul#normal-nav li:hover > ul{
     display: block;
 }
 .mid ul#normal-nav a {
@@ -153,6 +154,7 @@ body {
 .mid ul#normal-nav ul a:hover {
     opacity: 1;
 }
+
 /*Arrow Scroll Down*/
 .mid a#scroll {
     border-style: none;
@@ -163,11 +165,11 @@ body {
     border-style: none;
     border-color: transparent;
 }
-a#demo {
+a#demo-link {
     text-decoration: none;
     color: #4298B5;
 }
-a#demo:hover {
+a#demo-link:hover {
     color: #EA7360;
 }
 .document h1 {
@@ -370,7 +372,7 @@ input, textarea {
     .document h1 {
         color: #B58918;
     }
-    a#demo {
+    a#demo-link {
         color: #1A5EB3;
     }
     table {
