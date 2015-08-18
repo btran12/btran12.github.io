@@ -8,8 +8,8 @@ var projectDescriptions = new Array(
 	The difficulty of the game increases over time. Good luck.!",
 	"Historical events timeline from 1865 to 1877. Hover over an event to get a better look into the period.",
 	"See how the Queue Data Structure works visually. From enqueue to dequeue, the animation will play through step\
-	by step with accompanying code. This was one of the first projects that I tried to replicate from visualgo.net, \
-	so the functionalities are very limited."
+	by step with the accompanying code. This was one of the first projects that I tried to replicate from visualgo.net, \
+	so the functionaly is very limited."
 	);
 var projectTitles = new Array("No Escape", "History Timeline 1865 - 1880", "Queue Visualization", "Digit");
 var previewImages = new Array(["","",""],["","",""],["","",""]);
