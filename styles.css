@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
 }
-.module {
+.header-background {
     background: linear-gradient( 
     	rgba(0, 0, 0, 0.6), 
     	rgba(0, 0, 0, 0.6)), 
@@ -20,7 +20,7 @@ body {
     height: 500px;
     position: inherit;
 }
-.mid h2 {
+.header h2 {
     font-weight: 400;
     font-size: 130px;
     color: white;
@@ -38,7 +38,7 @@ body {
     overflow: hidden;
     opacity: 0;
 }
-.mid h4 {
+.header h4 {
     font-weight: 300;
     color: white;
     margin: auto;
@@ -52,7 +52,7 @@ body {
     -webkit-transform: translate(-50%);
     -ms-transform: translate(-50%);
 }
-.mid img#scrollBtn {
+.header img#scrollBtn {
     width: 40px;
     height: 40px;
     position: absolute;
@@ -63,7 +63,7 @@ body {
     -ms-transform: translate(-50%);
     -moz-transform: translate(-50%);
 }
-.mid ul#condensed-nav {
+.header ul#condensed-nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -71,19 +71,19 @@ body {
     float: right;
     position: relative;
 }
-.mid ul#condensed-nav li#icon img {
+.header ul#condensed-nav li#icon img {
     width: 40px;
     height: 40px;
     position: relative;
     cursor: pointer;
     left: 75%;
 }
-.mid ul#condensed-nav ul#menu-items {
+.header ul#condensed-nav ul#menu-items {
     list-style-type: none;
     visibility: hidden;
     padding-right: 15px;
 }
-.mid ul#condensed-nav a {
+.header ul#condensed-nav a {
     display: block;
     text-decoration: none;
     font-weight: 600;
@@ -95,25 +95,25 @@ body {
     opacity: .9;
     border-bottom: 1px solid;
 }
-.mid ul#condensed-nav a:hover {
+.header ul#condensed-nav a:hover {
     opacity: 1;
 }
-.mid ul#normal-nav {
+.header ul#normal-nav {
     margin: 0;
     padding: 0;
     display: block;
 }
-.mid ul#normal-nav li {
+.header ul#normal-nav li {
     display: inline;
     float: right;
     margin: 10px;
     list-style-type: none;
 }
 /*Show Drop Down*/
-.mid ul#normal-nav li:hover > ul{
+.header ul#normal-nav li:hover > ul{
     display: block;
 }
-.mid ul#normal-nav a {
+.header ul#normal-nav a {
     display: block;
     color: white;
     width: 100px;
@@ -126,7 +126,7 @@ body {
     -moz-transition: background-color .5s;
     -webkit-transition: background-color .5s;
 }
-.mid ul#normal-nav a:hover {
+.header ul#normal-nav a:hover {
     color: #354458;
     background-color: white;
     transition: background-color .5s;
@@ -136,36 +136,37 @@ body {
 }
 
 /*DROP DOWN*/
-.mid ul#normal-nav ul {
+.header ul#normal-nav ul {
     margin: 0;
     padding: 0;
     display: none;
     position: absolute;
 }
-.mid ul#normal-nav ul li {
+.header ul#normal-nav ul li {
     float: none;
     margin: 0;
 }
-.mid ul#normal-nav ul a {
+.header ul#normal-nav ul a {
     color: black;
     background-color: white;
     opacity: .8;
 }
-.mid ul#normal-nav ul a:hover {
+.header ul#normal-nav ul a:hover {
     opacity: 1;
 }
 
 /*Arrow Scroll Down*/
-.mid a#scroll {
+.header a#scroll {
     border-style: none;
     float: none;
 }
-.mid a#scroll:hover {
+.header a#scroll:hover {
     background-color: transparent;
     border-style: none;
     border-color: transparent;
 }
 a#demo-link {
+    font-weight: 400;
     text-decoration: none;
     color: #4298B5;
 }
@@ -262,10 +263,10 @@ input, textarea {
     .module {
         height: 550px;
     }
-    .mid h2 {
+    .header h2 {
         font-size: 800%;
     }
-    .mid h4 {
+    .header h4 {
         font-size: 150%;
     }
     .document h1 {
@@ -274,15 +275,18 @@ input, textarea {
     .document p {
         font-size: 120%;
     }
+    table {
+        width: 50%;
+    }
 }
 @media screen and (max-width: 1024px) {
     .module {
         height: 450px;
     }
-    .mid h2 {
+    .header h2 {
         font-size: 650%;
     }
-    .mid h4 {
+    .header h4 {
         font-size: 120%;
     }
     .document h1 {
@@ -300,38 +304,38 @@ input, textarea {
         background: transparent;
         height: 300px;
     }
-    .mid h2 {
+    .header h2 {
         font-size: 500%;
         color: black;
         top: 50px;
         left: 30%;
         font-weight: 600;
     }
-    .mid h4 {
+    .header h4 {
         font-size: 130%;
         color: black;
         font-weight: 400;
         top: 130px;
         left: 80%;
     }
-    .mid img#scrollBtn {
+    .header img#scrollBtn {
         display: none;
     }
     /*Navigation*/
     
-    .mid ul#normal-nav {
+    .header ul#normal-nav {
         display: none;
     }
-    .mid ul#condensed-nav {
+    .header ul#condensed-nav {
         display: block;
     }
-    .mid ul#condensed-nav li#icon img {
+    .header ul#condensed-nav li#icon img {
         filter: contrast(0);
         -webkit-filter: contrast(0);
         -moz-filter: contrast(0);
         -ms-filter: contrast(0);
     }
-    .mid ul#condensed-nav a {
+    .header ul#condensed-nav a {
         background: black;
         color: white;
     }
@@ -353,14 +357,14 @@ input, textarea {
         background-color: #FDF6E3;
         color: #657B83;
     }
-    .mid h2 {
+    .header h2 {
         font-size: 450%;
         top: 100px;
         left: 50%;
         font-weight: 600;
         color: #B58918;
     }
-    .mid h4 {
+    .header h4 {
         white-space: normal;
         top: 200px;
         width: 100%;

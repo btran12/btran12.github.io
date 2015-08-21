@@ -139,13 +139,13 @@ var TypingEffect = function() {
 		type();
 		if (i < 3) {
 			//Animate secondary text
-			setTimeout('ErasingEffect()', 2000);
+			setTimeout('ErasingEffect()', 1500);
 		}else{
 			//Show my name
-			$('#name').fadeTo(3500, 1);
+			$('#name').fadeTo(3000, 1);
 		}
 		i++;
-		setTimeout('TypingEffect()', 3000);
+		setTimeout('TypingEffect()', 2500);
 	}
 }
 
