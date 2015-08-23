@@ -250,6 +250,15 @@ input, textarea {
     -moz-transition: all .5s;/* Firefox */
     -webkit-transition: all .5s;/*safari and chrome */
 }
+.footer{
+    background-color: #303030;
+    height: 300px;
+}
+.credit{
+    color:#B2B2B2;
+    position: relative;
+    top: 85%;
+}
 ::-moz-selection {
     background-color: gray;
     color: #fff;
