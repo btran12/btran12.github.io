@@ -11,7 +11,7 @@ var projectDescriptions = new Array(
 	by step with the accompanying code. This was one of the first projects that I tried to replicate from visualgo.net, \
 	so the functionaly is very limited."
 	);
-var projectTitles = new Array("No Escape", "History Timeline 1865 - 1880", "Queue Visualization", "Digit");
+var projectTitles = new Array("No Escape", "Timeline 1865 - 1880", "Queue Visualization", "Digit");
 var previewImages = new Array(["","",""],["","",""],["","",""]);
 var projectIndex = 0;
 
@@ -36,17 +36,19 @@ function switchProject(index){
 var main = function(){
 	var rows = $('table.table-contents tr');
 
-	$('.layout').mousemove(function(event){
-		if (event.pageY < 25){
-			$('.project-navigator').find('div').fadeIn(300);
-			$('.project-navigator').show();
-		}
-		else if (event.pageY > 100){ //Mouse out
-			$('.project-navigator').find('div').fadeOut(300);
-			setTimeout(function(){$('.project-navigator').hide();}, 350);
-		}
-	});
+	// Hide show project navigator
+	// $('.layout').mousemove(function(event){
+	// 	if (event.pageY < 25){
+	// 		$('.project-navigator').find('div').fadeIn(300);
+	// 		$('.project-navigator').show();
+	// 	}
+	// 	else if (event.pageY > 100){ //Mouse out
+	// 		$('.project-navigator').find('div').fadeOut(300);
+	// 		setTimeout(function(){$('.project-navigator').hide();}, 350);
+	// 	}
+	// });
 
+	//Change opacity of project snapshots on hover
 	$(".snapshots").on("mouseover", "img", function(e){
     	var $target = $(e.currentTarget);
     	$target.animate({
