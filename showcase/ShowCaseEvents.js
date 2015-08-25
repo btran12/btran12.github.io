@@ -48,21 +48,6 @@ var main = function(){
 	// 	}
 	// });
 
-	//Change opacity of project snapshots on hover
-	$(".snapshots").on("mouseover", "img", function(e){
-    	var $target = $(e.currentTarget);
-    	$target.animate({
-    		opacity: '1'
-    	}, 200);
-	});
-
-	$(".snapshots").on("mouseout", "img", function(e){
-    	var $target = $(e.currentTarget);
-    	$target.animate({
-    		opacity: '.7'
-    	}, 200);
-	});
-
 	$(".snapshots").on("click", "img", function(e){
 		//Using the image alt attribute to determine which project to switch to
     	var $target = $(e.currentTarget);
@@ -89,19 +74,6 @@ var main = function(){
 
     	switchProject(projectIndex);
 	});
-
-	$("#left-arrow, #right-arrow").hover(
-		function(){
-			$(this).animate({
-				opacity: '1'
-			},200);
-		},
-		function(){
-			 $(this).animate({
-				opacity: '.4'
-			},200);
-		}
-	);
 
 	$("#right-arrow").click(function(){
 		if (projectIndex < projectSrcs.length - 1){
