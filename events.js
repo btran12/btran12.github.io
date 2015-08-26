@@ -5,16 +5,7 @@ var subTextElement = $('#secondaryText');
 
 var main = function(){
 	//Hide the mail form when site starts;
-	$('#mailForm').hide();
-
-	$('#nav-projects').hover(
-		function(){
-			
-		},
-		function(){
-
-		}
-	);
+	$('#mail-form').hide();
 
 	//Move it up and down
 	$('#scrollBtn').on({
@@ -78,9 +69,9 @@ var main = function(){
 	});
 
 	//Open up the form
-	$('#sendMailIcon').on({
+	$('#mail-icon').on({
 		click: function(){
-			$('#mailForm').slideToggle();
+			$('#mail-form').slideToggle();
 		},
 		mouseover: function(){
 			$(this).attr("src","./images/logos/mail-open.png");
@@ -90,17 +81,7 @@ var main = function(){
 		}
 	});
 
-	//The Send Button
-	$('#sendButton').mouseover(function(){
-		var email = $('#emailField').val();
-		var message = $('#messageField').val();
-
-		if (email.length < 1 || message.length < 1){
-			alert("The Email, or Message cannot be blank!");
-		}
-	})
-
-	$('#githubIcon').on({
+	$('#github-icon').on({
 		mouseover: function(){
 			$(this).attr("src","./images/logos/github-on.png");
 		},
@@ -109,7 +90,7 @@ var main = function(){
 		}
 	});
 
-	$('#linkedinIcon').on({
+	$('#linkedin-icon').on({
 		mouseover: function(){
 			$(this).attr("src","./images/logos/linkedin-on.png");
 		},

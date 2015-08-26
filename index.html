@@ -50,7 +50,7 @@
 				<li><a href="#about" class="smoothScroll">ABOUT</a></li>
 			</ul>
 
-  			<a id="scroll" href="#about" class="smoothScroll" style="cursor:pointer">
+  			<a id="scroll" href="#about" class="smoothScroll">
   				<img id="scrollBtn" src="./images/scrollDown.png" alt="Arrow to Scroll Down">
   			</a>
   			
@@ -72,7 +72,7 @@
 				<tr>
 					<td>
 						<a href="http://www.westfield.ma.edu" target="_blank">
-							<img class="university" src="./images/wscLogo.png" title="Visit University Website" style="width:100px;height:100px;cursor:pointer;" alt="Westfield State Logo">
+							<img class="university-logo" src="./images/wscLogo.png" title="Visit University Website" width="100px" height="100px" alt="Westfield State Logo">
 						</a>
 					</td>
 				</tr>
@@ -133,25 +133,25 @@
 			<div id="contactSection">
 			<h1 name="contact">Connect with Me</h1>
 			<hr id="underliner4">
-			<table align="center">
+			<table class="contact-logos" align="center">
 				<tr>
 					<td>
 						<a href="https://github.com/btran12" target="_blank">
-							<img id="githubIcon" src="./images/logos/github-off.png" width="64" height="64" title="Github" alt="Github Logo" style="postion:relative">
+							<img id="github-icon" src="./images/logos/github-off.png" width="64" height="64" title="Github" alt="Github Logo">
 						</a>
 					</td>
 					<td>
-						<img src="./images/logos/mail-closed.png" id="sendMailIcon" width="96" height="96" title="Contact me directly at: contact@baotran.xyz" alt="Send Me an Email" style="postion:relative;cursor:pointer">
+						<img src="./images/logos/mail-closed.png" id="mail-icon" width="96" height="96" title="Contact me directly at: contact@baotran.xyz" alt="Send Me an Email">
 					</td>
 					<td>
 						<a href="https://linkedin.com/in/baoqtran" target="_blank">
-							<img id="linkedinIcon" src="./images/logos/linkedin-off.png" width="64" height="64" title="Linkedin" alt="Linkedin Logo" style="postion:relative">
+							<img id="linkedin-icon" src="./images/logos/linkedin-off.png" width="64" height="64" title="Linkedin" alt="Linkedin Logo">
 						</a>
 					</td>
 				</tr>
 				<tr>	<!--Email Form-->
 					<td colspan="3" style="padding-top:15px;">
-						<form id="mailForm" method="POST" action="http://formspree.io/contact@baotran.xyz">
+						<form id="mail-form" method="POST" action="http://formspree.io/contact@baotran.xyz">
 							<!--Page to direct to after form submission-->
 							<input type="hidden" name="_next" value="./" />
 							<!--Prevent Spam-->
@@ -162,17 +162,17 @@
 										<p style="font-size:110%">Send your email to <a id="demo-link" href="mailto:contact@baotran.xyz">contact@baotran.xyz</a> or use the form to the right.</p>
 									</td>
 									<td valign="top" align="left">
-										<input id="nameField" type="text" name="name" placeholder="Your Name" maxlength="50" size="24">
+										<input id="name-field" type="text" name="name" placeholder="Your Name" maxlength="50" size="24" required>
 									</td>
 								</tr>
 								<tr>
 									<td valign="top" align="left">
-										<input id="emailField" type="text" name="_replyto" placeholder="Your Email" maxlength="80" size="24">
+										<input id="email-field" type="text" name="_replyto" placeholder="Your Email" maxlength="80" size="24" required>
 									</td>
 								</tr>
 								<tr>
 									<td valign="top" align="left">
-										<textarea id="messageField" name="message" placeholder="Your Message" maxlength="1000" cols="35" rows="6"></textarea>
+										<textarea id="message-field" name="message" placeholder="Your Message" maxlength="1000" cols="35" rows="6" required></textarea>
 									</td>
 								</tr>
 								<tr>
@@ -190,8 +190,12 @@
 			</div>
 
 		</div> <!--document-->
-		<div class="scroll-top"><a href="#navigation" class="smoothScroll"><img src="./images/scrollTop.png" width="50px" height="50px"></a></div>
-		<hr style="border-color:transparent;margin-top:5%;"><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		
+		<div class="scroll-top">
+			<a href="#navigation" class="smoothScroll">
+				<img src="./images/scrollTop.png" width="50px" height="50px">
+			</a>
+		</div>
 
 		<div class="footer">
 			<p align="center" class="credit">Constructed by Bao Tran</p>

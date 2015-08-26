@@ -159,12 +159,14 @@ body {
 .header a#scroll {
     border-style: none;
     float: none;
+    cursor: pointer;
 }
 .header a#scroll:hover {
     background-color: transparent;
     border-style: none;
     border-color: transparent;
 }
+
 a#demo-link {
     font-weight: 400;
     text-decoration: none;
@@ -210,11 +212,10 @@ input, textarea {
     font-size: 14px;
     outline-color: #EA7360;
 }
-/*footer{
-	height: 250px;
-	background-color: black;
-	margin: -8px;
-}*/
+
+#mail-icon {
+    cursor: pointer;
+}
 
 #sendButton {
     font-family: inherit;
@@ -250,6 +251,7 @@ input, textarea {
     -moz-transition: all .5s;/* Firefox */
     -webkit-transition: all .5s;/*safari and chrome */
 }
+
 .footer{
     background-color: #303030;
     height: 300px;
