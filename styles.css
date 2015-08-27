@@ -20,7 +20,7 @@ body {
     height: 500px;
     position: inherit;
 }
-.header h2 {
+.header #name {
     font-weight: 400;
     font-size: 130px;
     color: white;
@@ -156,12 +156,12 @@ body {
 }
 
 /*Arrow Scroll Down*/
-.header a#scroll {
+.header a#scroller {
     border-style: none;
     float: none;
     cursor: pointer;
 }
-.header a#scroll:hover {
+.header a#scroller:hover {
     background-color: transparent;
     border-style: none;
     border-color: transparent;
@@ -170,10 +170,10 @@ body {
 a#demo-link {
     font-weight: 400;
     text-decoration: none;
-    color: #4298B5;
+    color: lightslategray;
 }
 a#demo-link:hover {
-    color: #EA7360;
+    color: black;
 }
 .document h1 {
     text-align: center;
@@ -210,27 +210,41 @@ table {
 input, textarea {
     font-family: inherit;
     font-size: 14px;
-    outline-color: #EA7360;
+    outline-color: darkgray;
 }
 
 #mail-icon {
     cursor: pointer;
 }
 
-#sendButton {
+.button{
     font-family: inherit;
-    font-size: 16px;
-    border: 1px solid #777777;
-    background: #EA7360;
-    width: 100px;
-    color: white;
-    font: bold 12px;
+    font-size: 18px;
     padding: 5px;
+    color: white;
+    outline: none;
+    text-decoration: none;
+    background-color: darkgray;
+    box-shadow: 0px 4px gray;
+    opacity: 1;
+    border-color: transparent;
+    width: 120px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
     cursor: pointer;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
 }
+
+.button:hover{
+    opacity: .7;
+}
+
+.button:active{
+    box-shadow: 0px 0px;
+    position: relative;
+    top: 4px;
+}
+
 .scroll-top{
     position: fixed;
     z-index: 99999;

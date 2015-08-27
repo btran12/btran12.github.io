@@ -72,12 +72,16 @@ var main = function(){
 	$('#mail-icon').on({
 		click: function(){
 			$('#mail-form').slideToggle();
-		},
-		mouseover: function(){
-			$(this).attr("src","./images/logos/mail-open.png");
-		},
-		mouseout: function(){
-			$(this).attr("src","./images/logos/mail-closed.png");
+
+			var imgsrc = $(this).attr("src");
+
+			if (imgsrc === "./images/logos/mail-closed.png"){
+				imgsrc = "./images/logos/mail-open.png";
+			}else{
+				imgsrc = "./images/logos/mail-closed.png";
+			}
+
+			$(this).attr("src", imgsrc);
 		}
 	});
 
