@@ -210,7 +210,13 @@ table {
 input, textarea {
     font-family: inherit;
     font-size: 14px;
+    width: 250px;
     outline-color: darkgray;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
 }
 
 #mail-icon {
