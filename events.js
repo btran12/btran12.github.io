@@ -33,9 +33,9 @@ var main = function(){
 		$('#menu-items').css('visibility','hidden');
 	});
 
-	//Mouse over Sections animations
+	//Mouse over s animations
 	//TODO Make code more efficient
-	$('#aboutSection').on({
+	$('#about').on({
 		mouseenter: function(){
 			$('#underliner1').animate({ width: '150px' });
 		},
@@ -43,7 +43,7 @@ var main = function(){
 			$('#underliner1').animate({ width: '50px' });
 		}
 	});
-	$('#experienceSection').on({
+	$('#experience').on({
 		mouseenter: function(){
 			$('#underliner2').animate({ width: '150px' });
 		},
@@ -51,7 +51,7 @@ var main = function(){
 			$('#underliner2').animate({ width: '50px' });
 		}
 	});
-	$('#projectSection').on({
+	$('#project').on({
 		mouseenter: function(){
 			$('#underliner3').animate({ width: '150px' });
 		},
@@ -59,7 +59,7 @@ var main = function(){
 			$('#underliner3').animate({ width: '50px' });
 		}
 	});
-	$('#contactSection').on({
+	$('#contact').on({
 		mouseenter: function(){
 			$('#underliner4').animate({ width: '150px' });
 		},
@@ -112,7 +112,7 @@ var main = function(){
 		$('#secondaryText').html("Student | Learner | Achiever");
 	}
 	
-}
+}//MAIN
 
 var text = new Array("I'm a Student", "I'm a Learner", "I'm an Achiever", "Student | Learner | Achiever");
 
@@ -162,12 +162,21 @@ var erase = function() {
 	}
 }
 
-// function cursorAnimation() {
-// 	$('#textCursor').animate({
-// 		opacity: 0
-// 	}, 'fast', 'swing').animate({
-// 			opacity: 1
-// 		}, 'fast', 'swing');
-// }
+/*!
+ * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+// jQuery for page scrolling feature - requires jQuery Easing plugin
+$(function() {
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+});
 
 $(document).ready(main);
