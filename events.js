@@ -1,11 +1,31 @@
 var secondaryTextLength = 0;
 var secondaryText = '';
 var i = 0;
-var subTextElement = $('#secondaryText');
+var subTextElement = $('#secondary-text');
+var canSee = true;
 
 var main = function(){
 	//Hide the mail form when site starts;
 	$('#mail-form').hide();
+
+	$(window).scroll(function(){
+        var windowTop = $(window).scrollTop();
+        
+        //130 is Top position of the #name element
+        if (windowTop > 130 && canSee) {
+        	$('#normal-nav').animate({
+	          height: '65px',
+	          backgroundColor: '#3B3A35'
+	        }, 1000);
+	        canSee = false;
+        }else if (windowTop <= 130 && !canSee){
+        	$('#normal-nav').animate({
+	          height: '80px',
+	          backgroundColor: 'transparent'
+	        }, 1000);
+	        canSee = true;
+        }
+    });
 
 	//Move it up and down
 	$('#scrollBtn').on({

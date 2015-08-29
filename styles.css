@@ -38,8 +38,9 @@ body {
     overflow: hidden;
     opacity: 0;
 }
-.header h4 {
+.header #secondary-text {
     font-weight: 300;
+    font-style: italic;
     color: white;
     margin: auto;
     position: absolute;
@@ -98,10 +99,16 @@ body {
 .header ul#condensed-nav a:hover {
     opacity: 1;
 }
+
 .header ul#normal-nav {
     margin: 0;
     padding: 0;
     display: block;
+    background-color: transparent;
+    height:80px;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
 }
 .header ul#normal-nav li {
     display: inline;
@@ -133,6 +140,11 @@ body {
     -ms-transition: background-color .5s;/* IE 10 */    
     -moz-transition: background-color .5s;/* Firefox */
     -webkit-transition: background-color .5s;/*safari and chrome */
+}
+
+a.normal-nav-active {
+    color: #354458;
+    background-color: white;
 }
 
 /*DROP DOWN*/
