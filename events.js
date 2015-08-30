@@ -16,7 +16,7 @@ var main = function(){
         	$('#normal-nav').animate({
 	          height: '65px',
 	          backgroundColor: '#3B3A35'
-	        }, 1000);
+	        }, 500);
 	        canSee = false;
         }else if (windowTop <= 130 && !canSee){
         	$('#normal-nav').animate({
@@ -192,8 +192,10 @@ var erase = function() {
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
+        
+        // 65 is the height of the navigation bar
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
+            scrollTop: $($anchor.attr('href')).offset().top - 65
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
