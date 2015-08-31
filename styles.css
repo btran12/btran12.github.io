@@ -8,6 +8,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .header-background {
     background: linear-gradient( 
     	rgba(0, 0, 0, 0.6), 
@@ -20,7 +21,7 @@ body {
     height: 500px;
     position: inherit;
 }
-.header #name {
+.header #header-name {
     font-weight: 400;
     font-size: 130px;
     color: white;
@@ -29,14 +30,14 @@ body {
     top: 150px;
     left: 50%;
     white-space: nowrap;
+    text-align: center;
+    width: 4.3em;
+    overflow: hidden;
     transform: translate(-50%);
     -webkit-transform: translate(-50%);
     -ms-transform: translate(-50%);
     -moz-transform: translate(-50%);
-    text-align: center;
-    width: 4.3em;
-    overflow: hidden;
-    opacity: 0;
+    
 }
 .header #secondary-text {
     font-weight: 300;
@@ -147,6 +148,21 @@ a.normal-nav-active {
     background-color: white;
 }
 
+.header ul#normal-nav a#bao-tran{
+    color: white;
+    background: transparent;
+    position: absolute;
+    left: 5%;
+    width: 200px;
+    font-size: 36px;
+    font-weight: 300;
+    font-style: italic;
+    border: none;
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+}
+
 /*DROP DOWN*/
 .header ul#normal-nav ul {
     margin: 0;
@@ -159,12 +175,12 @@ a.normal-nav-active {
     margin: 0;
 }
 .header ul#normal-nav ul a {
-    color: black;
-    background-color: white;
-    opacity: .8;
+    color: lightgray;
+    background-color: #3B3A35;
 }
 .header ul#normal-nav ul a:hover {
-    opacity: 1;
+    color: white;
+    background-color: #3B3A35;
 }
 
 /*Arrow Scroll Down*/
@@ -261,27 +277,6 @@ input, textarea {
     box-shadow: 0px 0px;
     position: relative;
     top: 4px;
-}
-
-.scroll-top{
-    position: fixed;
-    z-index: 99999;
-    bottom: 5%;
-    right: 5%;
-}
-.scroll-top a{
-    opacity: .4; 
-    transition: all .5s;
-    -ms-transition: all .5s;/* IE 10 */    
-    -moz-transition: all .5s;/* Firefox */
-    -webkit-transition: all .5s;/*safari and chrome */
-}
-.scroll-top a:hover{
-    opacity: 1;
-    transition: all .5s;
-    -ms-transition: all .5s;/* IE 10 */    
-    -moz-transition: all .5s;/* Firefox */
-    -webkit-transition: all .5s;/*safari and chrome */
 }
 
 .footer{

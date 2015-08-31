@@ -8,21 +8,24 @@ var main = function(){
 	//Hide the mail form when site starts;
 	$('#mail-form').hide();
 
+	//Animate Navigation Bar on scroll
 	$(window).scroll(function(){
         var windowTop = $(window).scrollTop();
         
-        //130 is Top position of the #name element
+        //130 is Top position of the #header-name element
         if (windowTop > 130 && canSee) {
         	$('#normal-nav').animate({
 	          height: '65px',
 	          backgroundColor: '#3B3A35'
 	        }, 500);
+	        $('#bao-tran').css('visibility', 'visible');
 	        canSee = false;
         }else if (windowTop <= 130 && !canSee){
         	$('#normal-nav').animate({
 	          height: '80px',
 	          backgroundColor: 'transparent'
 	        }, 1000);
+	        $('#bao-tran').css('visibility', 'hidden');
 	        canSee = true;
         }
     });
@@ -134,24 +137,10 @@ var main = function(){
 	
 }//MAIN
 
-var text = new Array("I'm a Student", "I'm a Learner", "I'm an Achiever", "Student | Learner | Achiever");
-
 //Code from: http://codepen.io/stathisg/pen/Bkvhg
 var TypingEffect = function() {
-
-	if (i < text.length) {
-		secondaryText = text[i];
-		type();
-		if (i < 3) {
-			//Animate secondary text
-			setTimeout('ErasingEffect()', 1500);
-		}else{
-			//Show my name
-			$('#name').fadeTo(3000, 1);
-		}
-		i++;
-		setTimeout('TypingEffect()', 2500);
-	}
+	secondaryText = "Student | Learner | Achiever";
+	type();
 }
 
 var type = function() {
@@ -164,23 +153,23 @@ var type = function() {
 	}
 }
 
-var ErasingEffect = function() {
-	secondaryText = subTextElement.html();
-	secondaryTextLength = secondaryText.length;
-	if (secondaryTextLength > 0) {
-		erase();
-	}
-}
+// var ErasingEffect = function() {
+// 	secondaryText = subTextElement.html();
+// 	secondaryTextLength = secondaryText.length;
+// 	if (secondaryTextLength > 0) {
+// 		erase();
+// 	}
+// }
 
-var erase = function() {
-	subTextElement.html(secondaryText.substr(0, secondaryTextLength--));
-	if (secondaryTextLength >= 0) {
-		setTimeout('erase()', 50);
-	} else {
-		secondaryTextLength = 0;
-		secondaryText = '';
-	}
-}
+// var erase = function() {
+// 	subTextElement.html(secondaryText.substr(0, secondaryTextLength--));
+// 	if (secondaryTextLength >= 0) {
+// 		setTimeout('erase()', 50);
+// 	} else {
+// 		secondaryTextLength = 0;
+// 		secondaryText = '';
+// 	}
+// }
 
 /*!
  * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
