@@ -11,28 +11,59 @@ var main = function(){
 	//Animate Navigation Bar on scroll
 	$(window).scroll(function(){
         var windowTop = $(window).scrollTop();
-        
-        //130 is Top position of the #header-name element
-        if (windowTop > 130 && canSee) {
+        var speed = 500;
+
+        var sectionOne = $('#about').position().top - 65;
+        var sectionTwo = $('#experience').position().top - 65;
+        var sectionThree = $('#project').position().top - 65;
+        var sectionFour = $('#contact').position().top - 200;
+
+        //HARD CODED
+        if (windowTop > sectionOne && windowTop < sectionTwo){
+        	$('#nav-about').addClass('normal-nav-active');
+        	$('#nav-experience').removeClass('normal-nav-active');
+        	$('#nav-project').removeClass('normal-nav-active');
+        	$('#nav-contact').removeClass('normal-nav-active');
+        }else if (windowTop > sectionTwo && windowTop < sectionThree){
+        	$('#nav-about').removeClass('normal-nav-active');
+        	$('#nav-experience').addClass('normal-nav-active');
+        	$('#nav-project').removeClass('normal-nav-active');
+        	$('#nav-contact').removeClass('normal-nav-active');
+        }else if (windowTop > sectionThree && windowTop < sectionFour){
+        	$('#nav-about').removeClass('normal-nav-active');
+        	$('#nav-experience').removeClass('normal-nav-active');
+        	$('#nav-project').addClass('normal-nav-active');
+        	$('#nav-contact').removeClass('normal-nav-active');
+        }else if (windowTop > sectionFour){
+        	$('#nav-about').removeClass('normal-nav-active');
+        	$('#nav-experience').removeClass('normal-nav-active');
+        	$('#nav-project').removeClass('normal-nav-active');
+        	$('#nav-contact').addClass('normal-nav-active');
+        }
+
+        //100 is the point at which the navigation bar will animate
+        if (windowTop > 100 && canSee) {
         	$('#normal-nav').animate({
 	          height: '65px',
 	          backgroundColor: '#3B3A35'
-	        }, 500);
+	        }, speed);
 	        $('#bao-tran').css('visibility', 'visible');
 	        $('#bao-tran').animate({
 	        	height: '40px',
 	        	opacity: '1'
-	        }, 500);
+	        }, speed);
+
 	        canSee = false;
-        }else if (windowTop <= 130 && !canSee){
+        }else if (windowTop <= 100 && !canSee){
         	$('#normal-nav').animate({
 	          height: '80px',
 	          backgroundColor: 'transparent'
-	        }, 1000);
+	        }, speed);
 	        $('#bao-tran').animate({
 	        	height: '0px',
 	        	opacity: '0'
-	        }, 500);
+	        }, speed);
+
 	        canSee = true;
         }
     });
