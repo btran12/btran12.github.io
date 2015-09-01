@@ -153,6 +153,7 @@ a.normal-nav-active {
     background: transparent;
     position: absolute;
     left: 5%;
+    height: 0px;
     width: 200px;
     font-size: 36px;
     font-weight: 300;
@@ -160,7 +161,7 @@ a.normal-nav-active {
     border: none;
     padding: 0;
     margin: 0;
-    visibility: hidden;
+    opacity: 0;
 }
 
 /*DROP DOWN*/

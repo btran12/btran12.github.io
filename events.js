@@ -19,13 +19,20 @@ var main = function(){
 	          backgroundColor: '#3B3A35'
 	        }, 500);
 	        $('#bao-tran').css('visibility', 'visible');
+	        $('#bao-tran').animate({
+	        	height: '40px',
+	        	opacity: '1'
+	        }, 500);
 	        canSee = false;
         }else if (windowTop <= 130 && !canSee){
         	$('#normal-nav').animate({
 	          height: '80px',
 	          backgroundColor: 'transparent'
 	        }, 1000);
-	        $('#bao-tran').css('visibility', 'hidden');
+	        $('#bao-tran').animate({
+	        	height: '0px',
+	        	opacity: '0'
+	        }, 500);
 	        canSee = true;
         }
     });
