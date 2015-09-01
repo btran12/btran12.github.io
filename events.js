@@ -13,10 +13,10 @@ var main = function(){
         var windowTop = $(window).scrollTop();
         var speed = 500;
 
-        var sectionOne = $('#about').position().top - 65;
-        var sectionTwo = $('#experience').position().top - 65;
-        var sectionThree = $('#project').position().top - 65;
-        var sectionFour = $('#contact').position().top - 200;
+        var sectionOne = $('#about').position().top - 150;
+        var sectionTwo = $('#experience').position().top - 150;
+        var sectionThree = $('#project').position().top - 150;
+        var sectionFour = $('#contact').position().top - 150;
 
         //HARD CODED
         if (windowTop > sectionOne && windowTop < sectionTwo){
@@ -39,6 +39,11 @@ var main = function(){
         	$('#nav-experience').removeClass('normal-nav-active');
         	$('#nav-project').removeClass('normal-nav-active');
         	$('#nav-contact').addClass('normal-nav-active');
+        }else{
+        	$('#nav-about').removeClass('normal-nav-active');
+        	$('#nav-experience').removeClass('normal-nav-active');
+        	$('#nav-project').removeClass('normal-nav-active');
+        	$('#nav-contact').removeClass('normal-nav-active');
         }
 
         //100 is the point at which the navigation bar will animate
