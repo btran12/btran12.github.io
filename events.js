@@ -4,13 +4,8 @@ var i = 0;
 var subTextElement = $('#secondary-text');
 
 var canSee = true;
-
 var sections = new Array("nav-about", "nav-experience", "nav-project", "nav-contact");
-
-var windowTop = $(window).scrollTop();
-
-//Animation speed in milliseconds
-var animSpeed = 500;	
+var animSpeed = 500;	//Animation speed in milliseconds
 //Section positions
 var sectionOne = $('#about').position().top - 150;
 var sectionTwo = $('#experience').position().top - 150;
@@ -23,7 +18,8 @@ var main = function(){
 
 	//Animate Navigation Bar on scroll
 	$(window).scroll(function(){
-
+		var windowTop = $(window).scrollTop();	//Current position on scroll
+		
         if (windowTop > sectionOne && windowTop < sectionTwo){
         	activateClass(0);
         }else if (windowTop > sectionTwo && windowTop < sectionThree){
