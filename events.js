@@ -2,7 +2,20 @@ var secondaryTextLength = 0;
 var secondaryText = '';
 var i = 0;
 var subTextElement = $('#secondary-text');
+
 var canSee = true;
+
+var sections = new Array("nav-about", "nav-experience", "nav-project", "nav-contact");
+
+var windowTop = $(window).scrollTop();
+
+//Animation speed in milliseconds
+var animSpeed = 500;	
+//Section positions
+var sectionOne = $('#about').position().top - 150;
+var sectionTwo = $('#experience').position().top - 150;
+var sectionThree = $('#project').position().top - 150;
+var sectionFour = $('#contact').position().top - 150;
 
 var main = function(){
 	//Hide the mail form when site starts;
@@ -10,40 +23,17 @@ var main = function(){
 
 	//Animate Navigation Bar on scroll
 	$(window).scroll(function(){
-        var windowTop = $(window).scrollTop();
-        var speed = 500;
 
-        var sectionOne = $('#about').position().top - 150;
-        var sectionTwo = $('#experience').position().top - 150;
-        var sectionThree = $('#project').position().top - 150;
-        var sectionFour = $('#contact').position().top - 150;
-
-        //HARD CODED
         if (windowTop > sectionOne && windowTop < sectionTwo){
-        	$('#nav-about').addClass('normal-nav-active');
-        	$('#nav-experience').removeClass('normal-nav-active');
-        	$('#nav-project').removeClass('normal-nav-active');
-        	$('#nav-contact').removeClass('normal-nav-active');
+        	activateClass(0);
         }else if (windowTop > sectionTwo && windowTop < sectionThree){
-        	$('#nav-about').removeClass('normal-nav-active');
-        	$('#nav-experience').addClass('normal-nav-active');
-        	$('#nav-project').removeClass('normal-nav-active');
-        	$('#nav-contact').removeClass('normal-nav-active');
+        	activateClass(1);
         }else if (windowTop > sectionThree && windowTop < sectionFour){
-        	$('#nav-about').removeClass('normal-nav-active');
-        	$('#nav-experience').removeClass('normal-nav-active');
-        	$('#nav-project').addClass('normal-nav-active');
-        	$('#nav-contact').removeClass('normal-nav-active');
+        	activateClass(2);
         }else if (windowTop > sectionFour){
-        	$('#nav-about').removeClass('normal-nav-active');
-        	$('#nav-experience').removeClass('normal-nav-active');
-        	$('#nav-project').removeClass('normal-nav-active');
-        	$('#nav-contact').addClass('normal-nav-active');
+        	activateClass(3);
         }else{
-        	$('#nav-about').removeClass('normal-nav-active');
-        	$('#nav-experience').removeClass('normal-nav-active');
-        	$('#nav-project').removeClass('normal-nav-active');
-        	$('#nav-contact').removeClass('normal-nav-active');
+        	activateClass(-1);
         }
 
         //100 is the point at which the navigation bar will animate
@@ -51,27 +41,27 @@ var main = function(){
         	$('#normal-nav').animate({
 	          height: '65px',
 	          backgroundColor: '#3B3A35'
-	        }, speed);
+	        }, animSpeed);
 	        $('#bao-tran').css('visibility', 'visible');
 	        $('#bao-tran').animate({
 	        	height: '40px',
 	        	opacity: '1'
-	        }, speed);
+	        }, animSpeed);
 
 	        canSee = false;
         }else if (windowTop <= 100 && !canSee){
         	$('#normal-nav').animate({
 	          height: '80px',
 	          backgroundColor: 'transparent'
-	        }, speed);
+	        }, animSpeed);
 	        $('#bao-tran').animate({
 	        	height: '0px',
 	        	opacity: '0'
-	        }, speed);
+	        }, animSpeed);
 
 	        canSee = true;
         }
-    });
+    });//End of Scroll Function ---------------
 
 	//Move it up and down
 	$('#scrollBtn').on({
@@ -99,7 +89,7 @@ var main = function(){
 		$('#menu-items').css('visibility','hidden');
 	});
 
-	//Mouse over s animations
+	//Mouse over animations
 	//TODO Make code more efficient
 	$('#about').on({
 		mouseenter: function(){
@@ -169,8 +159,7 @@ var main = function(){
 		}
 	});
 
-
-//-- ANIMATE SECONDARY TEXT --
+	//-- ANIMATE SECONDARY TEXT --
 	//setInterval('cursorAnimation()', 600);
 	if (window.innerWidth > 768){
 		TypingEffect();
@@ -179,6 +168,21 @@ var main = function(){
 	}
 	
 }//MAIN
+
+var activateClass = function(sectionIndex){
+	for (i = 0; i < sections.length; i++){
+		//Remove the class from the other sections
+		if (i !== sectionIndex){
+			$('#'+sections[i]).removeClass('normal-nav-active');
+		}
+
+		//Add the class to the current section
+		//The check (-1) is so that I can remove the class from all sections
+		if (sectionIndex !== -1){
+			$('#'+sections[sectionIndex]).addClass('normal-nav-active');
+		}
+	}
+}
 
 //Code from: http://codepen.io/stathisg/pen/Bkvhg
 var TypingEffect = function() {
