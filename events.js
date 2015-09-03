@@ -69,20 +69,21 @@ var main = function(){
 		}
 	});
 
-	$('#menu-icon').on({
+	//Toggle Menu visibility
+	$('#mobile-menu-icon').on({
 		click: function(){
-			var visible = $('#menu-items').css('visibility');
+			var visible = $('#mobile-menu-items').css('visibility');
 			
 			if (visible === "hidden"){
-				$('#menu-items').css('visibility','visible');
+				$('#mobile-menu-items').css('visibility','visible');
 			}else{
-				$('#menu-items').css('visibility','hidden');
+				$('#mobile-menu-items').css('visibility','hidden');
 			}
 		}
 	});
-
-	$('#menu-items').click(function(){
-		$('#menu-items').css('visibility','hidden');
+	//When menu item is click hide it aswell
+	$('#mobile-menu-items').click(function(){
+		$('#mobile-menu-items').css('visibility','hidden');
 	});
 
 	//Mouse over animations
