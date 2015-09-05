@@ -4,7 +4,8 @@ var i = 0;
 var subTextElement = $('#secondary-text');
 
 var canSee = true;
-var sections = new Array("nav-about", "nav-experience", "nav-project", "nav-contact");
+var navSections = new Array("nav-about", "nav-experience", "nav-project", "nav-contact");
+
 var animSpeed = 500;	//Animation speed in milliseconds
 //Section positions
 var sectionOne = $('#about').position().top - 150;
@@ -86,8 +87,6 @@ var main = function(){
 		$('#mobile-menu-items').css('visibility','hidden');
 	});
 
-	//Mouse over animations
-	//TODO Make code more efficient
 	$('#about').on({
 		mouseenter: function(){
 			$('#underliner1').animate({ width: '150px' });
@@ -167,16 +166,16 @@ var main = function(){
 }//MAIN
 
 var activateClass = function(sectionIndex){
-	for (i = 0; i < sections.length; i++){
+	for (i = 0; i < navSections.length; i++){
 		//Remove the class from the other sections
 		if (i !== sectionIndex){
-			$('#'+sections[i]).removeClass('normal-nav-active');
+			$('#'+navSections[i]).removeClass('normal-nav-active');
 		}
 
 		//Add the class to the current section
 		//The check (-1) is so that I can remove the class from all sections
 		if (sectionIndex !== -1){
-			$('#'+sections[sectionIndex]).addClass('normal-nav-active');
+			$('#'+navSections[sectionIndex]).addClass('normal-nav-active');
 		}
 	}
 }
@@ -196,24 +195,6 @@ var type = function() {
 		secondaryText = '';
 	}
 }
-
-// var ErasingEffect = function() {
-// 	secondaryText = subTextElement.html();
-// 	secondaryTextLength = secondaryText.length;
-// 	if (secondaryTextLength > 0) {
-// 		erase();
-// 	}
-// }
-
-// var erase = function() {
-// 	subTextElement.html(secondaryText.substr(0, secondaryTextLength--));
-// 	if (secondaryTextLength >= 0) {
-// 		setTimeout('erase()', 50);
-// 	} else {
-// 		secondaryTextLength = 0;
-// 		secondaryText = '';
-// 	}
-// }
 
 /*!
  * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
