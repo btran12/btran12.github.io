@@ -155,12 +155,11 @@ var main = function(){
 		}
 	});
 
-	//-- ANIMATE SECONDARY TEXT --
-	//setInterval('cursorAnimation()', 600);
+	//Only animate when the screen size is > 768px
 	if (window.innerWidth > 768){
 		TypingEffect();
 	}else{
-		$('#secondaryText').html("Student | Learner | Achiever");
+		$('#secondary-text').html("Student | Learner | Achiever");
 	}
 	
 }//MAIN

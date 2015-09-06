@@ -72,6 +72,7 @@ body {
     display: none;
     float: right;
     position: relative;
+    z-index: 9999;
 }
 .header ul#mobile-nav li#icon img {
     width: 40px;
@@ -80,7 +81,7 @@ body {
     cursor: pointer;
     left: 75%;
 }
-.header ul#mobile-nav ul#menu-items {
+.header ul#mobile-nav ul#mobile-menu-items {
     list-style-type: none;
     visibility: hidden;
     padding-right: 15px;
@@ -299,13 +300,13 @@ input, textarea {
 }
 /*---- Responsiveness ----*/
 @media screen and (min-width: 1440px) {
-    .module {
+    .header-background {
         height: 550px;
     }
-    .header h2 {
+    .header #header-name {
         font-size: 800%;
     }
-    .header h4 {
+    .header #secondary-text {
         font-size: 150%;
     }
     .document h1 {
@@ -319,13 +320,13 @@ input, textarea {
     }
 }
 @media screen and (max-width: 1024px) {
-    .module {
+    .header-background {
         height: 450px;
     }
-    .header h2 {
+    .header #header-name {
         font-size: 650%;
     }
-    .header h4 {
+    .header #secondary-text {
         font-size: 120%;
     }
     .document h1 {
@@ -339,23 +340,23 @@ input, textarea {
     }
 }
 @media screen and (max-width: 768px) {
-    .module {
+    .header-background {
         background: transparent;
         height: 300px;
     }
-    .header h2 {
+    .header #header-name {
         font-size: 500%;
         color: black;
-        top: 50px;
-        left: 30%;
+        top: 80px;
+        left: 50%;
         font-weight: 600;
     }
-    .header h4 {
+    .header #secondary-text {
         font-size: 130%;
         color: black;
         font-weight: 400;
-        top: 130px;
-        left: 80%;
+        top: 200px;
+        left: 50%;
     }
     .header img#scrollBtn {
         display: none;
@@ -396,14 +397,14 @@ input, textarea {
         background-color: #FDF6E3;
         color: #657B83;
     }
-    .header h2 {
+    .header #header-name {
         font-size: 450%;
         top: 100px;
         left: 50%;
         font-weight: 600;
         color: #B58918;
     }
-    .header h4 {
+    .header #secondary-text {
         white-space: normal;
         top: 200px;
         width: 100%;
@@ -421,16 +422,7 @@ input, textarea {
     table {
         width: 95%;
     }
-    hr#underliner1 {
-        display: none;
-    }
-    hr#underliner2 {
-        display: none;
-    }
-    hr#underliner3 {
-        display: none;
-    }
-    hr#underliner4 {
+    #underliner1, #underliner2, #underliner3, #underliner3 {
         display: none;
     }
 }
