@@ -339,23 +339,23 @@ input, textarea {
         width: 70%;
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 870px) {
     .header-background {
         background: transparent;
         height: 300px;
     }
     .header #header-name {
-        font-size: 500%;
+        font-size: 600%;
         color: black;
         top: 80px;
         left: 50%;
         font-weight: 600;
     }
     .header #secondary-text {
-        font-size: 130%;
+        font-size: 140%;
         color: black;
         font-weight: 400;
-        top: 200px;
+        top: 220px;
         left: 50%;
     }
     .header img#scrollBtn {
