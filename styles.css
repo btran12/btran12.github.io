@@ -299,6 +299,7 @@ input, textarea {
     color: #fff;
 }
 /*---- Responsiveness ----*/
+/*SCREENS > 1440px*/
 @media screen and (min-width: 1440px) {
     .header-background {
         height: 550px;
@@ -315,10 +316,11 @@ input, textarea {
     .document p {
         font-size: 120%;
     }
-    table {
-        width: 50%;
+    .document hr, table{
+        width: 40%;
     }
 }
+/*SCREENS < 1024px*/
 @media screen and (max-width: 1024px) {
     .header-background {
         height: 450px;
@@ -332,13 +334,11 @@ input, textarea {
     .document h1 {
         font-size: 240%;
     }
-    .document hr {
-        width: 70%;
-    }
-    table {
+    .document hr, table {
         width: 70%;
     }
 }
+
 @media screen and (max-width: 870px) {
     .header-background {
         background: transparent;
@@ -362,7 +362,6 @@ input, textarea {
         display: none;
     }
     /*Navigation*/
-    
     .header ul#normal-nav {
         display: none;
     }
