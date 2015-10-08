@@ -319,6 +319,9 @@ input, textarea {
     .document hr, table{
         width: 40%;
     }
+    .footer{
+        height: 400px;
+    }
 }
 /*SCREENS < 1024px*/
 @media screen and (max-width: 1024px) {
