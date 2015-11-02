@@ -285,11 +285,28 @@ input, textarea {
     background-color: #303030;
     height: 300px;
 }
-.credit{
-    color:#B2B2B2;
+
+.quote{
     position: relative;
-    top: 85%;
+    top: 35%;
+    font-size: 190%;
+    font-style: italic;
+    color: white;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
 }
+
+.quote-author{
+    position: relative;
+    top: 35%;
+    font-size: 150%;
+    color: white;
+    text-align: right;
+    right: 20%;
+    font-weight: 400;
+}
+
 ::-moz-selection {
     background-color: gray;
     color: #fff;
