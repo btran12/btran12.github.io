@@ -136,7 +136,7 @@
 			<hr><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 			
 			<section id="contact">
-				<h1>Connect with Me</h1>
+				<h1>Contact Me</h1>
 				<hr id="underliner4">
 				<table class="contact-logos" align="center">
 					<tr>
@@ -146,7 +146,7 @@
 							</a>
 						</td>
 						<td>
-							<img src="./images/logos/mail-closed.png" id="mail-icon" width="96" height="96" title="Contact me directly at: contact@baotran.xyz" alt="Send Me an Email">
+							<img src="./images/logos/mail-open.png" id="mail-icon" width="96" height="96" title="Contact me directly at: contact@baotran.xyz" alt="Send Me an Email">
 						</td>
 						<td>
 							<a href="https://linkedin.com/in/baoqtran">
@@ -155,7 +155,7 @@
 						</td>
 					</tr>
 					<tr>	<!--Email Form-->
-						<td colspan="3" style="padding-top:15px;">
+						<td colspan="3" style="padding-top:60px;">
 							<form id="mail-form" method="POST" action="http://formspree.io/b.qtran12@gmail.com">
 								<!--Page to direct to after form submission-->
 								<input type="hidden" name="_next" value="./" />
@@ -163,28 +163,26 @@
 								<input type="text" name="_gotcha" style="display:none" />
 								<table align="center" style="table-layout: auto">
 									<tr>
-										<td rowspan="3" align="left" style="padding-right:30px">
-											<p style="font-size:18px">Send your email to <a id="demo-link" href="mailto:b.qtran12@gmail.com">b.qtran12@gmail.com</a> or use the form to the right.</p>
-										</td>
 										<td valign="top" align="left">
 											<input type="text" name="name" placeholder="YOUR NAME *" maxlength="50" required>
 										</td>
-									</tr>
-									<tr>
-										<td valign="top" align="left">
-											<input type="email" name="_replyto" placeholder="YOUR EMAIL *" maxlength="80" required>
+										<td valign="top" align="left" rowspan="3">
+											<textarea name="message" placeholder="YOUR MESSAGE *" maxlength="500" cols="40" rows="8" required></textarea>
 										</td>
 									</tr>
 									<tr>
 										<td valign="top" align="left">
-											<textarea name="message" placeholder="YOUR MESSAGE *" maxlength="500" cols="35" rows="6" required></textarea>
+											<input type="email" name="_replyto" placeholder="YOUR EMAIL *" maxlength="100" required>
 										</td>
 									</tr>
 									<tr>
-										<td>
-											<!-- Spacer -->
+										<td valign="top" align="left">
+											<input type="tel" name="phone" placeholder="YOUR PHONE NUMBER" maxlength="20" >
 										</td>
-										<td style="text-align:center">
+									</tr>
+
+									<tr>
+										<td colspan="2">
 											<input class="button" type="submit" value="Send">
 										</td>
 									</tr>

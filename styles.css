@@ -237,15 +237,33 @@ table {
 }
 input, textarea {
     font-family: inherit;
-    font-size: 14px;
-    width: 250px;
-    outline-color: darkgray;
-    border: 1px solid;
+    font-weight: 600;
     padding: 10px;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -ms-border-radius: 3px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -ms-border-radius: 5px;
+    outline: none;
+    border: 1px solid lightgray;
+    -webkit-transition: all 0.30s ease-in-out;
+      -moz-transition: all 0.30s ease-in-out;
+      -ms-transition: all 0.30s ease-in-out;
+      -o-transition: all 0.30s ease-in-out;
+}
+textarea{
+    width: 400px;
+    height: 150px;
+    font-size: 14px;
+}
+input {
+    width: 300px;
+    height: 30px;
+    margin-right: 20px;
+    font-size: 14px;
+
+}
+input:focus, textarea:focus{
+    box-shadow: 0 0 6px gray;
 }
 
 #mail-icon {
@@ -256,6 +274,7 @@ input, textarea {
     font-family: inherit;
     font-size: 18px;
     padding: 5px;
+    margin-top: 50px;
     color: white;
     outline: none;
     text-decoration: none;
@@ -263,7 +282,8 @@ input, textarea {
     box-shadow: 0px 4px gray;
     opacity: 1;
     border-color: transparent;
-    width: 120px;
+    width: 150px;
+    height: 50px;
     border-radius: 2px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;

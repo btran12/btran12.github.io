@@ -15,7 +15,7 @@ var sectionFour = $('#contact').position().top - 150;
 
 var main = function(){
 	//Hide the mail form when site starts;
-	$('#mail-form').hide();
+	//$('#mail-form').hide();
 
 	//Animate Navigation Bar on scroll
 	$(window).scroll(function(){
@@ -164,6 +164,7 @@ var main = function(){
 	
 }//MAIN
 
+//Highlight sections in navigation bar
 var activateClass = function(sectionIndex){
 	for (i = 0; i < navSections.length; i++){
 		//Remove the class from the other sections
