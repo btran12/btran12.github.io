@@ -230,7 +230,7 @@ a#demo-link:hover {
     margin-bottom: 50px;
 }
 table {
-    width: 50%;
+    width: 70%;
     text-align: center;
     border-collapse: collapse;
     table-layout: fixed;
@@ -354,7 +354,7 @@ input:focus, textarea:focus{
         font-size: 120%;
     }
     .document hr, table{
-        width: 40%;
+        width: 50%;
     }
     .footer{
         height: 400px;
@@ -433,8 +433,7 @@ input:focus, textarea:focus{
 }
 @media screen and (max-width: 605px) {
     body {
-        background-color: #FDF6E3;
-        color: #657B83;
+        
     }
     .header #header-name {
         font-size: 450%;
@@ -459,7 +458,7 @@ input:focus, textarea:focus{
         color: #1A5EB3;
     }
     table {
-        width: 95%;
+        width: 90%;
     }
     #underliner1, #underliner2, #underliner3, #underliner3 {
         display: none;
