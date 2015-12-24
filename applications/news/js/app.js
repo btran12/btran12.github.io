@@ -17,13 +17,8 @@ app.config(function ($routeProvider){
     });
 });
 
-app.controller('NavigationsController', function($scope){
-  $scope.sections = ["home","world","national","politics","business","opinion","technology","science", "health","sports","arts","fashion","dining","travel","magazine"];
-});
-
 app.controller('NewsController', function($scope, $http){
-
-  console.log(currentSect);
+  $scope.sections = ["home","world","national","politics","business","opinion","technology","science", "health","sports","arts","fashion","dining","travel","magazine"];
 
   fetchNews();
 
