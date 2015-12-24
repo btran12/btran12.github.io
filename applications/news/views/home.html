@@ -1,0 +1,15 @@
+<div class="main">
+  <div class="container">
+
+    <h2>Top Stories</h2>
+    <div class="row">
+      <div class="news col-md-4" ng-repeat="article in news.results">
+        <a href="#/news/{{$index}}">
+          <img class="img-responsive" ng-src="{{ article.multimedia[4].url }}">
+          <h4> {{ article.title }} </h4>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
