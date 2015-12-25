@@ -57,7 +57,7 @@
 <script type="text/ng-template" id="home.html">
   <div class="container">
     <div class="row">
-      <div ng-repeat="article in news.results">
+      <div ng-repeat="article in news">
           <div class="clearfix" ng-if="$index % 3 == 0"></div>
           <div class="col-sm-4">
             <a href="#/article/{{$index}}">
@@ -80,9 +80,13 @@
 
 <script type="text/ng-template" id="article.html">
 
-  <h1 class="text-center"> {{ article.title }} </h1>
-  <img class="img-responsive" ng-src="{{ article.multimedia[4].url }}">
-  <!-- Dummy Image if image doesnt exists -->
-  <img class="img-responsive" src="https://www.berklee.edu/sites/default/files/the-new-york-times-logo.jpg" ng-show="article.multimedia == ''">
+  <a href="{{article.url}}">
+    <h1 class="text-center"> {{ article.title }} </h1>
+  </a>
+  <center>
+    <img class="img-responsive" ng-src="{{ article.multimedia[4].url }}">
+    <!-- Dummy Image if image doesnt exists -->
+    <img class="img-responsive" src="https://www.berklee.edu/sites/default/files/the-new-york-times-logo.jpg" ng-show="article.multimedia == ''">
+  </center>
 
 </script>

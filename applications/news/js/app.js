@@ -1,6 +1,7 @@
 
 var app = angular.module('NewsApp', ['ngRoute']);
 var currentSect = "home";
+var articleData = ""; //Store information about articles.
 
 app.config(function ($routeProvider){
   $routeProvider
@@ -25,7 +26,8 @@ app.controller('NewsController', function($scope, $http){
   function fetchNews(){
     $http.get('http://api.nytimes.com/svc/topstories/v1/' + currentSect +  '.json?api-key=ff96a20c88b2f4cbfecdd6bcba03c586:9:73827464')
       .success(function(newsData) {
-        $scope.news = newsData;
+        $scope.news = newsData.results;
+        articleData = newsData.results;
       })
   }
 
@@ -37,5 +39,5 @@ app.controller('NewsController', function($scope, $http){
 });
 
 app.controller('ArticleController', function($scope, $routeParams) {
-    $scope.article = $scope.news.results[$routeParams.id];
+    $scope.article = articleData[$routeParams.id];
 });
