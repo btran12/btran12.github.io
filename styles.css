@@ -364,7 +364,7 @@ input:focus, textarea:focus{
     }
 }
 /*SCREENS < 1024px*/
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1300px) {
     .header-background {
         height: 450px;
     }
@@ -378,7 +378,7 @@ input:focus, textarea:focus{
         font-size: 240%;
     }
     .document hr, table {
-        width: 70%;
+        width: 60%;
     }
 }
 

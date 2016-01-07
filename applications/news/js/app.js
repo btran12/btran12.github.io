@@ -41,3 +41,21 @@ app.controller('NewsController', function($scope, $http){
 app.controller('ArticleController', function($scope, $routeParams) {
     $scope.article = articleData[$routeParams.id];
 });
+
+//Capitalize the first letter filter
+app.filter('capitalize', function() {
+    return function(input) {
+      return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+    }
+});
+
+app.filter('timesdate', function() {
+  return function(input){
+    var date = input.split('T')[0];
+    var splitdate = date.split('-');
+    var year = splitdate[0];
+    var month = splitdate[1];
+    var day = splitdate[2];
+    return month + "/" + day + "/" + year;
+  }
+});
