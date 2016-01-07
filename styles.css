@@ -255,6 +255,9 @@ textarea{
     height: 150px;
     font-size: 14px;
 }
+.mobile-msgBox{
+    display:none;
+}
 input {
     width: 300px;
     height: 30px;
@@ -432,15 +435,23 @@ input:focus, textarea:focus{
     }
 }
 @media screen and (max-width: 605px) {
-    body {
-        
+    p{
+        text-align: justify;
+    }
+    .input{
+        width: 400px;
+    }
+    .msgBox{
+        display:none;
+    }
+    .mobile-msgBox{
+        display:inline;
     }
     .header #header-name {
         font-size: 450%;
         top: 100px;
         left: 50%;
         font-weight: 600;
-        color: #B58918;
     }
     .header #secondary-text {
         white-space: normal;
@@ -449,11 +460,19 @@ input:focus, textarea:focus{
         text-align: center;
         left: 50%;
         top: 200px;
-        color: #B58918;
     }
-    .document h1 {
-        color: #B58918;
+    .footer{
+        height: 420px;
     }
+
+    .quote{
+        top: 25%;
+    }
+
+    .quote-author{
+        top: 25%;
+    }
+
     a#demo-link {
         color: #1A5EB3;
     }
