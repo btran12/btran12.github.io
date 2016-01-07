@@ -307,6 +307,7 @@ input:focus, textarea:focus{
 .footer{
     background-color: #303030;
     height: 300px;
+    width: auto;
 }
 
 .quote{
@@ -446,6 +447,7 @@ input:focus, textarea:focus{
     }
     .mobile-msgBox{
         display:inline;
+        width: 300px;
     }
     .header #header-name {
         font-size: 450%;
