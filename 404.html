@@ -1,13 +1,132 @@
----
-permalink: /404.html
----
+
 <!doctype html>
 <html>
 <head>
 	<title>404 Encountered</title>
+
+	<style>
+		body{
+			background-color: #404040;
+			color: #ffffff;
+			font-size: 300%;
+			font-family: "Lucida Console";
+			width: 70%;
+			line-height: 70px;
+		}
+
+		span{
+			position: absolute;
+			top: 70%;
+			left: 10%;
+			text-align: left;
+		}
+
+		.object{
+		    background-color: transparent;
+		    width: 200px;
+		    height: 200px;
+		    border-radius: 50%;
+		    border: 15px solid black;
+		    border-top: 15px solid gray;
+		    box-shadow: 0px 0px 2px 2px lightgray;
+		    position: absolute;
+		    left: 45%;
+		    top: 30%;
+		    animation: alive 3s infinite;
+		    -webkit-animation: alive 3s infinite;
+		    -moz-animation: alive 3s infinite;
+
+		    transition: border-color 1000ms ease;
+		}
+		.object:hover{
+			border-color: #388E8E;
+			border-top: 15px solid gray;
+			cursor: pointer;
+		}
+		@keyframes alive{
+			0% { box-shadow: 0px 0px 20px 15px lightgray }
+			50% { box-shadow: 0px 0px 2px 2px lightgray }
+			100% { box-shadow: 0px 0px 20px 15px lightgray }
+		}
+		@-webkit-keyframes alive{
+			0% { box-shadow: 0px 0px 20px 15px lightgray }
+			50% { box-shadow: 0px 0px 2px 2px lightgray }
+			100% { box-shadow: 0px 0px 20px 15px lightgray }
+		}
+		@-moz-keyframes alive{
+			0% { box-shadow: 0px 0px 20px 15px lightgray }
+			50% { box-shadow: 0px 0px 2px 2px lightgray }
+			100% { box-shadow: 0px 0px 20px 15px lightgray }
+		}
+
+		.typed-cursor{
+		    opacity: 1;
+		    -webkit-animation: blink 1s infinite;
+		    -moz-animation: blink 1s infinite;
+		    animation: blink 1s infinite;
+		}
+		@keyframes blink{
+		    0% { opacity:1; }
+		    50% { opacity:0; }
+		    100% { opacity:1; }
+		}
+		@-webkit-keyframes blink{
+		    0% { opacity:1; }
+		    50% { opacity:0; }
+		    100% { opacity:1; }
+		}
+		@-moz-keyframes blink{
+		    0% { opacity:1; }
+		    50% { opacity:0; }
+		    100% { opacity:1; }
+		}
+	</style>
 <head>
 
-<body>
-	<iframe src="http://www.giphy.com/embed/oQPswLDhl15PG" width="480" height="336" frameBorder="0" style="max-width: 100%; left:30%;position:absolute" class="giphy-embed" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<body align="center">
+
+	<div class="object" onclick="redirect()"></div>
+	<span class="element"></span>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/typed.js"></script>
+
+	<script>
+		function redirect(){
+			window.open("http://www.baotran.xyz", "_self");
+		}
+	</script>
+	<script>
+		//http://stackoverflow.com/questions/15653801/rotating-object-to-face-mouse-pointer-on-mousemove
+		var box=$(".object");
+		var boxCenter=[box.offset().left+box.width()/2, box.offset().top+box.height()/2];
+
+		$(document).mousemove(function(e){   
+			var angle = Math.atan2(e.pageX- boxCenter[0],- (e.pageY- boxCenter[1]) )*(180/Math.PI);
+
+			setTimeout(function () {
+				box.css({ '-webkit-transform': 'rotate(' + angle + 'deg)'});    
+			    box.css({ '-moz-transform': 'rotate(' + angle + 'deg)'});
+			    box.css({ 'transform': 'rotate(' + angle + 'deg)'});
+			    // This property will smooth out the transition, but the rotation will not be correct
+			    // box.css({ 'transition': '500ms linear all' });
+			}, 500); 
+
+		});
+
+	</script>
+
+	<script>
+	  $(function(){
+	      $(".element").typed({
+	        strings: ["Hello..!^2000 <br> Are you lost?...^3000 <br> Click me and I'll redirect you back home."],
+	        startDelay: 1000,
+	        backDelay: 800,
+	        showCursor: false,
+	        cursorChar: "|",
+	        typeSpeed: 40
+	      });
+	  });
+	</script>
 </body>
 </html>
