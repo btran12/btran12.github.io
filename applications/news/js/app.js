@@ -28,7 +28,7 @@ app.controller('NewsController', function($scope, $http){
       .success(function(newsData) {
         $scope.news = newsData.results;
         articleData = newsData.results;
-      })
+      });
   }
 
   $scope.queryNews = function(_section){

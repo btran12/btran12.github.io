@@ -63,10 +63,10 @@ var main = function(){
 	//Move it up and down
 	$('#scrollBtn').on({
 		mouseover: function(){
-			$(this).animate({ top: '450px' });
+			$(this).animate({ top: '410px' });
 		},
 		mouseout: function(){
-			$(this).animate({ top: '440px' });
+			$(this).animate({ top: '400px' });
 		}
 	});
 
