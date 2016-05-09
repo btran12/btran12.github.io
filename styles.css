@@ -7,7 +7,6 @@ body {
     color: #3B3A35;
     margin: 0;
     padding: 0;
-    line-height: 1.5;
 }
 
 .header-background {
@@ -194,7 +193,7 @@ body {
 }
 
 a#demo-link {
-    font-weight: 400;
+    font-weight: 600;
     text-decoration: none;
     color: lightslategray;
 }
@@ -207,12 +206,13 @@ a#demo-link:hover {
     font-weight: 600;
 }
 .document th {
-    font-size: 160%;
+    font-size: 165%;
     font-weight: 400;
 }
 .document p {
     font-size: 115%;
-    font-weight: 300;
+    font-family:Roboto Slab, serif;
+    line-height: 2;
 }
 .document hr {
     width: 50%;
