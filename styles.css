@@ -424,10 +424,10 @@ input:focus, textarea:focus{
         color: white;
     }
     .document h1 {
-        font-size: 230%;
+        font-size: 20px;
     }
     .document p {
-        font-size: 130%;
+        font-size: 16px;
     }
     .document hr {
         width: 80%;
