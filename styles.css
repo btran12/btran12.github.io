@@ -170,10 +170,12 @@ body {
 .header ul#normal-nav ul li {
     float: none;
     margin: 0;
+    border:none;
 }
 .header ul#normal-nav ul a {
     color: lightgray;
     background-color: #3B3A35;
+    border:none;
 }
 .header ul#normal-nav ul a:hover {
     color: #3B3A35;
