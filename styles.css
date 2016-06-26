@@ -166,19 +166,24 @@ body {
     padding: 0;
     display: none;
     position: absolute;
-    border: none;
 }
 .header ul#normal-nav ul li {
     float: none;
-    margin: 0; 
+    margin: 0;
+    border:none;
+}
+.header ul#normal-nav li a {
+    border-color: #3B3A35;
 }
 .header ul#normal-nav ul a {
     color: lightgray;
     background-color: #3B3A35;
+    border:none;
 }
 .header ul#normal-nav ul a:hover {
     color: #3B3A35;
     background-color: white;
+    border-color: white;
 }
 
 /*Arrow Scroll Down*/
