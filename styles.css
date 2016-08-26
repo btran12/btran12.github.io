@@ -312,10 +312,10 @@ input:focus, textarea:focus{
 }
 
 .quote{
+	font-family: 'Shadows Into Light', cursive;
     position: relative;
-    top: 35%;
-    font-size: 190%;
-    font-style: italic;
+    top: 20%;
+    font-size: 50px;
     color: white;
     text-align: center;
     margin-left: 5%;
@@ -323,13 +323,13 @@ input:focus, textarea:focus{
 }
 
 .quote-author{
+	font-family: 'Shadows Into Light', cursive;
     position: relative;
-    top: 35%;
-    font-size: 150%;
+    top: 25%;
+    font-size: 40px;
     color: white;
     text-align: right;
-    right: 20%;
-    font-weight: 400;
+    right: 15%;
 }
 
 ::-moz-selection {
