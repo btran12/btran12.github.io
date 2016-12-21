@@ -24,7 +24,7 @@ app.controller('NewsController', function($scope, $http){
   fetchNews();
 
   function fetchNews(){
-    $http.get('http://api.nytimes.com/svc/topstories/v1/' + currentSect +  '.json?api-key=ff96a20c88b2f4cbfecdd6bcba03c586:9:73827464')
+    $http.get('http://api.nytimes.com/svc/topstories/v2/' + currentSect +  '.json?api-key=bea40c42e52f4f53a83d7531ed89deab')
       .success(function(newsData) {
         $scope.news = newsData.results;
         articleData = newsData.results;
