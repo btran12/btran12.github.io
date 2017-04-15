@@ -159,7 +159,7 @@ var main = function(){
 	if (window.innerWidth > 768){
 		TypingEffect();
 	}else{
-		$('#secondary-text').html("Student | Learner | Achiever");
+		$('#secondary-text').html("Software Engineer at 3M");
 	}
 	
 }//MAIN
