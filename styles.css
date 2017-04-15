@@ -3,7 +3,7 @@ html {
     padding: 0;
 }
 body {
-    font-family: Open Sans;
+    font-family: 'Space Mono', monospace;
     color: #3B3A35;
     margin: 0;
     padding: 0;
@@ -11,8 +11,8 @@ body {
 
 .header-background {
     background: linear-gradient( 
-    	rgba(0, 0, 0, 0.6), 
-    	rgba(0, 0, 0, 0.6)), 
+    	rgba(0, 0, 0, 0.5), 
+    	rgba(0, 0, 0, 0.5)), 
     	url(./images/headerBackground.jpg);
     
     background-size: cover;
@@ -30,7 +30,7 @@ body {
     left: 50%;
     white-space: nowrap;
     text-align: center;
-    width: 4.3em;
+    width: 5.3em;
     overflow: hidden;
     transform: translate(-50%);
     -webkit-transform: translate(-50%);
@@ -58,7 +58,7 @@ body {
     width: 40px;
     height: 40px;
     position: absolute;
-    top: 400px;
+    bottom: 5%;
     left: 50%;
     transform: translate(-50%);
     -webkit-transform: translate(-50%);
@@ -196,6 +196,7 @@ a#demo-link {
     font-weight: 600;
     text-decoration: none;
     color: lightslategray;
+    margin-left: 10%;
 }
 a#demo-link:hover {
     color: black;
@@ -210,9 +211,11 @@ a#demo-link:hover {
     font-weight: 400;
 }
 .document p {
-    font-size: 115%;
-    font-family:Roboto Slab, serif;
-    line-height: 2;
+    font-size: 16px !important;
+    font-family: 'Space Mono', monospace;
+    line-height: 1.4;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 .document hr {
     width: 50%;
