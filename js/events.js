@@ -182,7 +182,7 @@ var activateClass = function(sectionIndex){
 
 //Code from: http://codepen.io/stathisg/pen/Bkvhg
 var TypingEffect = function() {
-	secondaryText = "Student | Learner | Achiever";
+	secondaryText = "Software Engineer at 3M";
 	type();
 }
 
