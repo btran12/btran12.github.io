@@ -16,6 +16,9 @@
                 url: './images/macro/',
                 success: function (data) {
                     console.log(data);
+                    $(data).find("a:contains(" + fileExt + ")").each(function () {
+                        console.log($(this).text());
+                    });
                 }
             });
       })
