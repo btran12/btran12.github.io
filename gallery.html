@@ -12,10 +12,12 @@
     <script type="text/javascript">
       $(document).ready(function () 
       {
-          $.get("./images/macro/", function(data) 
-          {
-              console.log(data);
-          });
+          $.ajax({
+                url: './images/macro/',
+                success: function (data) {
+                    console.log(data);
+                }
+            });
       })
     </script>
     <style type="text/css">
