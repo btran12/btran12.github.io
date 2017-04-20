@@ -211,7 +211,7 @@ a#demo-link:hover {
     font-weight: 400;
 }
 .document p {
-    font-size: 16px !important;
+    font-size: 16px;
     font-family: 'Space Mono', monospace;
     line-height: 1.4;
     margin-left: 5%;
@@ -312,23 +312,25 @@ input:focus, textarea:focus{
     background-color: #303030;
     height: 300px;
     width: auto;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .quote{
-	font-family: 'Shadows Into Light', cursive;
     position: relative;
-    top: 20%;
-    font-size: 50px;
+    font-size: 18px !important;
     color: white;
     text-align: center;
+    top: 40%;
     margin-left: 5%;
     margin-right: 5%;
 }
 
 .quote-author{
-	font-family: 'Shadows Into Light', cursive;
     position: relative;
-    top: 25%;
+    top: 40%;
     font-size: 40px;
     color: white;
     text-align: right;
@@ -469,7 +471,7 @@ input:focus, textarea:focus{
         top: 200px;
     }
     .footer{
-        height: 420px;
+        display: none;
     }
 
     .quote{
