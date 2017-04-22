@@ -320,7 +320,7 @@ input:focus, textarea:focus{
 
 .quote{
     position: relative;
-    font-size: 18px !important;
+    font-size: 2em !important;
     color: white;
     text-align: center;
     top: 40%;
