@@ -310,7 +310,7 @@ input:focus, textarea:focus{
 
 .footer{
     background-color: #303030;
-    height: 300px;
+    height: 400px;
     width: auto;
     position: relative;
     right: 0;
@@ -330,7 +330,7 @@ input:focus, textarea:focus{
 
 .quote-author{
     position: relative;
-    top: 40%;
+    top: 35%;
     font-size: 40px;
     color: white;
     text-align: right;
