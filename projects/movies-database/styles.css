@@ -1,0 +1,341 @@
+
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz|Ubuntu+Condensed|Fjalla+One|PT+Sans|Montserrat);
+
+body{
+	background: #f2f2f2;
+	position: relative;
+	z-index: 1;
+	height:100%;
+}
+
+.navigation-bar {
+	position: fixed;	
+	width: 250px;
+	background: #333333;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	border-right: 5px solid #3385ff;
+}
+.navigation-bar ul, #movies-list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#movies-list li {
+	margin-bottom: 10px;
+}
+.navigation-bar li a {
+    display: block;
+    color: white;
+    padding: 10px 0 10px 0px;
+	text-align: center;
+    text-decoration: none;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 18px;
+}
+
+.navigation-bar li a:hover {
+    background-color: #3385ff;
+    color: white;
+	width:100%;
+	transition: background-color 500ms;
+}
+.navigation-bar .active{
+	background-color: #3385ff;
+	color: white;
+}
+#user-session-label{
+	color:green
+}
+
+table{
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+table td#url,th{
+	word-break: break-all;
+}
+
+.document{
+	position: relative;
+	left: 300px;
+	width: 75%;
+}
+.document table td a{
+	color: #46869C;
+	text-decoration:none;
+	font-family: 'Ubuntu Condensed';
+	font-size:18px;
+}
+.document table td a:hover{
+	text-decoration: underline;
+}
+.document p{
+	font-family: 'PT Sans';
+	font-size:16px;
+}
+.document .imgBox{
+	opacity: .9;
+}
+.document .imgBox:hover{
+	opacity: 1;
+}
+.movie_title, .movie_rating{
+	font-family: 'Fjalla One', sans-serif;
+	font-size:24px;
+}
+
+.contact-button {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}
+.contact-button a:link, a:visited{
+	text-decoration: none;
+	font-family: 'Ubuntu Condensed', sans-serif;
+	color: black;
+}
+.contact-button a:hover{
+	font-weight: bold;
+}
+
+h1{
+	font-family: 'Fjalla One', sans-serif;
+	color:#4d4d4d;
+}
+hr {
+    border: 0;
+    height: 2px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+td{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 20px;
+}
+th{
+	text-align: left;
+}
+input{
+	background: transparent;
+}
+input[type="date"] {
+  font-size: 16px;
+  border: none;
+  border-bottom: solid 2px #46869C;
+  padding: 10px;
+  padding-bottom: 2px;
+  color: black;
+}
+input[type="date"]:focus {
+	outline:none;
+	border-bottom: solid 2px #7ebace;
+}
+input[type="text"] {
+	padding: 10px;
+	border: none;
+	border-bottom: solid 2px #46869C;
+	transition: border 0.3s;
+	font-size: 16px;
+}
+input[type="text"]:focus,
+input[type="text"].focus {
+	border-bottom: solid 2px #7ebace;
+	outline: none;
+}
+input[type="number"]{
+	font-size: 16px;
+	border:none;
+	border-bottom: solid 2px #46869C;
+}
+input[type="number"]:focus{
+	border-bottom: solid 2px #7ebace;
+	outline: none;
+}
+input[type="submit"] {
+    cursor: pointer;
+	position: relative;
+	width: 50px;
+	height: 50px;
+	border: 0px black;
+	border-radius: 50%;
+	background-color: #46869C;
+	box-shadow: 0px 5px 0px #396F82;
+	outline: none;
+}
+input[type="submit"]:hover {
+	background-color: #56A5BF;
+	top: 2px;
+	box-shadow: 0px 3px 0px #396F82;
+}
+input[type="submit"]:active {
+	top: 5px;
+	box-shadow: 0px 0px 0px #396F82;
+}
+
+textarea{
+	border-color: #46869C;
+	border-width: 2px;
+	font-size: 16px;
+	resize: none;
+	background: transparent;
+	transition: border-color 500ms;
+}
+
+textarea:focus{
+	border-color: #7ebace;
+	outline: none;
+	transition: border-color 500ms;
+}
+
+/*--Admin Page-*/
+.login-page-body{
+	background-color: #262626;
+}
+.login-block {
+     width: 320px;
+     padding: 20px;
+     background: #4d4d4d;
+     border-radius: 5px;
+     border-top: 5px solid black;
+     margin: 0 auto;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+ .login-block h1 {
+     text-align: center;
+     color: #000;
+     font-size: 18px;
+     text-transform: uppercase;
+     margin-top: 0;
+     margin-bottom: 20px;
+ }
+ .login-block input {
+     width: 100%;
+     height: 42px;
+     box-sizing: border-box;
+     border-radius: 5px;
+     border: 1px solid #262626;
+     margin-bottom: 20px;
+     font-size: 14px;
+     font-family: Montserrat;
+     padding: 0 20px 0 50px;
+     outline: none;
+     color: white;
+ }
+ .login-block input#username {
+     background: transparent url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
+     background-size: 16px 80px;
+ }
+ .login-block input#password {
+     background: transparent url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
+     background-size: 16px 80px;
+ }
+ .login-block input:active, .login-block input:focus {
+     border: 1px solid black;
+     border-radius: 5px;
+ }
+ .login-block button {
+     width: 100%;
+     height: 40px;
+     background: #262626;
+     box-sizing: border-box;
+     border-radius: 5px;
+     color: #fff;
+     border: 0px;
+     font-weight: bold;
+     text-transform: uppercase;
+     font-size: 14px;
+     font-family: Montserrat;
+     outline: none;
+     cursor: pointer;
+ }
+ .login-block button:hover {
+     background: #333333;
+     color:black;
+ }
+ .login-block .cancel-button{
+	cursor: pointer;
+	position: relative;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #800000;
+	outline: none;
+	margin-top:15px;
+	left:135px;
+ }
+ .login-block .cancel-button:hover{
+	background-color: #b30000;
+ }
+ 
+ /*The video player that pops up on top of everything */
+ #videoPopup{
+ 	z-index: 999;
+ 	position:fixed;
+ 	width:100%;
+ 	height:100%;
+ 	background: rgb(38, 38, 38); /* Default for browsers that don't support rgba */
+ 	background: rgba(0, 0, 0, 0.9);
+ 	display: none;
+ 	top:0px;
+ 	left:0px;
+ 	padding-left:0px;
+ 	margin-left:0px;
+ }
+ #youtube-frame{
+ 	width:80%;
+ 	height:720px;
+ 	position: relative;
+ 	top:50%;
+ 	left:50%;
+ 	transform: translate(-50%, -50%);
+ }
+ #video-thumbnail {
+ 	width:100%;
+ 	height:450px;
+ }
+ 
+ /*Video thumbnail container*/
+ .video {
+ 	position: relative;
+ 	cursor:pointer;
+ }
+ /*Video play button on top of the thumbnail*/
+ .video span {
+ 	position: absolute;
+ 	display: block;
+ 	background: url("https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/youtube-64.png");
+ 	height: 64px;
+ 	width: 64px;
+ 	top: 50%;
+ 	left: 50%;
+ 	transform: translate(-50%, -50%);
+ }
+ 
+ /*Initially hide the add a review form*/
+ #write-review-container {
+ 	display: none;
+ }
+
+ #showtimes-container{
+ 	position:absolute;
+ 	left:250px;	/*The width of the navigation bar*/
+ 	width: auto;
+ }
+ /* When the screen width < 1400 Resize YouTube components */
+ @media screen and (max-width: 1400px) {
+ 	#video-thumbnail {
+ 		width: 480px;
+ 		height: 300px;
+ 	}
+ 	#youtube-frame {
+ 		height:480px;
+ 	}
+
+ }
