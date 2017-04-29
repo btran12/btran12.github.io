@@ -2,39 +2,15 @@
 	/**
 	*	Display a vertical navigation bar
 	**/
-	if (!isset($one)){
-		$one = "";
+	if (session_status() == PHP_SESSION_NONE) {
+    	session_start();
 	}
-	if (!isset($two)){
-		$two = "";
+	if (!isset($one) && !isset($two) && !isset($three) && !isset($four) && !isset($five) && !isset($six)
+		&& !isset($seven) && !isset($eight) && !isset($nine) && !isset($ten) && !isset($eleven)){
+		$one = $two = $three = $four = $five = $six = $seven = $eight = $nine = $ten = $eleven = "";
+		$admin_page="active";
 	}
-	if (!isset($three)){
-		$three = "";
-	}
-	if (!isset($four)){
-		$four = "";
-	}
-	if (!isset($five)){
-		$five = "";
-	}
-	if (!isset($six)){
-		$six = "";
-	}
-	if (!isset($seven)){
-		$seven = "";
-	}
-	if (!isset($eight)){
-		$eight = "";
-	}
-	if (!isset($nine)){
-		$nine = "";
-	}
-	if (!isset($ten)){
-		$ten = "";
-	}
-	if (!isset($eleven)){
-		$eleven = "";
-	}
+	
 	//The number variables are in the parent file that includes this file.
 	echo "
 	<div class='navigation-bar'>
@@ -91,7 +67,7 @@
 			</li>
 
 			<li>
-				<a href='admin_page.php'> 
+				<a href='admin_page.php' class='".$admin_page."'> 
 					Administration
 				</a>
 			</li>

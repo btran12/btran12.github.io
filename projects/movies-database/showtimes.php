@@ -8,7 +8,7 @@
 	$next_tomorrow_date = date("Y-m-d", strtotime("+2 days"));
 	$current_time = date("H:i");
 
-  $zipcode = $_GET["zip"];
+  $zipcode = isset($_GET["zip"]) ? $_GET["zip"] : "";
   
   $radius = "15"; //15 miles radius; about 25-30 min drive
 	
