@@ -3,37 +3,37 @@
 	*	Display a vertical navigation bar
 	**/
 	if (!isset($one)){
-		$one = ""
+		$one = "";
 	}
 	if (!isset($two)){
-		$two = ""
+		$two = "";
 	}
 	if (!isset($three)){
-		$three = ""
+		$three = "";
 	}
 	if (!isset($four)){
-		$four = ""
+		$four = "";
 	}
 	if (!isset($five)){
-		$five = ""
+		$five = "";
 	}
 	if (!isset($six)){
-		$six = ""
+		$six = "";
 	}
 	if (!isset($seven)){
-		$seven = ""
+		$seven = "";
 	}
 	if (!isset($eight)){
-		$eight = ""
+		$eight = "";
 	}
 	if (!isset($nine)){
-		$nine = ""
+		$nine = "";
 	}
 	if (!isset($ten)){
-		$ten = ""
+		$ten = "";
 	}
 	if (!isset($eleven)){
-		$eleven = ""
+		$eleven = "";
 	}
 	//The number variables are in the parent file that includes this file.
 	echo "
