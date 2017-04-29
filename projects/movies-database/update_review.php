@@ -73,8 +73,9 @@ if ($_SESSION['valid'] && ($_SESSION['username'] == 'btran')){
 		*	$data - the string to be cleaned
 		**/
 		function sanitize($data){
-			$data=stripslashes($data);
-			$data=strip_tags($data); 
+			$data=stripslashes($data); 
+			$data=strip_tags($data);
+			$data=preg_replace("/[^a-zA-Z0-9]+/", "", $data);
 			return $data;
 		}
 

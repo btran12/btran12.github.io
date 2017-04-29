@@ -225,7 +225,7 @@ if (empty($_POST)){
 	//Clean data just in case of injections
 	$username = sanitize($_POST["user_name"]);
 	$userrating = sanitize($_POST["user_rating"]);
-	$userreview = preg_replace("/[^a-zA-Z0-9]+/", "", sanitize($_POST["user_review"]));
+	$userreview = sanitize($_POST["user_review"]);
 	$movieid = sanitize($_POST["movie_id"]);
 
 	//Get the current date
@@ -260,6 +260,7 @@ if (empty($_POST)){
 function sanitize($data){
 	$data=stripslashes($data); 
 	$data=strip_tags($data);
+	$data=preg_replace("/[^a-zA-Z0-9]+/", "", $data);
 	return $data;
 }
 /**
