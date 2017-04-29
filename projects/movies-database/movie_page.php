@@ -162,7 +162,8 @@ if (empty($_POST)){
 						<hr style='background-image:none;'>";
 
 					//Review Update and Delete options will only show up if it's the admin
-					$tmp_user = (isset($_SESSION['username']) ? $_SESSION['username'] : "";
+					$tmp_user = isset($_SESSION['username']) ? $_SESSION['username'] : "";
+
 					if (isset($_SESSION['valid']) && ($tmp_user == 'btran')){
 						echo "<a href='update_review.php?id=".$r["ID"]."'>Edit</a>
 						<a href='delete_review.php?id=".$r["ID"]."&movieid=".$movie_id."' style='margin-left:50px;color:red'>Remove</a>";
