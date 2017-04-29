@@ -2,7 +2,7 @@
     // Start storing values for the current session across pages.
    session_start();
    // Allow the user to login if the current session is invalid.
-   if (!$_SESSION['valid']){
+   if (!isset($_SESSION['valid']){
 ?>
 
 <html lang = "en">

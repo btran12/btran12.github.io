@@ -75,7 +75,7 @@
 				</a>
 			</li>";
 	//If the user is logged in display a new item with the username
-	if ($_SESSION["valid"]){
+	if (isset($_SESSION["valid"]){
 		echo "
 			<li>
 				<a href='logout.php' id='user-session-label'>

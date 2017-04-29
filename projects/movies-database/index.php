@@ -1,6 +1,6 @@
 <?php
 	//Value determines which page to display.
-	$page = $_GET["page"];
+	$page = isset($_GET["page"]);
 	$page_title = "";
 
 	//Shorten the sql command, for better viewability
@@ -9,7 +9,7 @@
 	$releaseDay = "SUBSTRING(movie_released_date,9, 2)";
 
 	//Values to set link on navigation bar as active
-	$one = $two = $three = $four = $five = $six = $seven = $eight = $nine = "";
+	$one = $two = $three = $four = $five = $six = $seven = $eight = $nine = $ten = $eleven = "";
 	$visibility = "visible";
 	//Popluate different pages with different information
 	switch($page){ 
