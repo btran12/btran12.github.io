@@ -9,64 +9,76 @@
 		&& !isset($seven) && !isset($eight) && !isset($nine) && !isset($ten) && !isset($eleven)){
 		$admin_page="active";
 	}
-	
+	$one = isset($one) ? $one : "";
+	$two = isset($two) ? $two : "";
+	$three = isset($three) ? $three : "";
+	$four = isset($four) ? $four : "";
+	$five = isset($five) ? $five : "";
+	$six = isset($six) ? $six : "";
+	$seven = isset($seven) ? $seven : "";
+	$eight = isset($eight) ? $eight : "";
+	$nine = isset($nine) ? $nine : "";
+	$ten = isset($ten) ? $ten : "";
+	$eleven = isset($eleven) ? $eleven : "";
+	$admin_page = isset($admin_page) ? $admin_page : "";
+
 	//The number variables are in the parent file that includes this file.
 	echo "
 	<div class='navigation-bar'>
 		<ul>
 			<li>
-				<a href='index.php?page=main' class='".isset($one) ? $one : ""."'>
+				<a href='index.php?page=main' class='".$one."'>
 					Upcoming Movies
 				</a>
 			</li>
 			<li>
-				<a href='index.php?page=current' class='".isset($two) ? $two : ""."'> 
+				<a href='index.php?page=current' class='".$two."'> 
 					Currently Showing Movies 
 				</a>
 			</li>
 			<li>
-				<a href='index.php?page=topall' class='".isset($three) ? $three : ""."'> 
+				<a href='index.php?page=topall' class='".$three."'> 
 					Best Movies of All Times 
 				</a>
 			</li>
 			<li>
-				<a href='index.php?page=top15' class='".isset($four) ? $four : ""."'> 
+				<a href='index.php?page=top15' class='".$four."'> 
 					Top Movies of 2015 
 				</a>
 			</li>
 			<li>
-				<a href='index.php?page=top14' class='".isset($five) ? $five : ""."'> 
+				<a href='index.php?page=top14' class='".$five."'> 
 					Top Movies of 2014 
 				</a>
 			</li>
 			<li>
-				<a href='index.php?page=top13' class='".isset($six) ? $six : ""."'> 
+				<a href='index.php?page=top13' class='".$six."'> 
 					Top Movies of 2013 
 				</a>
 			</li>
 			<li>
-				<a href='index.php?page=top12' class='".isset($seven) ? $seven : ""."'>
+				<a href='index.php?page=top12' class='".$seven."'>
 					Top Movies of 2012 
 				</a>
 			</li>
 			<li>
-				<a href='index.php?page=top11' class='".isset($eight) ? $eight : ""."'> 
+				<a href='index.php?page=top11' class='".$eight."'> 
 					Top Movies of 2011 
 				</a>
 			</li>
 			<li>
-				<a href='index.php?page=top10' class='".isset($nine) ? $nine : ""."'> 
+				<a href='index.php?page=top10' class='".$nine."'> 
 					Top Movies of 2010 
 				</a>
 			</li>
 			<li>
-				<a href='showtimes.php' class='".isset($eleven) ? $eleven : ""."'> 
+				<a href='showtimes.php' class='".$eleven."'> 
 					Showtimes Near You
 				</a>
 			</li>
 
 			<li>
-				<a href='admin_page.php' class='".isset($admin_page) ? $admin_page : ""."'> 
+				<a href='admin_page.php' class='".$admin_page."'> 
 					Administration
 				</a>
 			</li>
@@ -76,7 +88,7 @@
 				</a>
 			</li>
 			<li>
-				<a href='movie_lookup.php' class='".isset($ten) ? $ten : ""."'> 
+				<a href='movie_lookup.php' class='".$ten."'> 
 					Search <img src='https://cdn1.iconfinder.com/data/icons/free-98-icons/32/search-128.png' style='width:16px;height:16px;'>
 				</a>
 			</li>";
