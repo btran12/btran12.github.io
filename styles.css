@@ -57,8 +57,8 @@ body {
 .header img#scrollBtn {
     width: 40px;
     height: 40px;
-    position: absolute;
-    bottom: 5%;
+    position: relative;
+    top: 400px;
     left: 50%;
     transform: translate(-50%);
     -webkit-transform: translate(-50%);
@@ -125,7 +125,7 @@ body {
 .header ul#normal-nav a {
     display: block;
     color: white;
-    width: 100px;
+    width: 120px;
     padding: 10px;
     text-align: center;
     text-decoration: none;
@@ -172,7 +172,7 @@ body {
     margin: 0;
 }
 .header ul#normal-nav ul a {
-    color: lightgray;
+    color: white;
     background-color: #3B3A35;
 }
 .header ul#normal-nav ul a:hover {
