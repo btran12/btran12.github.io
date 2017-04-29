@@ -5,6 +5,7 @@
 	if (session_status() == PHP_SESSION_NONE) {
     	session_start();
 	}
+	$admin_page = "";
 	if (!isset($one) && !isset($two) && !isset($three) && !isset($four) && !isset($five) && !isset($six)
 		&& !isset($seven) && !isset($eight) && !isset($nine) && !isset($ten) && !isset($eleven)){
 		$one = $two = $three = $four = $five = $six = $seven = $eight = $nine = $ten = $eleven = "";
