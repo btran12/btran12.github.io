@@ -2,8 +2,39 @@
 	/**
 	*	Display a vertical navigation bar
 	**/
-	session_start();
-	
+	if (!isset($one)){
+		$one = ""
+	}
+	if (!isset($two)){
+		$two = ""
+	}
+	if (!isset($three)){
+		$three = ""
+	}
+	if (!isset($four)){
+		$four = ""
+	}
+	if (!isset($five)){
+		$five = ""
+	}
+	if (!isset($six)){
+		$six = ""
+	}
+	if (!isset($seven)){
+		$seven = ""
+	}
+	if (!isset($eight)){
+		$eight = ""
+	}
+	if (!isset($nine)){
+		$nine = ""
+	}
+	if (!isset($ten)){
+		$ten = ""
+	}
+	if (!isset($eleven)){
+		$eleven = ""
+	}
 	//The number variables are in the parent file that includes this file.
 	echo "
 	<div class='navigation-bar'>
