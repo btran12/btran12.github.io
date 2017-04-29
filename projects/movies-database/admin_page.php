@@ -21,17 +21,13 @@
             $username = $_POST['username'];
             $password = $_POST['password'];
 
-            if (($username == 'btran' && $password == '6291') || 
-                ($username == 'guest' && $password == '1234')) {
+            if ($username == 'btran' && $password == '6291') {
 
                $_SESSION['valid'] = true;
                 //Redirect to different places depending on the user
                if ($username == 'btran'){
                   $_SESSION['username'] = 'btran';
                   header('Refresh: 1; URL = add_movie.php');
-               }else if ($username == 'guest'){
-                  $_SESSION['username'] = 'guest';
-                  header('Refresh: 1; URL = view_movies.php');
                }
                die();
             }else {
@@ -46,8 +42,8 @@
             <div class="login-block">
                 <h1>Login &nbsp; <img src=<?php echo "\"".$markUrl ."\"" ?>></h1>
 
-                <input type="text" name="username" placeholder="Username - (guest)" id="username" autocomplete="off" required/>
-                <input type="password" name="password" placeholder="Password - (1234)" id="password" autocomplete="off" required/>
+                <input type="text" name="username" placeholder="Username" id="username" autocomplete="off" required/>
+                <input type="password" name="password" placeholder="Password" id="password" autocomplete="off" required/>
                 <button  type="submit" name = "login">Login</button>
 				        <a href="index.php"><div class="cancel-button"></div></a>
             </div>
