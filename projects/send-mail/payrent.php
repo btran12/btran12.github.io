@@ -1,13 +1,13 @@
 <?php
-	//mgr.Burgundy@cormorantco.com
-	$to = "baotr1340@gmail.com";
-	$subject = "326 - Please run my card <eom>";
+	$to = "mgr.Burgundy@cormorantco.com";
+	$subject = "Apt 326 - Please run my card <eom>";
 
 	$message = "
 		<html>
 			<body>
-				<h2>This is an automated message</h2>
+				<h3>This is an automated message</h3>
 				<p>For any questions please reply to this email or call me at (413) 626-3714</p>
+				<p>Bao Tran</p>
 			</body>
 		</html>
 	";
@@ -18,7 +18,7 @@
 
 	// More headers
 	$headers .= 'From: <btran1340@gmail.com>' . "\r\n";
-	$headers .= 'Cc: <baotranomatic@gmail.com>' . "\r\n";
+	$headers .= 'Cc: <me@baotran.xyz>' . "\r\n";
 
 	mail($to,$subject,$message,$headers);
 ?>
