@@ -1,5 +1,5 @@
 <?php
-	$to = "mgr.Burgundy@cormorantco.com";
+	$to = "b.qtran12@gmail.com";
 	$subject = "Apt 326 - Please run my card <eom>";
 
 	$message = "
@@ -18,7 +18,7 @@
 
 	// More headers
 	$headers .= 'From: <btran1340@gmail.com>' . "\r\n";
-	$headers .= 'Cc: <me@baotran.xyz>' . "\r\n";
+	$headers .= 'Cc: <baotranomatic@gmail.com>' . "\r\n";
 
 	mail($to,$subject,$message,$headers);
 ?>
