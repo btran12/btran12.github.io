@@ -5,19 +5,13 @@
 	if (session_status() == PHP_SESSION_NONE) {
     	session_start();
 	}
-	if (!isset($one) && !isset($two) && !isset($three) && !isset($four) && !isset($five) && !isset($six)
-		&& !isset($seven) && !isset($eight) && !isset($nine) && !isset($ten) && !isset($eleven)){
+	if (!isset($one) && !isset($two) && !isset($three) && !isset($four) && !isset($ten) && !isset($eleven)){
 		$admin_page="active";
 	}
 	$one = isset($one) ? $one : "";
 	$two = isset($two) ? $two : "";
 	$three = isset($three) ? $three : "";
 	$four = isset($four) ? $four : "";
-	$five = isset($five) ? $five : "";
-	$six = isset($six) ? $six : "";
-	$seven = isset($seven) ? $seven : "";
-	$eight = isset($eight) ? $eight : "";
-	$nine = isset($nine) ? $nine : "";
 	$ten = isset($ten) ? $ten : "";
 	$eleven = isset($eleven) ? $eleven : "";
 	$admin_page = isset($admin_page) ? $admin_page : "";
@@ -27,48 +21,23 @@
 	<div class='navigation-bar'>
 		<ul>
 			<li>
-				<a href='index.php?page=main' class='".$one."'>
-					Upcoming Movies
+				<a href='index.php?page=upcoming' class='".$one."'>
+					Upcoming
 				</a>
 			</li>
 			<li>
-				<a href='index.php?page=current' class='".$two."'> 
-					Currently Showing Movies 
+				<a href='index.php?page=now' class='".$two."'> 
+					Now Playing
 				</a>
 			</li>
 			<li>
-				<a href='index.php?page=topall' class='".$three."'> 
-					Best Movies of All Times 
+				<a href='index.php?page=popular' class='".$three."'> 
+					Popular 
 				</a>
 			</li>
 			<li>
-				<a href='index.php?page=top15' class='".$four."'> 
-					Top Movies of 2015 
-				</a>
-			</li>
-			<li>
-				<a href='index.php?page=top14' class='".$five."'> 
-					Top Movies of 2014 
-				</a>
-			</li>
-			<li>
-				<a href='index.php?page=top13' class='".$six."'> 
-					Top Movies of 2013 
-				</a>
-			</li>
-			<li>
-				<a href='index.php?page=top12' class='".$seven."'>
-					Top Movies of 2012 
-				</a>
-			</li>
-			<li>
-				<a href='index.php?page=top11' class='".$eight."'> 
-					Top Movies of 2011 
-				</a>
-			</li>
-			<li>
-				<a href='index.php?page=top10' class='".$nine."'> 
-					Top Movies of 2010 
+				<a href='index.php?page=top' class='".$four."'> 
+					Most Rated
 				</a>
 			</li>
 			<li>

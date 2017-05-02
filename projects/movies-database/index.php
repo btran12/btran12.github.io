@@ -9,107 +9,48 @@
 	$releaseDay = "SUBSTRING(movie_released_date,9, 2)";
 
 	//Values to set link on navigation bar as active
-	$one = $two = $three = $four = $five = $six = $seven = $eight = $nine = $ten = $eleven = "";
+	$one = $two = $three = $four = $ten = $eleven = "";
 	$visibility = "visible";
+
 	//Popluate different pages with different information
 	switch($page){ 
 		
-		case "main":
-			$page_title = "Soon to be Released";
+		case "upcoming":
+			$service_query="upcoming";
+
+			$page_title = "Upcoming";
 			$one = "active";
-			//Newest movies to be released
-			//(year > cYear) || (year = cYear && month > cMonth) || (year = cYear && month = cMonth && day >= cDay) 
-			$QUERY = "SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE (($releaseYear > YEAR(CURDATE())) OR 
-							($releaseYear = YEAR(CURDATE()) AND $releaseMonth > MONTH(CURDATE())) OR 
-							($releaseYear = YEAR(CURDATE()) AND $releaseMonth = MONTH(CURDATE()) AND $releaseDay >= DAY(CURDATE()))) 
-						ORDER BY movie_released_date asc";
 			$visibility = "hidden";
 			break;
-		case "current":
-			$page_title = "Now Showing";
+		case "now":
+			$service_query="now_playing";
+
+			$page_title = "Now Playing";
 			$two = "active";
-			//Current Year
-			//Months prior to the current month
-			//
-			$QUERY = "SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE ($releaseYear = YEAR(CURDATE()) AND $releaseMonth < MONTH(CURDATE())) OR
-							($releaseYear = YEAR(CURDATE()) AND $releaseMonth = MONTH(CURDATE()) AND $releaseDay <= DAY(CURDATE())) 
-						ORDER BY movie_released_date desc";
 			break;
-		case "topall":
-			$page_title = "Best Movies of All Times";
+		case "popular":
+			$service_query="popular";
+
+			$page_title = "Popular";
 			$three = "active";
-			$QUERY = "SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE movie_rating > 8.5 
-						ORDER BY movie_rating desc";
 			break;
-		case "top15":
-			$page_title = "The Best Movies of 2015";
+		case "top":
+			$service_query="top_rated";
+
+			$page_title = "Top Rated";
 			$four = "active";
-			$QUERY = "SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE movie_rating > 7 && $releaseYear = 2015 
-						ORDER BY movie_rating desc";
-			break;
-		case "top14":
-			$page_title = "The Best Movies of 2014";
-			$five = "active";
-			$QUERY = "SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE movie_rating > 7 && $releaseYear = 2014 
-						ORDER BY movie_rating desc";
-			break;
-		case "top13":
-			$page_title = "The Best Movies of 2013";
-			$six = "active";
-			$QUERY = "SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE movie_rating > 7 && $releaseYear = 2013 
-						ORDER BY movie_rating desc";
-			break;
-		case "top12":
-			$page_title = "The Best Movies of 2012";
-			$seven = "active";
-			$QUERY = "SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE movie_rating > 7 && $releaseYear = 2012 
-						ORDER BY movie_rating desc";
-			break;
-		case "top11":
-			$page_title = "The Best Movies of 2011";
-			$eight = "active";
-			$QUERY = "SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE movie_rating > 7 && $releaseYear = 2011 
-						ORDER BY movie_rating desc";
-			break;
-		case "top10":
-			$page_title = "The Best Movies of 2010";
-			$nine = "active";
-			$QUERY = "SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE movie_rating > 7 && $releaseYear = 2010 
-						ORDER BY movie_rating desc";
-			break;
-		case "all":	//TODO List all movies, show 15 at a time, sortable
+			
 			break;
 		default: //Same as main
-			$page_title = "New and Currently Showing Movies";
-			$QUERY = "SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE $releaseYear = 2016 
-						ORDER BY movie_released_date desc";
+			$page_title = "Now Playing";
+			$service_query="now_playing";
+
 	}//end switch 
 
-	include 'connect_server.php';
-
-	$q = $conn->prepare($QUERY);
-	$q->execute();
-	$q->setFetchMode(PDO::FETCH_BOTH);
+	//service query is used as an input into request.php
+	include dirname(__DIR__)."/movies-database/service/request.php";
+	$results=$api_results;
+	
 ?>
 <!doctype html>
 <html lang="en">
@@ -132,14 +73,14 @@
 	<table width="100%">
 		<?php
 			//Populate the page with rows of movies 
-			while($r=$q->fetch()){
+			for ($x = 0; $x < count($results); $x++){
 				
-				$movie_id= $r["ID"];
-				$poster_url = $r["poster_url"];
-				$movie_released_date= $r["movie_released_date"];
-				$movie_title= $r["movie_title"];
-				$movie_plot = $r["movie_plot"];
-				$movie_rating= $r["movie_rating"];
+				$movie_id		= $results[$x]->id;
+				$poster_url 	= "https://image.tmdb.org/t/p/w500/".$results[$x]->poster_path;
+				$movie_released_date= $results[$x]->release_date;
+				$movie_title	= $results[$x]->title;
+				$movie_plot 	= $results[$x]->overview;
+				$movie_rating	= $results[$x]->vote_average;
 				
 				echo "
 				<tr>
@@ -167,9 +108,6 @@
 				</tr>";
 			}
 			
-			//Close connection
-			$conn=null; 
-			
 		?>
 		<?php
 			/**
@@ -186,10 +124,6 @@
 </div>
 
 </body>
-
-<footer>
-	<p align="right">Sample Movies Data Obtained from IMDB</p>
-</footer>
 
 <div class="contact-button">
 	<a href="http://baotran.xyz">Bao Tran</a>
