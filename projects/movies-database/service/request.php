@@ -24,7 +24,6 @@ if ($err) {
   echo "cURL Error #:" . $err;
 } else {
   $response = json_decode($response);
-  $api_results = $response->results;  //Variable used in index.php
 }
 
 ?>

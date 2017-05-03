@@ -49,7 +49,7 @@
 
 	//service query is used as an input into request.php
 	include dirname(__DIR__)."/movies-database/service/request.php";
-	$results=$api_results;
+	$results=$response->results;
 	
 ?>
 <!doctype html>

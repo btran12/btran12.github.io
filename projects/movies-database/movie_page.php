@@ -4,37 +4,26 @@ session_start();
 
 //Review formed posted and contains data?
 if (empty($_POST)){
-
 	$movie_id = $_GET["id"];
 
-	include "connect_server.php";
+	$service_query = $movie_id;
+	include dirname(__DIR__)."/movies-database/service/request.php";
 
-	$QUERY = "SELECT * 
-				FROM btran6291_MOVIE 
-				WHERE ID = " . $movie_id;
+	$title = $response->title;
+	$release_date = $response->release_date;
+	$runtime = $response->runtime;
+	$vote_average = $response->vote_average;
+	$overview = $response->overview;
+	$backdrop_path = $response->backdrop_path;
+	$poster_path = "https://image.tmdb.org/t/p/w500/" . $response->poster_path;
 
-	$q = $conn->prepare($QUERY);
-	$q->execute();
-	$q->setFetchMode(PDO::FETCH_BOTH);
-
-	// Fetch movie information based on movie ID
-	// Only 1 result should return
-	// As this is a single movie page
-	$m=$q->fetch();
-
-	//Get Reviews Information linked by movie id
-	$QUERY = "SELECT * FROM btran6291_REVIEW WHERE movie_id = " . $movie_id ." ORDER BY Review_date desc"; 
-	$q = $conn->prepare($QUERY);
-	$q->execute();
-	$q->setFetchMode(PDO::FETCH_BOTH);
-	
 ?>
 <?php
 	//Youtube API ---------------------------
 	$DEVELOPER_KEY = "AIzaSyBBj3selsO2bOhTYRuR6ZxmJxRzup2Bx5c";
 
 	$base_url = "https://www.googleapis.com/youtube/v3/search?part=id&q=";
-	$url_query = rawurlencode($m["movie_title"] . " trailer");
+	$url_query = rawurlencode($title . " trailer");
 
 	//Get data
 	$json = file_get_contents($base_url.$url_query."&key=".$DEVELOPER_KEY);
@@ -51,7 +40,7 @@ if (empty($_POST)){
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="styles.css">
-		<title><?php echo $m["movie_title"]; ?></title>
+		<title><?php echo $title; ?></title>
 		<!-- JQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script> 
@@ -76,20 +65,20 @@ if (empty($_POST)){
 		<br>
 		<center>
 			<h1 style="display:inline">
-				<?php echo $m["movie_title"]; ?>
+				<?php echo $title; ?>
 			</h1>
 			<h1 style="display:inline;margin-left:10px;font-size:16px">
-				<?php echo " " . formatDate($m["movie_released_date"]); ?>
+				<?php echo " " . formatDate($release_date); ?>
 			</h1>
 		</center>
 		<hr>
 		<table width="100%">
 			<tr>
 				<td rowspan="3" style="width:265px">
-					<img src=<?php echo "'".$m["poster_url"]."'"?>  height="400" width="275">
+					<img src=<?php echo "'".$poster_path."'"?>  height="400" width="275">
 				</td>
 				<td style="vertical-align:bottom;width:150px">
-					<p><b>Duration:</b><br><?php echo $m["movie_duration"] ?> min</p>
+					<p><b>Duration:</b><br><?php echo $runtime ?> min</p>
 				</td>
 				<td rowspan="3" align="right">
 					<div class="video" onclick="openPlayer()">
@@ -101,19 +90,13 @@ if (empty($_POST)){
 			<tr>
 				<td>
 					<p style="font-size:28px;color:#0099ff">
-						<?php echo $m["movie_rating"] ?>
+						<?php echo $vote_average ?>
 					</p>
 				</td>
 			</tr>
 			<tr>
-				<td style="vertical-align:top;">
-					<p><b>Director:</b><br><?php echo $m["movie_director"] ?></p>
-				</td>
-				
-			</tr>
-			<tr>
 				<td colspan="3">
-					<p><?php echo $m["movie_plot"] ?></p>
+					<p><?php echo $overview ?></p>
 				</td>
 			</tr>
 		</table>
@@ -155,6 +138,13 @@ if (empty($_POST)){
 		<div class="user-reviews">
 			<table width="80%">
 			<?php
+				include "connect_server.php";
+				//Get Reviews Information linked by movie id
+				$QUERY = "SELECT * FROM btran6291_REVIEW WHERE movie_id = " . $movie_id ." ORDER BY Review_date desc"; 
+				$q = $conn->prepare($QUERY);
+				$q->execute();
+				$q->setFetchMode(PDO::FETCH_BOTH);
+
 				// Print all the available reviews for this particular movie 
 				while($r=$q->fetch()){
 					echo "<tr>
