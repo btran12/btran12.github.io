@@ -38,6 +38,7 @@ body{
 .navigation-bar li a:hover {
     background-color: #eaeaea;
 	transition: background-color 250ms;
+	cursor: pointer;
 }
 .navigation-bar .active{
 	background-color: #eaeaea;
