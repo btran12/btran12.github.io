@@ -69,7 +69,7 @@
 -->
 <div class="document">
 	<br><h1><center><?php echo $page_title; ?></center></h1>
-	<hr>
+
 	<table width="100%">
 		<?php
 			//Populate the page with rows of movies 
@@ -124,9 +124,5 @@
 </div>
 
 </body>
-
-<div class="contact-button">
-	<a href="http://baotran.xyz">Bao Tran</a>
-</div>
 
 </html>

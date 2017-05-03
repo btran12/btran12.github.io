@@ -45,7 +45,7 @@
 					Showtimes Near You
 				</a>
 			</li>
-
+			<li><hr></li>
 			<li>
 				<a href='admin_page.php' class='".$admin_page."'> 
 					Administration
