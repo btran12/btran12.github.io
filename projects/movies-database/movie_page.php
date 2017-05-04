@@ -14,8 +14,9 @@ if (empty($_POST)){
 	$runtime = $response->runtime;
 	$vote_average = $response->vote_average;
 	$overview = $response->overview;
-	$backdrop_path = $response->backdrop_path;
-	$poster_path = "https://image.tmdb.org/t/p/w500/" . $response->poster_path;
+	$secure_base_url = "https://image.tmdb.org/t/p/";
+	$backdrop_path = $secure_base_url."w1280/".$response->backdrop_path;
+	$poster_path = $secure_base_url."w780/".$response->poster_path;
 
 ?>
 <?php
@@ -52,17 +53,19 @@ if (empty($_POST)){
 			});
 		</script>
 	</head>
-	
+
 <body>
 	<!-- top refers to the upper method or the parent of the current div -->
 	<div id="videoPopup" onclick="top.close()">
-		<iframe id="youtube-frame" src="" frameborder="0"></iframe>
+		<iframe id="youtube-frame" src="" frameborder="0" allowfullscreen></iframe>
 	</div>
 	<!-- MOVIE INFORMATION SECTION
 	==============================================
 	-->
 	<div class="document">
 		<br>
+		<img src=<?php echo "'".$backdrop_path."'"?> width="100%" height="auto">
+
 		<center>
 			<h1 style="display:inline">
 				<?php echo $title; ?>
@@ -74,37 +77,23 @@ if (empty($_POST)){
 		<hr>
 		<table width="100%">
 			<tr>
-				<td rowspan="3" style="width:265px">
-					<img src=<?php echo "'".$poster_path."'"?>  height="400" width="275">
-				</td>
-				<td style="vertical-align:bottom;width:150px">
-					<p><b>Duration:</b><br><?php echo $runtime ?> min</p>
-				</td>
-				<td rowspan="2" align="right" width="100%">
+				<td align="center" width="100%">
 					<div class="video" onclick="openPlayer()">
-					    <img id="video-thumbnail" src="" width="100%" height="450px">
+					    <img id="video-thumbnail" src="">
 					    <span></span><!-- play button image on top of video thumbnail -->
 					</div>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<p>
-						<?php echo $vote_average ?>
-					</p>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="3">
 					<p><?php echo $overview ?></p>
 				</td>
 			</tr>
 		</table>
 		<br>
 		<hr>
-		<!--USER REVIEWS FORM
-		====================================================
-		-->
+		<!-- USER REVIEWS FORM
+		==================================================== -->		
 		<h2><p style="font-size:24px;font-weight:600;">User Reviews</p></h2>
 		<form action="movie_page.php" method="POST">
 			<button type="button" id="open-review-container">Write Review</button>
@@ -187,7 +176,7 @@ if (empty($_POST)){
 		var videoSrc = "https://www.youtube.com/embed/" + <?php echo '"'.$youtube_video_id.'"'; ?> + "?rel=0&iv_load_policy=3&amp;showinfo=0&autoplay=1";
 
 		// Video thumbnail link with video ID
-		var videoThumbnail = "http://img.youtube.com/vi/" + <?php echo '"'.$youtube_video_id.'"'; ?> + "/0.jpg";
+		var videoThumbnail = "http://img.youtube.com/vi/" + <?php echo '"'.$youtube_video_id.'"'; ?> + "/maxresdefault.jpg";
 
 		document.getElementById('video-thumbnail').src = videoThumbnail;
 		
