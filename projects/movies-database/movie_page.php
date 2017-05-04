@@ -80,7 +80,7 @@ if (empty($_POST)){
 				<td style="vertical-align:bottom;width:150px">
 					<p><b>Duration:</b><br><?php echo $runtime ?> min</p>
 				</td>
-				<td rowspan="3" align="right">
+				<td rowspan="2" align="right" width="100%">
 					<div class="video" onclick="openPlayer()">
 					    <img id="video-thumbnail" src="" width="100%" height="450px">
 					    <span></span><!-- play button image on top of video thumbnail -->
@@ -89,7 +89,7 @@ if (empty($_POST)){
 			</tr>
 			<tr>
 				<td>
-					<p style="font-size:28px;color:#0099ff">
+					<p>
 						<?php echo $vote_average ?>
 					</p>
 				</td>
