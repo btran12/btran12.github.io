@@ -57,10 +57,6 @@
 <head>
 	<title><?php echo $page_title . " - Bao Tran MovieDB"; ?></title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
-<<<<<<< HEAD
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-=======
 
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
@@ -69,7 +65,7 @@
 	    enable_page_level_ads: true
 	  });
 	</script>
->>>>>>> 9f47c4adbc78bed3262ea12998f49187cb7a2f93
+
 </head>
 
 <body>
