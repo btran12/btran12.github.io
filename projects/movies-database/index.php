@@ -57,6 +57,8 @@
 <head>
 	<title><?php echo $page_title . " - Bao Tran MovieDB"; ?></title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 
 <body>
@@ -102,7 +104,7 @@
 					</td>
 					<td width='15%' align='center'>
 						<div class='movie_rating' style='visibility:".$visibility."'>
-							". $movie_rating . "/10
+							". $movie_rating . "
 						</div>
 					</td>
 				</tr>";

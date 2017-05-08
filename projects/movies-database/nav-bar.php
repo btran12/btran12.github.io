@@ -22,7 +22,7 @@
 		<ul>
 			<li>
 				<a href='index.php?page=upcoming' class='".$one."'>
-					Upcoming
+					<i class='material-icons'>&#xE87C;</i> Upcoming
 				</a>
 			</li>
 			<li>
@@ -42,7 +42,7 @@
 			</li>
 			<li>
 				<a href='showtimes.php' class='".$eleven."'> 
-					Showtimes Near You
+					Showtimes
 				</a>
 			</li>
 			<li><hr></li>
