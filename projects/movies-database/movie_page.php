@@ -41,6 +41,7 @@ if (empty($_POST)){
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<title><?php echo $title; ?></title>
 		<!-- JQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
