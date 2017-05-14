@@ -11,8 +11,8 @@
 		$name = "";
 		$theatre_name = "";
 
-		$movie_title = $obj->title;
-		$release_year = $obj->releaseYear;
+		$movie_title = isset($obj->title) ? $obj->title : "Untitled";
+		$release_year = isset($obj->releaseYear) ? $obj->releaseYear : "Unknown" ;
 		$duration = strtolower(substr($obj->runTime,3));
 
 		//Only show movies in the current year
@@ -36,8 +36,9 @@
 				$date = $date_time[0];
 				$time = $date_time[1];
 				$hr = substr($time,0,2);
-				
-				$timeHtmlString = "<a href='".$showtime->ticketURI."'><font color='blue'>" .$time."</font></a>" . str_repeat('&nbsp;', 5);
+
+				$uri = isset($showtime->ticketURI) ? $showtime->ticketURI : "#";
+				$timeHtmlString = "<a href='".$uri."'><font color='blue'>" .$time."</font></a>" . str_repeat('&nbsp;', 5);
 
 				//Only print current and future showing times
 				//This only applies to today's date
