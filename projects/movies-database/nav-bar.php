@@ -27,7 +27,7 @@
 			</li>
 			<li>
 				<a href='index.php?page=now' class='".$two."'> 
-					<i class='material-icons'>&#xE87C;</i> Now Playing
+					<i class='material-icons>&#xE87C;</i> Now Playing
 				</a>
 			</li>
 			<li>
