@@ -27,38 +27,38 @@
 			</li>
 			<li>
 				<a href='index.php?page=now' class='".$two."'> 
-					<i class='material-icons'>&#xE87C;<span>Now Playing</span>
+					<i class='material-icons'>&#xE87C;</i> <span>Now Playing</span>
 				</a>
 			</li>
 			<li>
 				<a href='index.php?page=popular' class='".$three."'> 
-					<i class='material-icons'>&#xE87D;<span>Popular</span> 
+					<i class='material-icons'>&#xE87D;</i> <span>Popular</span> 
 				</a>
 			</li>
 			<li>
 				<a href='index.php?page=top' class='".$four."'> 
-					<i class='material-icons'>&#xE838;<span>Most Rated</span>
+					<i class='material-icons'>&#xE838;</i> <span>Most Rated</span>
 				</a>
 			</li>
 			<li>
 				<a href='showtimes.php' class='".$eleven."'> 
-					<i class='material-icons'>&#xE192;<span>Showtimes</span>
+					<i class='material-icons'>&#xE192;</i> <span>Showtimes</span>
 				</a>
 			</li>
 			<li><hr></li>
 			<li>
 				<a href='admin_page.php' class='".$admin_page."'> 
-					<i class='material-icons'>&#xE853;<span>Account</span> 
+					<i class='material-icons'>&#xE853;</i> <span>Account</span> 
 				</a>
 			</li>
 			<li>
 				<a href='dynamic.php'>
-					<i class='material-icons'>&#xE42B;<span>Dynamic View</span>
+					<i class='material-icons'>&#xE42B;</i> <span>Dynamic View</span>
 				</a>
 			</li>
 			<li>
 				<a href='movie_lookup.php' class='".$ten."'> 
-					<i class='material-icons'>&#xE8B6;<span>Search</span>
+					<i class='material-icons'>&#xE8B6;</i> <span>Search</span>
 				</a>
 			</li>";
 	//If the user is logged in display a new item with the username
