@@ -10,6 +10,13 @@ body{
 	font-weight: 100px;
 }
 
+#c-icons {
+	display: inline;
+	position:relative !important;
+	top:5px !important;
+	margin-right: 20px !important;
+}
+
 .navigation-bar {
 	position: fixed;	
 	background: white;
@@ -43,11 +50,8 @@ body{
 .navigation-bar .active{
 	background-color: #eaeaea;
 }
-.material-icons {
-	position:relative;
-	top:5px;
-	margin-right: 20px;
-}
+
+
 	
 #user-session-label{
 	color:red;
