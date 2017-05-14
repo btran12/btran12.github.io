@@ -1,7 +1,7 @@
 <?php
 	//Variables are in parent's files
 
-	$json = file_get_contents($base_url."startDate=".$query_date."&zip=".$zipcode."&radius=".$radius."&api_key=".$ONCONNECT_KEY);
+	$json = file_get_contents($base_url."startDate=".$query_date."&zip=".$zipcode."&lat=".$lat."$lng=".$lng."&radius=".$radius."&api_key=".$ONCONNECT_KEY);
 
 	$json = json_decode($json);
 	$current_hour = date("H");	//Get the current hour

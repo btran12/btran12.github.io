@@ -8,7 +8,19 @@
 	$next_tomorrow_date = date("Y-m-d", strtotime("+2 days"));
 	$current_time = date("H:i");
 
-  $zipcode = isset($_GET["zip"]) ? $_GET["zip"] : "";
+  $user_ip = getenv('REMOTE_ADDR');
+  $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
+
+  $zipcode = "";
+  $lat = "";
+  $lng = "";
+  if (!isset($_GET["zip"])){
+    $lat = $geo["geoplugin_latitude"];
+    $lng = $geo["geoplugin_longitude"]; 
+  }else{
+    $zipcode = $_GET["zip"];
+  }
+  
   
   $radius = "15"; //15 miles radius; about 25-30 min drive
 	
