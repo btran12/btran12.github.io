@@ -43,7 +43,9 @@ body{
 .navigation-bar .active{
 	background-color: #eaeaea;
 }
-.md-icon {
+.material-icons {
+	position:relative;
+	top:5px;
 	margin-right: 20px;
 }
 	
