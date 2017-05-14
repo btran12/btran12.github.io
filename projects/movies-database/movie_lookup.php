@@ -2,6 +2,7 @@
 	<head>
 		<title>Movie Search</title>
 		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 
 <body>

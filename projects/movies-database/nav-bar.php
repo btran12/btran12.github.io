@@ -22,43 +22,43 @@
 		<ul>
 			<li>
 				<a href='index.php?page=upcoming' class='".$one."'>
-					<i class='material-icons'>&#xE87C;</i> Upcoming
+					<i class='material-icons'>&#xE878;</i> Upcoming
 				</a>
 			</li>
 			<li>
 				<a href='index.php?page=now' class='".$two."'> 
-					Now Playing
+					<i class='material-icons'>&#xE8DF;</i> Now Playing
 				</a>
 			</li>
 			<li>
 				<a href='index.php?page=popular' class='".$three."'> 
-					Popular 
+					<i class='material-icons'>&#xE87D;</i> Popular 
 				</a>
 			</li>
 			<li>
 				<a href='index.php?page=top' class='".$four."'> 
-					Most Rated
+					<i class='material-icons'>&#xE8CF;</i> Most Rated
 				</a>
 			</li>
 			<li>
 				<a href='showtimes.php' class='".$eleven."'> 
-					Showtimes
+					<i class='material-icons'>&#xE192;</i> Showtimes
 				</a>
 			</li>
 			<li><hr></li>
 			<li>
 				<a href='admin_page.php' class='".$admin_page."'> 
-					Administration
+					<i class='material-icons'>&#xE853;</i> Account 
 				</a>
 			</li>
 			<li>
 				<a href='dynamic.php'>
-					Dynamic View
+					<i class='material-icons'>&#xE42B;</i> Dynamic View
 				</a>
 			</li>
 			<li>
 				<a href='movie_lookup.php' class='".$ten."'> 
-					Search <img src='https://cdn1.iconfinder.com/data/icons/free-98-icons/32/search-128.png' style='width:16px;height:16px;'>
+					<i class='material-icons'>&#xE8B6;</i> Search
 				</a>
 			</li>";
 	//If the user is logged in display a new item with the username
