@@ -75,28 +75,21 @@
       <h3>Today</h3>
       <?php
         $query_date = $todays_date;
-
-        if ($zipcode != "" ){
-          include "onconnect_api.php";
-        }
+        include "onconnect_api.php";
       ?>
     </div>
     <div id="menu1" class="tab-pane fade">
       <h3>Tomorrow</h3>
       <?php
         $query_date = $tomorrow_date;
-        if ($zipcode != ""){
-          include "onconnect_api.php";
-        }
+        include "onconnect_api.php";
       ?>
     </div>
     <div id="menu2" class="tab-pane fade">
       <h3><?php echo date('l', strtotime("+2 day")) ?></h3>
       <?php
         $query_date = $next_tomorrow_date;
-        if ($zipcode != ""){
-          include "onconnect_api.php";
-        }
+        include "onconnect_api.php";
       ?>
     </div>
   </div>
