@@ -10,13 +10,6 @@ body{
 	font-weight: 100px;
 }
 
-#c-icons {
-	display: inline;
-	position:relative !important;
-	top:5px !important;
-	margin-right: 20px !important;
-}
-
 .navigation-bar {
 	position: fixed;	
 	background: white;
