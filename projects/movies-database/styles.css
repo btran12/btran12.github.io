@@ -43,9 +43,10 @@ body{
 .navigation-bar .active{
 	background-color: #eaeaea;
 }
-.material-icons{
-	margin-right:20px !important;
+.material-icons {
+	margin-right: 20px;
 }
+	
 #user-session-label{
 	color:red;
 }
