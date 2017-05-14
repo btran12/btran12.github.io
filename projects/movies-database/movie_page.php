@@ -15,8 +15,9 @@ if (empty($_POST)){
 	$vote_average = $response->vote_average;
 	$overview = $response->overview;
 	$secure_base_url = "https://image.tmdb.org/t/p/";
-	$backdrop_path = $secure_base_url."w1280/".$response->backdrop_path;
-	$poster_path = $secure_base_url."w780/".$response->poster_path;
+	$path = isset($response->backdrop_path) ? $response->backdrop_path : $response->belongs_to_collection->backdrop_path;
+	$backdrop_path = $secure_base_url."w1280".$path;
+	$poster_path = $secure_base_url."w780".$response->poster_path;
 
 ?>
 <?php
