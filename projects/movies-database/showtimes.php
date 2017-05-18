@@ -8,7 +8,19 @@
 	$next_tomorrow_date = date("Y-m-d", strtotime("+2 days"));
 	$current_time = date("H:i");
 
-  $zipcode = isset($_GET["zip"]) ? $_GET["zip"] : "";
+  $user_ip = getenv('REMOTE_ADDR');
+  $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
+
+  $zipcode = "";
+  $lat = "";
+  $lng = "";
+  if (!isset($_GET["zip"])){
+    $lat = $geo["geoplugin_latitude"];
+    $lng = $geo["geoplugin_longitude"]; 
+  }else{
+    $zipcode = $_GET["zip"];
+  }
+  
   
   $radius = "15"; //15 miles radius; about 25-30 min drive
 	
@@ -20,15 +32,18 @@
   <title>Movies Showtimes</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
+
 <body style="position:relative">
 <?php
-	$eleven = "active";	//Set active tab
-	include "nav-bar.php";
+  $eleven = "active"; //Set active tab
+  include "nav-bar.php";
 ?>
 <br>
 <div id="showtimes-container" class="container">
@@ -60,28 +75,21 @@
       <h3>Today</h3>
       <?php
         $query_date = $todays_date;
-
-        if ($zipcode != "" ){
-          include "onconnect_api.php";
-        }
+        include "onconnect_api.php";
       ?>
     </div>
     <div id="menu1" class="tab-pane fade">
       <h3>Tomorrow</h3>
       <?php
         $query_date = $tomorrow_date;
-        if ($zipcode != ""){
-          include "onconnect_api.php";
-        }
+        include "onconnect_api.php";
       ?>
     </div>
     <div id="menu2" class="tab-pane fade">
       <h3><?php echo date('l', strtotime("+2 day")) ?></h3>
       <?php
         $query_date = $next_tomorrow_date;
-        if ($zipcode != ""){
-          include "onconnect_api.php";
-        }
+        include "onconnect_api.php";
       ?>
     </div>
   </div>

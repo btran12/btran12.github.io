@@ -1,11 +1,12 @@
 <?php
 
 $query=$service_query;
+$defaultUrl = "https://api.themoviedb.org/3/movie/".$query."?page=1&language=en-US&api_key=4c40b76e885cbdd0161087ef43a8fce5";
 
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.themoviedb.org/3/movie/".$query."?page=1&language=en-US&api_key=4c40b76e885cbdd0161087ef43a8fce5",
+  CURLOPT_URL => $defaultUrl,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
