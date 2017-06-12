@@ -65,8 +65,6 @@ if (empty($_POST)){
 	==============================================
 	-->
 	<div class="document">
-		<br>
-		<img src=<?php echo "'".$backdrop_path."'"?> width="100%" height="auto">
 
 		<center>
 			<h1 style="display:inline">
