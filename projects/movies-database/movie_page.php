@@ -96,7 +96,12 @@ if (empty($_POST)){
 		==================================================== -->		
 		<h2><p style="font-size:24px;font-weight:600;">User Reviews</p></h2>
 		<form action="movie_page.php" method="POST">
-			<button type="button" id="open-review-container">Write Review</button>
+			<!-- Only allow users to write reviews -->
+			<?php
+				if (isset($_SESSION['valid'])){
+					echo "<button type='button' id='open-review-container'>Write Review</button>";
+				}
+			?>
 			<div id="write-review-container">
 				<table>
 					<?php echo "<input type='hidden' name='movie_id' value='".$movie_id."'>"; ?>
