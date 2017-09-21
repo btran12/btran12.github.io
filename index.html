@@ -36,6 +36,24 @@
 				font-size:60px;
 				color:#7a797a;
 			}
+
+			.animate {
+				animation: pulse 3s infinite;
+			}
+
+			@keyframes pulse {
+			  0% {
+			    opacity: 1;
+			  }
+			  50% {
+
+			  	opacity: 0;
+			  }
+			  100% {
+			    opacity: 0.9;
+			  }
+			}
+			
 		</style>
 
 	</head>
@@ -44,7 +62,11 @@
 		<div id="main-title">
 			<p>BAO TRAN</p>
 			<div id="sub-title">
-				<p>simplicity</p>
+				<p>
+					<span class="animate">[</span>
+					simplicity
+					<span class="animate">]</span>
+				</p>
 			</div>
 		</div>
 	</body>
