@@ -17,18 +17,24 @@
 			body {
 				background-color: #1f1a1a;
 				color: #7a797a;
-				/*#c4c2c2*/
 			}
 
 			#main-title {
-				margin:auto;
-				position: relative;
-				top:200px;
+
 				color: #c4c2c2;
 				font-size: 120px;
 				font-family: 'Lato', sans-serif;
 				text-align: center;
 				line-height: 1px;
+
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				-webkit-transform: translate(-50%, -50%);
+				-moz-transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+				-o-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
 
 			}
 
@@ -39,6 +45,22 @@
 
 			.animate {
 				animation: pulse 3s infinite;
+			}
+
+			#social-handles {
+				position: fixed;
+				right: 3%;
+				bottom: 10px;
+			}
+
+			#social-handles ul {
+				list-style-type: none;
+				display: inline;
+			}
+
+			#social-handles ul li {
+				display: inline;
+				margin: 10px;
 			}
 
 			@keyframes pulse {
@@ -53,7 +75,18 @@
 			    opacity: 0.9;
 			  }
 			}
-			
+
+			/* For mobile phones: */
+			@media only screen and (max-width: 768px) {
+			    #main-title {
+			    	font-size: 60px;
+			    }
+
+			    #sub-title {
+			    	font-size: 30px;
+			    }
+			}
+
 		</style>
 
 	</head>
@@ -69,5 +102,24 @@
 				</p>
 			</div>
 		</div>
+
+		<div id="social-handles">
+			<ul>
+				<li>
+					<a href="https://github.com/btran12">
+						<img src="./images/logos/github-circle.png">
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/baoqtran/">
+						<img src="./images/logos/linkedin-box.png">
+					</a>
+				</li>
+			</ul>
+		</div>
+
+
+
 	</body>
+
 </html>
