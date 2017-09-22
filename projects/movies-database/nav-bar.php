@@ -52,7 +52,7 @@
 			</li>
 			<li><hr></li>
 			<li>
-				<a href='admin_page.php' class='".$admin_page."'> 
+				<a href='login.php' class='".$admin_page."'> 
 					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE853;</i>
 					<span>Account</span> 
 				</a>
