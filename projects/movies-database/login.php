@@ -47,17 +47,17 @@
 
               <div class="group">
                 <input type="text" name="username" id="username" required>
-                <span class="highlight"/>
-                <span class="bar"/>
+                <span class="highlight"></span>
+                <span class="bar"></span>
                 <label>Email</label>
               </div>
               <div class="group">
                 <input type="password" name="password" id="password" required>
-                <span class="highlight"/>
-                <span class="bar"/>
+                <span class="highlight"></span>
+                <span class="bar"></span>
                 <label>Password</label>
               </div>
-              <button type="button" class="button buttonBlue">Login
+              <button type="submit" name="login" class="button buttonBlue">Login
                 <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
               </button>
 
