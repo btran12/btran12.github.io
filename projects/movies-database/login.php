@@ -45,7 +45,6 @@
         -->
          <form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method = "post">
 
-            <form>
               <div class="group">
                 <input type="text" name="username" id="username" required>
                 <span class="highlight"/>
@@ -61,7 +60,6 @@
               <button type="button" class="button buttonBlue">Login
                 <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
               </button>
-            </form>
 
             <!-- <div class="login-block">
                 <h1>Login &nbsp; <img src=<?php echo "\"".$markUrl ."\"" ?>></h1>
