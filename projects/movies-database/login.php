@@ -19,8 +19,6 @@
    <body class="login-page-body">
       <?php
          
-         $markUrl = ''; //Link to either check mark or x mark
-
          //Username and Password validation
          if (!empty($_POST)) {
             $username = $_POST['username'];
@@ -29,14 +27,10 @@
             if ($username == 'btran' && $password == '6291') {
 
                $_SESSION['valid'] = true;
-                //Redirect to different places depending on the user
-               if ($username == 'btran'){
-                  $_SESSION['username'] = 'btran';
-                  header('Refresh: 1; URL = add_movie.php');
-               }
+                $_SESSION['username'] = 'btran';
+                header('Refresh: 1; URL = add_movie.php');
+               
                die();
-            }else {
-               $markUrl = 'https://cdn0.iconfinder.com/data/icons/16x16-free-toolbar-icons/16/33.png';
             }
          }
       ?>
@@ -61,14 +55,6 @@
                 <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
               </button>
 
-            <!-- <div class="login-block">
-                <h1>Login &nbsp; <img src=<?php echo "\"".$markUrl ."\"" ?>></h1>
-
-                <input type="text" name="username" placeholder="Username" id="username" autocomplete="off" required/>
-                <input type="password" name="password" placeholder="Password" id="password" autocomplete="off" required/>
-                <button  type="submit" name = "login">Login</button>
-				        <a href="index.php"><div class="cancel-button"></div></a>
-            </div> -->
          </form>
 			
          <script>
