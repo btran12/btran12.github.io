@@ -1,5 +1,6 @@
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,300);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
 
 body{
 	background: white;
@@ -11,7 +12,7 @@ body{
 }
 
 .navigation-bar {
-	position: fixed;	
+	position: fixed;
 	background: white;
 	width: 225px;
 	height: 100%;
@@ -45,7 +46,7 @@ body{
 }
 
 
-	
+
 #user-session-label{
 	color:red;
 }
@@ -250,7 +251,7 @@ textarea:focus{
  .login-block .cancel-button:hover{
 	background-color: #b30000;
  }
- 
+
  /*The video player that pops up on top of everything */
  #videoPopup{
  	z-index: 999;
@@ -275,7 +276,7 @@ textarea:focus{
  	width:80%;
  	height:auto;
  }
- 
+
  /*Video thumbnail container*/
  .video {
  	position: relative;
@@ -292,7 +293,7 @@ textarea:focus{
  	left: 50%;
  	transform: translate(-50%, -50%);
  }
- 
+
  /*Initially hide the add a review form*/
  #write-review-container {
  	display: none;
