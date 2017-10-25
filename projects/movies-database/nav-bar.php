@@ -74,9 +74,11 @@
 	if ($isValid){
 		echo "
 			<li>
-				<button type='button' class='btn btn-default btn-sm'>
-					<span class='glyphicon glyphicon-log-out'></span> Log out
-				</button>
+				<a href='logout.php'>
+					<button type='button' class='btn btn-default btn-sm' style='position:relative;'>
+						<span class='glyphicon glyphicon-log-out'></span> Log out
+					</button>
+				</a>
 			</li>";
 	}
 	echo "
