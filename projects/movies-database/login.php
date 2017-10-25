@@ -1,6 +1,22 @@
 <?php
     // Start storing values for the current session across pages.
    session_start();
+
+
+  // Username and Password validation once form is POSTED - so after refresh
+  if (!empty($_POST)) {
+     $username = $_POST['username'];
+     $password = $_POST['password'];
+
+     if ($username == 'btran' && $password == '6291') {
+
+         $_SESSION['valid'] = true;
+         $_SESSION['username'] = 'btran';
+     }else {
+         $_SESSION['loginErrorMessage'] = "Incorrect credentials, try again.";
+     }
+  }
+
    // Allow the user to login if the current session is invalid.
    $isValid = isset($_SESSION["valid"]) ? $_SESSION["valid"] : false;
    if (!$isValid){
@@ -17,51 +33,33 @@
    </head>
 
    <body class="login-page-body">
-      <?php
+     <!-- Login Form
+     ======================================
+     -->
+      <form method="post">
 
-         //Username and Password validation
-         if (!empty($_POST)) {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-
-            if ($username == 'btran' && $password == '6291') {
-
-                $_SESSION['valid'] = true;
-                $_SESSION['username'] = 'btran';
-                header('Refresh: 0; URL = add_movie.php');
-            }else {
-                $_SESSION['loginErrorMessage'] = 'Your message';
-            }
-         }
-      ?>
-        <!-- Login Form
-        ======================================
-        -->
-         <form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method = "post">
-
-              <div class="group">
-                <input type="text" name="username" id="username" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Username / Email</label>
-              </div>
-              <div class="group">
-                <input type="password" name="password" id="password" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Password</label>
-              </div>
-              <button type="submit" name="login" class="button buttonBlue">Login
-                <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-              </button>
-              <?php
-                if (isset($_SESSION['loginErrorMessage'])) {
-                  echo "<p>Incorrect credentials, try again.</p>";
-                  unset($_SESSION['loginErrorMessage']);
-                }
-              ?>
-
-         </form>
+           <div class="group">
+             <input type="text" name="username" id="username" autocomplete="off" required>
+             <span class="highlight"></span>
+             <span class="bar"></span>
+             <label>Username / Email</label>
+           </div>
+           <div class="group">
+             <input type="password" name="password" id="password" autocomplete="off" required>
+             <span class="highlight"></span>
+             <span class="bar"></span>
+             <label>Password</label>
+           </div>
+           <button type="submit" name="login" class="button buttonBlue">Login
+             <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+           </button>
+           <?php
+             if (isset($_SESSION['loginErrorMessage'])) {
+               echo "<p>".$_SESSION['loginErrorMessage']."</p>";
+               unset($_SESSION['loginErrorMessage']);
+             }
+           ?>
+      </form>
 
          <script>
             $(window, document, undefined).ready(function() {
@@ -106,10 +104,10 @@
 <?php
 }else{
    //If already logged in just redirect
-   if ($_SESSION['username'] == 'btran'){
-      header('Refresh: 1; URL = add_movie.php');
-   }else if ($_SESSION['username'] == 'guest'){
-      header('Refresh: 1; URL = view_movies.php');
+   if (isset($_SESSION['username'])){
+      header('Refresh: 0; URL = add_movie.php');
+   } else {
+     header('Refresh: 0; URL = index.php');
    }
 }
 ?>
