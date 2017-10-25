@@ -27,34 +27,34 @@
 				</a>
 			</li>
 			<li>
-				<a href='index.php?page=now' class='".$two."'> 
+				<a href='index.php?page=now' class='".$two."'>
 					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE87C;</i>
 					<span>Now Playing</span>
 				</a>
 			</li>
 			<li>
-				<a href='index.php?page=popular' class='".$three."'> 
+				<a href='index.php?page=popular' class='".$three."'>
 					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE87D;</i>
-					<span>Popular</span> 
+					<span>Popular</span>
 				</a>
 			</li>
 			<li>
-				<a href='index.php?page=top' class='".$four."'> 
+				<a href='index.php?page=top' class='".$four."'>
 					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE838;</i>
 					<span>Most Rated</span>
 				</a>
 			</li>
 			<li>
-				<a href='showtimes.php' class='".$eleven."'> 
+				<a href='showtimes.php' class='".$eleven."'>
 					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE192;</i>
 					<span>Showtimes</span>
 				</a>
 			</li>
 			<li><hr></li>
 			<li>
-				<a href='login.php' class='".$admin_page."'> 
+				<a href='login.php' class='".$admin_page."'>
 					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE853;</i>
-					<span>Account</span> 
+					<span>Account</span>
 				</a>
 			</li>
 			<li>
@@ -64,7 +64,7 @@
 				</a>
 			</li>
 			<li>
-				<a href='movie_lookup.php' class='".$ten."'> 
+				<a href='movie_lookup.php' class='".$ten."'>
 					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE8B6;</i>
 					<span>Search</span>
 				</a>
@@ -74,9 +74,9 @@
 	if ($isValid){
 		echo "
 			<li>
-				<a href='logout.php' id='user-session-label'>
-					Log Out of ".$_SESSION["username"].
-				"</a>
+				<button type='button' class='btn btn-default btn-sm'>
+					<span class='glyphicon glyphicon-log-out'></span> Log out
+				</button>
 			</li>";
 	}
 	echo "

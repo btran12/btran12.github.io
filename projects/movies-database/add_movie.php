@@ -8,13 +8,14 @@ if ($_SESSION['valid'] && ($_SESSION['username'] == 'btran')){
 
 		<head>
 			<title>Add Movie</title>
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 			<link rel="stylesheet" type="text/css" href="styles.css">
 		</head>
 		<body>
 			<?php
 			include "nav-bar.php";
 			?>
-			<?php 
+			<?php
 			include 'connect_server.php';
 
 			$QUERY = "SELECT movie_title FROM btran6291_MOVIE";
@@ -136,7 +137,7 @@ if ($_SESSION['valid'] && ($_SESSION['username'] == 'btran')){
 
 		//Insert movie data into database.
 		include 'connect_server.php';
-		
+
 		$QUERY = "INSERT into btran6291_MOVIE(
 								movie_title,
 								movie_plot,
@@ -144,7 +145,7 @@ if ($_SESSION['valid'] && ($_SESSION['username'] == 'btran')){
 								movie_duration,
 								poster_url,
 								movie_released_date,
-								movie_rating) 
+								movie_rating)
 								values (?,?,?,?,?,?,?)";
 
 		$q = $conn->prepare($QUERY);
@@ -159,7 +160,7 @@ if ($_SESSION['valid'] && ($_SESSION['username'] == 'btran')){
 		//Reformat date to YYYY/MM/DD
 		$date = date_format(date_create($date), "Y/m/d");
 		if($q->execute(array($title,$plot,$director,$duration,$link,$date,$rating))){
-			echo '<script>document.location = "add_movie.php";</script>'; 
+			echo '<script>document.location = "add_movie.php";</script>';
 		}else{
 			echo $q->errorCode();
 		}
