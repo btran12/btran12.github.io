@@ -11,7 +11,7 @@
      if ($username == 'btran' && $password == '6291') {
 
          $_SESSION['valid'] = true;
-         $_SESSION['username'] = 'btran';
+         $_SESSION['username'] = $username;
      }else {
          $_SESSION['loginErrorMessage'] = "Incorrect credentials, try again.";
      }

@@ -20,6 +20,9 @@
 	<div class='navigation-bar'>
 		<ul>
 			<li>
+				<p style='font-size:18px;padding-left:10%'> Welcome, ".$_SESSION['username']." </p>
+			</li>
+			<li>
 				<a href='index.php?page=upcoming' class='".$one."'>
 					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE878;</i>
 					<span>Upcoming</span>
@@ -69,8 +72,7 @@
 				</a>
 			</li>";
 	//If the user is logged in display a new item with the username
-	$isValid = isset($_SESSION["valid"]) ? $_SESSION["valid"] : false;
-	if ($isValid){
+	if ($_SESSION["valid"]){
 		echo "
 			<li>
 				<a href='logout.php'>
