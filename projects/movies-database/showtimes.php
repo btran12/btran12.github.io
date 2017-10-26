@@ -2,7 +2,7 @@
 	//Variables to be sent to onconnect_api.php to query data
 	$ONCONNECT_KEY = "kfjymzrccf2d68jxcnnecvwm";
 
-	$base_url = "http://data.tmsapi.com/v1.1/movies/showings?"; 
+	$base_url = "http://data.tmsapi.com/v1.1/movies/showings?";
 	$todays_date = date("Y-m-d");
 	$tomorrow_date = date("Y-m-d", strtotime("+1 day"));
 	$next_tomorrow_date = date("Y-m-d", strtotime("+2 days"));
@@ -16,14 +16,13 @@
   $lng = "";
   if (!isset($_GET["zip"])){
     $lat = $geo["geoplugin_latitude"];
-    $lng = $geo["geoplugin_longitude"]; 
+    $lng = $geo["geoplugin_longitude"];
   }else{
     $zipcode = $_GET["zip"];
   }
-  
-  
+
   $radius = "15"; //15 miles radius; about 25-30 min drive
-	
+
 ?>
 
 <!DOCTYPE html>
@@ -33,9 +32,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="styles.css">
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
