@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	/**
 	*	Display a vertical navigation bar
 	**/

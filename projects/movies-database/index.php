@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	//Value determines which page to display.
 	$page = isset($_GET["page"]) ? $_GET["page"] : "";
 	$page_title = "";
