@@ -73,7 +73,7 @@
 		echo "
 			<li>
 				<a href='logout.php'>
-					<button type='button' class='btn btn-default btn-sm' style='position:relative;'>
+					<button type='button' class='btn btn-default btn-md' style='position:relative;'>
 						<span class='glyphicon glyphicon-log-out'></span> Log out
 					</button>
 				</a>
