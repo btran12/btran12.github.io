@@ -1,11 +1,9 @@
-
 <?php
 session_start();
-if ($_SESSION['valid'] && ($_SESSION['username'] == 'btran')){
+if ($_SESSION['valid'] && $_SESSION['username']){
 	if (empty($_POST)){
-		?>
+?>
 		<html>
-
 		<head>
 			<title>Add Movie</title>
 			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,28 +11,28 @@ if ($_SESSION['valid'] && ($_SESSION['username'] == 'btran')){
 		</head>
 		<body>
 			<?php
-			include "nav-bar.php";
+				include "nav-bar.php";
 			?>
 			<?php
-			include 'connect_server.php';
+				include 'connect_server.php';
 
-			$QUERY = "SELECT movie_title FROM btran6291_MOVIE";
-			$q = $conn->prepare($QUERY);
-			$q->execute();
-			$q->setFetchMode(PDO::FETCH_BOTH);
-			$titles = array();
+				$QUERY = "SELECT movie_title FROM btran6291_MOVIE";
+				$q = $conn->prepare($QUERY);
+				$q->execute();
+				$q->setFetchMode(PDO::FETCH_BOTH);
+				$titles = array();
 
-			//Get all queried data into an array.
-			while($r=$q->fetch()){
-				array_push($titles,strtolower($r["movie_title"]));
-			}
+				//Get all queried data into an array.
+				while($r=$q->fetch()){
+					array_push($titles,strtolower($r["movie_title"]));
+				}
 
-			$titlesAsString = "";
+				$titlesAsString = "";
 
-			//Get all the values from the array into a single string.
-			foreach($titles as $str){
-				$titlesAsString = $titlesAsString . "\"$str\",";
-			}
+				//Get all the values from the array into a single string.
+				foreach($titles as $str){
+					$titlesAsString = $titlesAsString . "\"$str\",";
+				}
 			?>
 			<!--ADD MOVIE FORM
 			=================================================================
@@ -87,7 +85,9 @@ if ($_SESSION['valid'] && ($_SESSION['username'] == 'btran')){
 									</tr>
 									<tr>
 										<td>
-											<input type="submit" value="Add">
+											<button type="submit" class="btn btn-primary btn-md">
+							          <span class="glyphicon glyphicon-plus-sign"></span> Add
+							        </button>
 										</td>
 									</tr>
 								</table>

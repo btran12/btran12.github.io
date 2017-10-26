@@ -2,9 +2,7 @@
 	/**
 	*	Display a vertical navigation bar
 	**/
-	if (session_status() == PHP_SESSION_NONE) {
-    	session_start();
-	}
+
 	if (!isset($one) && !isset($two) && !isset($three) && !isset($four) && !isset($ten) && !isset($eleven)){
 		$admin_page="active";
 	}
