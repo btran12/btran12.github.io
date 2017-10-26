@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	//Value determines which page to display.
 	$page = isset($_GET["page"]) ? $_GET["page"] : "";
 	$page_title = "";
@@ -13,8 +14,8 @@
 	$visibility = "visible";
 
 	//Popluate different pages with different information
-	switch($page){ 
-		
+	switch($page){
+
 		case "upcoming":
 			$service_query="upcoming";
 
@@ -39,27 +40,27 @@
 
 			$page_title = "Top Rated";
 			$four = "active";
-			
+
 			break;
 		default: //Same as main
 			$page_title = "Now Playing";
 			$service_query="now_playing";
 
-	}//end switch 
+	}//end switch
 
 	//service query is used as an input into request.php
 	include dirname(__DIR__)."/movies-database/service/request.php";
 	$results=$response->results;
-	
+
 ?>
 <!doctype html>
 <html lang="en">
 <head>
 	<title><?php echo $page_title . " - Bao Tran MovieDB"; ?></title>
-	
+
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	
+
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
 	  (adsbygoogle = window.adsbygoogle || []).push({
@@ -71,7 +72,7 @@
 </head>
 
 <body>
-	
+
 <?php
 	include "nav-bar.php";
 ?>
@@ -83,16 +84,16 @@
 
 	<table width="100%">
 		<?php
-			//Populate the page with rows of movies 
+			//Populate the page with rows of movies
 			for ($x = 0; $x < count($results); $x++){
-				
+
 				$movie_id		= $results[$x]->id;
 				$poster_url 	= "https://image.tmdb.org/t/p/w500/".$results[$x]->poster_path;
 				$movie_released_date= $results[$x]->release_date;
 				$movie_title	= $results[$x]->title;
 				$movie_plot 	= $results[$x]->overview;
 				$movie_rating	= $results[$x]->vote_average;
-				
+
 				echo "
 				<tr>
 					<td width='250px'>
@@ -118,7 +119,7 @@
 					</td>
 				</tr>";
 			}
-			
+
 		?>
 		<?php
 			/**

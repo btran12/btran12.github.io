@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	//Variables to be sent to onconnect_api.php to query data
 	$ONCONNECT_KEY = "kfjymzrccf2d68jxcnnecvwm";
 
