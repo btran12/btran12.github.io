@@ -45,6 +45,7 @@
 		default: //Same as main
 			$page_title = "Now Playing";
 			$service_query="now_playing";
+			$two = "active";
 
 	}//end switch
 
