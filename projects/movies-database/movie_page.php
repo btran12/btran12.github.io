@@ -21,19 +21,11 @@ if (empty($_POST)){
 
 ?>
 <?php
-	//Youtube API ---------------------------
-	$DEVELOPER_KEY = "AIzaSyBBj3selsO2bOhTYRuR6ZxmJxRzup2Bx5c";
+	$service_query = $movie_id."/videos";
+	include dirname(__DIR__)."/movies-database/service/request.php";
 
-	$base_url = "https://www.googleapis.com/youtube/v3/search?part=id&q=";
-	$url_query = rawurlencode($title . " trailer");
-
-	//Get data
-	$json = file_get_contents($base_url.$url_query."&key=".$DEVELOPER_KEY);
-
-	//Decoded json as a multidimensional array
-	$obj = json_decode($json);
 	//Just need the video ID to embed into the youtube player
-	$youtube_video_id = $obj->items[0]->id->videoId;
+	$youtube_video_id = $response->results[0]->key;
 ?>
 
 <?php
@@ -46,7 +38,7 @@ if (empty($_POST)){
 		<title><?php echo $title; ?></title>
 		<!-- JQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-		<script> 
+		<script>
 			$(document).ready(function(){
 				// Function to open and close the add a review form.
 			    $("#open-review-container").click(function(){
@@ -93,7 +85,7 @@ if (empty($_POST)){
 		<br>
 		<hr>
 		<!-- USER REVIEWS FORM
-		==================================================== -->		
+		==================================================== -->
 		<h2><p style="font-size:24px;font-weight:600;">User Reviews</p></h2>
 		<form action="movie_page.php" method="POST">
 			<!-- Only allow users to write reviews -->
@@ -134,12 +126,12 @@ if (empty($_POST)){
 			<?php
 				include "connect_server.php";
 				//Get Reviews Information linked by movie id
-				$QUERY = "SELECT * FROM btran6291_REVIEW WHERE movie_id = " . $movie_id ." ORDER BY Review_date desc"; 
+				$QUERY = "SELECT * FROM btran6291_REVIEW WHERE movie_id = " . $movie_id ." ORDER BY Review_date desc";
 				$q = $conn->prepare($QUERY);
 				$q->execute();
 				$q->setFetchMode(PDO::FETCH_BOTH);
 
-				// Print all the available reviews for this particular movie 
+				// Print all the available reviews for this particular movie
 				while($r=$q->fetch()){
 					echo "<tr>
 						<td colspan='3' height='10'>
@@ -169,7 +161,7 @@ if (empty($_POST)){
 					echo "<td colspan='3']>
 						<p>". $r["Reviewer_review"]."</p>";
 					echo "</td>
-						</tr>";	
+						</tr>";
 				}
 			?>
 			</table>
@@ -184,7 +176,7 @@ if (empty($_POST)){
 		var videoThumbnail = "http://img.youtube.com/vi/" + <?php echo '"'.$youtube_video_id.'"'; ?> + "/maxresdefault.jpg";
 
 		document.getElementById('video-thumbnail').src = videoThumbnail;
-		
+
 		/**
 		*	Show the div on top of the current document and autoplay Youtube video
 		**/
@@ -224,14 +216,14 @@ if (empty($_POST)){
 							Reviewer_review,
 							Review_date,
 							Review_rating,
-							movie_id) 
+							movie_id)
 							VALUES(?,?,?,?,?)";
 
 	$q = $conn->prepare($QUERY);
 
 	// Add review to the database and refresh
 	if($q->execute(array($username,$userreview,$date,$userrating,$movieid))){
-		echo "<script>document.location ='movie_page.php?id=". $movieid. "';</script>"; 
+		echo "<script>document.location ='movie_page.php?id=". $movieid. "';</script>";
 	}else{
 		echo $q->errorCode();
 	}
@@ -244,7 +236,7 @@ if (empty($_POST)){
 *	$data - The string to be sanitized
 **/
 function sanitize($data){
-	$data=stripslashes($data); 
+	$data=stripslashes($data);
 	$data=strip_tags($data);
 	$data=preg_replace("/[^a-zA-Z0-9]+/", "", $data);
 	return $data;
