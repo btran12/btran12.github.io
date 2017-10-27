@@ -91,7 +91,9 @@ if (empty($_POST)){
 			<!-- Only allow users to write reviews -->
 			<?php
 				if (isset($_SESSION['valid'])){
-					echo "<button type='button' id='open-review-container'>Write Review</button>";
+					echo "<button type='button' class='btn btn-default btn-md' style='position:relative;' id='open-review-container'>
+							<span class='glyphicon glyphicon-pencil'></span> Write Review
+						</button>";
 				}
 			?>
 			<div id="write-review-container">
