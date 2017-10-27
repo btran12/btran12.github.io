@@ -1,7 +1,8 @@
 <?php
 
 $query=$service_query;
-$defaultUrl = "https://api.themoviedb.org/3/movie/".$query."?page=1&language=en-US&api_key=4c40b76e885cbdd0161087ef43a8fce5";
+$api_key    = "4c40b76e885cbdd0161087ef43a8fce5";
+$defaultUrl = "https://api.themoviedb.org/3/movie/".$query."?page=".$pageNum."&language=en-US&api_key=".$api_key;
 
 $curl = curl_init();
 

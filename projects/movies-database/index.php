@@ -1,6 +1,7 @@
 <?php
 	//Value determines which page to display.
 	$page = isset($_GET["page"]) ? $_GET["page"] : "";
+	$pageNum = isset($_GET["pageNum"]) ? $_GET["pageNum"] : "1";
 	$page_title = "";
 
 	//Shorten the sql command, for better viewability
@@ -49,7 +50,9 @@
 
 	//service query is used as an input into request.php
 	include dirname(__DIR__)."/movies-database/service/request.php";
-	$results=$response->results;
+	$results	= $response->results;
+	$totalPages	= $response->total_pages;
+	$currentPage= $response->page;
 
 ?>
 <!doctype html>
@@ -118,22 +121,38 @@
 					</td>
 				</tr>";
 			}
-
 		?>
-		<?php
-			/**
-			*	Convert the string to date format (# month ####)
-			*	$date - The string to be formatted
-			**/
-			function formatDate($date){
-				$dateObject = date_create($date);
-				return date_format($dateObject, "j F Y");
-			}
-		?>
-
 	</table>
+	<?php
+		$prevPage = ($currentPage > 1)  ? $currentPage-1 : 1;
+		$nextPage = ($currentPage < 10) ? $currentPage+1 : 10;
+		// Setup pagination ; max it at 10
+		echo "	<div class='center'>
+					<div class='pagination'>
+						<a href='index.php?page=".$service_query."&pageNum=".$prevPage."'>&laquo;</a>";
+		for ($p = 1; $p < $totalPages && $p <= 10; $p++) {
+
+			if ($p == $currentPage)
+				echo "<a class='active' href='index.php?page=".$service_query."&pageNum=".$p."'>".$p."</a>";
+			else
+				echo "<a href='index.php?page=".$service_query."&pageNum=".$p."'>".$p."</a>";
+		}
+		echo "			<a href='index.php?page=".$service_query."&pageNum=".$nextPage."'>&raquo;</a>
+					</div>
+				</div>";
+	?>
 </div>
 
 </body>
 
 </html>
+<?php
+	/**
+	*	Convert the string to date format (# month ####)
+	*	$date - The string to be formatted
+	**/
+	function formatDate($date){
+		$dateObject = date_create($date);
+		return date_format($dateObject, "j F Y");
+	}
+?>
