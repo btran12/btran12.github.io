@@ -18,7 +18,12 @@ if (empty($_POST)){
 	$path = isset($response->backdrop_path) ? $response->backdrop_path : $response->belongs_to_collection->backdrop_path;
 	$backdrop_path = $secure_base_url."w1280".$path;
 	$poster_path = $secure_base_url."w780".$response->poster_path;
+	$genres = "";
+	foreach ($response->genres as $genre) {
+		$genres .= $genre->name . ", ";
+	}
 
+	$genres = substr($genres,0,strlen($genres)-2);
 ?>
 <?php
 	$service_query = $movie_id."/videos";
@@ -58,18 +63,23 @@ if (empty($_POST)){
 	-->
 	<div class="document">
 
-		<center>
-			<h1 style="display:inline">
+		<center style="margin-top:10px">
+			<h1 style="display:inline;">
 				<?php echo $title; ?>
 			</h1>
-			<h1 style="display:inline;margin-left:10px;font-size:16px">
-				<?php echo " " . formatDate($release_date); ?>
-			</h1>
+		</center>
+		<center style="margin-top:10px">
+		<p style="display:inline;margin-left:10px;font-size:16px">
+			<?php echo " " . formatDate($release_date) . " | " . $genres . " | " . convertMinutesToRunTime($runtime); ?>
+		</p>
 		</center>
 		<hr>
 		<table width="100%">
-			<tr>
-				<td align="center" width="100%">
+			<tr valign="top">
+				<td align="center" width="20%">
+					<img src="<?php echo $poster_path ?>" width="100%" height="auto"/>
+				</td>
+				<td align="center">
 					<div class="video" onclick="openPlayer()">
 					    <img id="video-thumbnail" src="">
 					    <span></span><!-- play button image on top of video thumbnail -->
@@ -77,7 +87,7 @@ if (empty($_POST)){
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td colspan="2">
 					<p><?php echo $overview ?></p>
 				</td>
 			</tr>
@@ -250,5 +260,12 @@ function sanitize($data){
 function formatDate($date){
 	$dateObject = date_create($date);
 	return date_format($dateObject, "j F Y");
+}
+
+function convertMinutesToRunTime($minutes){
+	$hours = floor($minutes / 60);
+	$minutes = $minutes - ($hours * 60);
+
+	return $hours . "h " . $minutes . "min";
 }
 ?>

@@ -296,12 +296,17 @@ textarea:focus{
  #video-thumbnail {
  	width:80%;
  	height:auto;
+	filter: brightness(50%);
  }
 
  /*Video thumbnail container*/
  .video {
  	position: relative;
  	cursor:pointer;
+ }
+
+ .video:hover > span{
+	 filter: brightness(100%);
  }
  /*Video play button on top of the thumbnail*/
  .video span {
@@ -313,6 +318,7 @@ textarea:focus{
  	top: 50%;
  	left: 50%;
  	transform: translate(-50%, -50%);
+	filter: brightness(80%);
  }
 
  /*Initially hide the add a review form*/
