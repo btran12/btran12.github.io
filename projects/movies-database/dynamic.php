@@ -1,74 +1,37 @@
 <?php
-	include 'connect_server.php';
-
-	$releaseYear = "SUBSTRING(movie_released_date,1, 4)";
-	$releaseMonth = "SUBSTRING(movie_released_date,6, 2)";
-	$releaseDay = "SUBSTRING(movie_released_date,9, 2)";
-
-	$headers = array("Upcoming Releases", "Currently Showing", "The Best Movies of All Times", "Movies of 2015", "Movies of 2014", "Movies of 2013", "Movies of 2012", "Movies of 2011", "Movies of 2010", "All Movies");
-
-	$queries = array("SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE (($releaseYear > YEAR(CURDATE())) OR 
-							($releaseYear = YEAR(CURDATE()) AND $releaseMonth > MONTH(CURDATE())) OR 
-							($releaseYear = YEAR(CURDATE()) AND $releaseMonth = MONTH(CURDATE()) AND $releaseDay >= DAY(CURDATE()))) 
-						ORDER BY movie_released_date asc",
-					"SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE ($releaseYear = YEAR(CURDATE()) AND $releaseMonth < MONTH(CURDATE())) OR
-							($releaseYear = YEAR(CURDATE()) AND $releaseMonth = MONTH(CURDATE()) AND $releaseDay <= DAY(CURDATE())) 
-						ORDER BY movie_released_date desc",
-					"SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE movie_rating > 8.5 
-						ORDER BY movie_rating desc",
-					"SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE movie_rating > 7 && $releaseYear = 2015 
-						ORDER BY movie_rating desc",
-					"SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE movie_rating > 7 && $releaseYear = 2014 
-						ORDER BY movie_rating desc",
-					"SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE movie_rating > 7 && $releaseYear = 2013 
-						ORDER BY movie_rating desc",
-					"SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE movie_rating > 7 && $releaseYear = 2012 
-						ORDER BY movie_rating desc",
-					"SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE movie_rating > 7 && $releaseYear = 2011 
-						ORDER BY movie_rating desc",
-					"SELECT * 
-						FROM btran6291_MOVIE 
-						WHERE movie_rating > 7 && $releaseYear = 2010 
-						ORDER BY movie_rating desc",
-					"SELECT * 
-						FROM btran6291_MOVIE 
-						ORDER BY movie_title");
+	$headers = array("Upcoming Releases", "Now Playing", "Popular", "Top Rated");
+	$queries = array("upcoming", "now_playing", "popular", "top_rated");
 ?>
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<link rel="stylesheet" href="assets/docs.theme.min.css">
-
 		<link rel="stylesheet" href="assets/owl.carousel.css">
 		<link rel="stylesheet" href="assets/owl.theme.default.min.css">
 	</head>
 	<style>
-		.featurette-container{
-			width:100%;
-			height:600px;
+		.featurette-container .featurette-carousel .item img{
+			height: 650px;
+			width: 90%;
 			margin: auto;
 		}
-		.featurette-container .featurette-carousel .item img{
-			height: 600px;
-			width: 100%;
+
+		.featurette-container .featurette-carousel .item span{
+			position: absolute;
+			z-index: 99;
+			bottom: 20px;
+			margin-left: 5%;
+			width: 25%;
+		    letter-spacing: -1px;
+		    background: rgba(0, 0, 0, 0.7);
 		}
+
+		.featurette-container .featurette-carousel .item h2{
+			color: white;
+			padding-left: 5%;
+		}
+
 		.carousel-container {
 			width:90%;
 			margin: auto;
@@ -77,7 +40,7 @@
 			width:200px;
 			height:285px;
 			position: relative;
-		}	
+		}
 		.carousel-container .owl-carousel .item:hover span{
 			top: 20%;
 			opacity: .9;
@@ -112,14 +75,18 @@
 		<div class="featurette-container">
 			<div class="featurette-carousel">
 				<?php
-					//Get all the files names in the images/ directory
-					$images_directory = new DirectoryIterator("images/");
-					foreach ($images_directory as $fileinfo){
-						if (!$fileinfo->isDot()){
-							echo "<div class='item'>
-									<img src='images/".$fileinfo->getFilename()."'>
-								</div>";
-						}
+					$service_query = $queries[0];
+					include dirname(__DIR__)."/movies-database/service/request.php";
+					$results = $response->results;
+
+					foreach ($results as $r){
+						echo "<div class='item'>
+								<span>
+									<h2>".$r->title."</h2>
+									<h3>".$r->tagline."</h3>
+								</span>
+								<img src='https://image.tmdb.org/t/p/w1280".$r->backdrop_path."'>
+							</div>";
 					}
 				?>
 			</div>
@@ -129,26 +96,31 @@
 				//Print the movies
 				for ($x=0; $x < count($headers); $x++){
 					echo "<h3>".$headers[$x]."</h3>
-					<div class='owl-carousel'>";
-						$q = $conn->prepare($queries[$x]);
-						$q->execute();
-						$q->setFetchMode(PDO::FETCH_BOTH);
-						while($r=$q->fetch()){
+							<div class='owl-carousel'>";
+
+					if ($x != 0){ // Skip b/c already set above
+						$service_query = $queries[$x];
+						include dirname(__DIR__)."/movies-database/service/request.php";
+
+						$results	= $response->results;
+					}
+
+						foreach ($results as $r){
 							echo "<div class='item'>
-									<a href='movie_page.php?id=".$r["ID"]."'>
-										<img src='".$r["poster_url"]."'>
+									<a href='movie_page.php?id=".$r->id."'>
+										<img src='https://image.tmdb.org/t/p/w500".$r->poster_path."'>
 										<span>
-											<h4>".$r["movie_title"]."</h4>
-											<h5>".$r["movie_plot"]."</h5>
+											<h4>".$r->title."</h4>
+											<h5>".$r->overview."</h5>
 										</span>
 									</a>
 								</div>";
 						}
-					echo "</div>";	
+					echo "</div>";
 				}
 			?>
 		</div>
-		
+
 		<!-- JQuery Framework -->
 		<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 		<!-- Owl Carousel Plugin -->
@@ -159,7 +131,7 @@
 				$('.featurette-carousel').owlCarousel({
 					loop:true,
 					items: 1,
-					dots: false,
+					dots: true,
 					autoplay: true,
 					autoplayHoverPause: true
 				});
@@ -198,5 +170,5 @@
 			});
 		</script>
 	</body>
-	
+
 </html>
