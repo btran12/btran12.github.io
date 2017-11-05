@@ -18,20 +18,22 @@ if (empty($_POST)){
 	$path = isset($response->backdrop_path) ? $response->backdrop_path : $response->belongs_to_collection->backdrop_path;
 	$backdrop_path = $secure_base_url."w1280".$path;
 	$poster_path = $secure_base_url."w780".$response->poster_path;
+
 	$genres = "";
 	foreach ($response->genres as $genre) {
 		$genres .= $genre->name . ", ";
 	}
-
 	$genres = substr($genres,0,strlen($genres)-2);
-?>
-<?php
+
 	$service_query = $movie_id."/videos";
 	include dirname(__DIR__)."/movies-database/service/request.php";
-
-	//Just need the video ID to embed into the youtube player
 	$youtube_video_id = $response->results[0]->key;
+
+	$service_query = $movie_id."/recommendations";
+	include dirname(__DIR__)."/movies-database/service/request.php";
+	$recommendations = $response->results;
 ?>
+
 
 <?php
 	include "nav-bar.php";
@@ -40,16 +42,57 @@ if (empty($_POST)){
 	<head>
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="assets/docs.theme.min.css">
+		<link rel="stylesheet" href="assets/owl.carousel.css">
+		<link rel="stylesheet" href="assets/owl.theme.default.min.css">
 		<title><?php echo $title; ?></title>
 		<!-- JQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
 		<script>
 			$(document).ready(function(){
 				// Function to open and close the add a review form.
 			    $("#open-review-container").click(function(){
 			        $("#write-review-container").slideToggle();
 			    });
+
+					$(".owl-carousel").owlCarousel({
+						loop:true,
+				    margin:10,
+				    nav:false,
+				    dots:false,
+						autoplay:true,
+						lazyLoad:true,
+						autoplayHoverPause:true,
+				    responsive:{	//The number of items to display based on screen size
+				        0:{
+				            items:1,
+				            slideBy:1
+				        },
+				        600:{
+				            items:3,
+				            slideBy:3
+				        },
+				        1000:{
+				            items:5,
+				            slideBy:5
+				        },
+				        1200:{
+				        	items:6,
+				        	slideBy:6
+				        },
+				        1400:{
+				        	items:7,
+				        	slideBy:7
+				        },
+				        1500:{
+				        	items:8,
+				        	slideBy:8
+				        }
+				    }
+					});
 			});
+
 		</script>
 	</head>
 
@@ -58,26 +101,26 @@ if (empty($_POST)){
 	<div id="videoPopup" onclick="top.close()">
 		<iframe id="youtube-frame" src="" frameborder="0" allowfullscreen></iframe>
 	</div>
-	<!-- MOVIE INFORMATION SECTION
-	==============================================
-	-->
+
 	<div class="document">
 
+		<!-- MAIN CONTENT -->
 		<center style="margin-top:10px">
-			<h1 style="display:inline;">
+			<p style="display:inline;font-size:4.2rem">
 				<?php echo $title; ?>
-			</h1>
+			</p>
 		</center>
 		<center style="margin-top:10px">
-		<p style="display:inline;margin-left:10px;font-size:16px">
-			<?php echo " " . formatDate($release_date) . " | " . $genres . " | " . convertMinutesToRunTime($runtime); ?>
-		</p>
+			<p style="display:inline;margin-left:10px;font-size:16px">
+				<?php echo " " . formatDate($release_date) . " | " . $genres . " | " . convertMinutesToRunTime($runtime); ?>
+			</p>
 		</center>
 		<hr>
-		<table width="100%">
+		<table width="100%" style="border:0px !important">
 			<tr valign="top">
 				<td align="center" width="20%">
-					<img src="<?php echo $poster_path ?>" width="100%" height="auto"/>
+					<img src="<?php echo $poster_path ?>" width="100%" height="auto" style="display:block"/>
+					<p style="margin-top: 15px; font-size:2rem; "><?php echo $vote_average ?><span style="font-size:1rem">/10<span></p>
 				</td>
 				<td align="center">
 					<div class="video" onclick="openPlayer()">
@@ -92,11 +135,28 @@ if (empty($_POST)){
 				</td>
 			</tr>
 		</table>
+		<!-- =============================================== -->
+
+		<!--  RECOMMENDATIONS -->
+		<p style="font-size:1.5rem;">Recommendations</p>
+		<div class="owl-carousel">
+			<?php
+				foreach ($recommendations as $recommendation) {
+					echo "<div>";
+						echo "<a href='movie_page.php?id=".$recommendation->id."' style='display:inline'>";
+							echo "<img src='".$secure_base_url."w780".$recommendation->poster_path."'>";
+						echo "</a>";
+					echo "</div>";
+				}
+			?>
+		</div>
+		<!-- =============================================== -->
+
 		<br>
 		<hr>
 		<!-- USER REVIEWS FORM
 		==================================================== -->
-		<h2><p style="font-size:24px;font-weight:600;">User Reviews</p></h2>
+		<p style="font-size:1.5rem;">Reviews</p>
 		<form action="movie_page.php" method="POST">
 			<!-- Only allow users to write reviews -->
 			<?php
@@ -181,6 +241,7 @@ if (empty($_POST)){
 	</div>
 
 	<script>
+
 		// Video embed link with video ID
 		var videoSrc = "https://www.youtube.com/embed/" + <?php echo '"'.$youtube_video_id.'"'; ?> + "?rel=0&iv_load_policy=3&amp;showinfo=0&autoplay=1";
 
@@ -205,12 +266,15 @@ if (empty($_POST)){
 			document.getElementById('youtube-frame').src = "";
 		}
 	</script>
+	<!-- Owl Carousel Plugin -->
+	<script src="js/owl.carousel.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
 
 </body>
 </html>
+
 <?php
 }else{
-	//TODO remove check if POST is empty to prevent the page from refreshing too many times
 
 	//Clean data just in case of injections
 	$username = sanitize($_POST["user_name"]);
@@ -267,5 +331,11 @@ function convertMinutesToRunTime($minutes){
 	$minutes = $minutes - ($hours * 60);
 
 	return $hours . "h " . $minutes . "min";
+}
+
+function queryService($get) {
+	$service_query = $movie_id."/".$get;
+	include dirname(__DIR__)."/movies-database/service/request.php";
+	return $response;
 }
 ?>

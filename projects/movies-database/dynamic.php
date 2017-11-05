@@ -11,9 +11,13 @@
 		<link rel="stylesheet" href="assets/owl.theme.default.min.css">
 	</head>
 	<style>
-		.featurette-container .featurette-carousel .item img{
+		/*Crop the image*/
+		.featurette-container .featurette-carousel .item {
 			height: 650px;
-			width: 90%;
+		}
+
+		.featurette-container .featurette-carousel .item img{
+			width: 100%;
 			margin: auto;
 		}
 
