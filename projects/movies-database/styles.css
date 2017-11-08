@@ -34,11 +34,11 @@ body{
 
 .navigation-bar {
 	position: fixed;
-	background: white;
+	background: #f4f4f4;
 	width: 225px;
 	height: 100%;
 	left: 0px;
-	top: 10%;
+	top: 0px;
 }
 .navigation-bar ul, #movies-list{
     list-style-type: none;

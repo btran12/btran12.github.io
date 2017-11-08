@@ -20,7 +20,7 @@
 	<div class='navigation-bar'>
 		<ul>
 			<li>
-				<p style='font-size:18px;padding-left:10%'> Welcome, ".$_SESSION['username']." </p>
+				<p style='font-size:18px;padding-left:10%;padding-top:10%'> Welcome ".$_SESSION['username']." </p>
 			</li>
 			<li>
 				<a href='index.php?page=upcoming' class='".$one."'>
