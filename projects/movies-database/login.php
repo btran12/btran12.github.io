@@ -4,22 +4,21 @@
 
 
   // Username and Password validation once form is POSTED - so after refresh
-  if (!empty($_POST)) {
-     $username = $_POST['username'];
-     $password = $_POST['password'];
+    if (!empty($_POST)) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-     if ($username == 'btran' && $password == '6291') {
+        if (verifyCredentials($username, $password)) {
+            $_SESSION['valid'] = true;
+            $_SESSION['username'] = $username;
+        }else {
+            $_SESSION['loginErrorMessage'] = "Incorrect credentials, try again.";
+        }
+    }
 
-         $_SESSION['valid'] = true;
-         $_SESSION['username'] = $username;
-     }else {
-         $_SESSION['loginErrorMessage'] = "Incorrect credentials, try again.";
-     }
-  }
-
-   // Allow the user to login if the current session is invalid.
-   $isValid = isset($_SESSION["valid"]) ? $_SESSION["valid"] : false;
-   if (!$isValid){
+    // Allow the user to login if the current session is invalid.
+    $isValid = isset($_SESSION["valid"]) ? $_SESSION["valid"] : false;
+    if (!$isValid){
 ?>
 
 <html lang = "en">
@@ -102,12 +101,22 @@
 </html>
 
 <?php
-}else{
-   //If already logged in just redirect
-   if (isset($_SESSION['username'])){
-      header('Refresh: 0; URL = add_movie.php');
-   } else {
-     header('Refresh: 0; URL = index.php');
-   }
+    }else{
+       //If already logged in just redirect
+       if (isset($_SESSION['username'])){
+          header('Refresh: 0; URL = add_movie.php');
+       } else {
+         header('Refresh: 0; URL = index.php');
+       }
+    }
+
+function verifyCredentials($username, $password) {
+    include "./service/database.php";
+
+    if (password_verify($password, getPasswordHash($username))){
+        return true;
+    }
+
+    return false;
 }
 ?>
