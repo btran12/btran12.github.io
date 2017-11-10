@@ -1,10 +1,12 @@
 <?php
 	//Start the session to get the values
    session_start();
-   //Clear all entered values
-   unset($_SESSION["username"]);
-   unset($_SESSION["password"]);
-   unset($_SESSION["valid"]);
+   
+   // remove all session variables
+   session_unset();
+
+   // destroy the session
+   session_destroy();
 
    //Redirect to main page
    header('Refresh: 0; URL = index.php');

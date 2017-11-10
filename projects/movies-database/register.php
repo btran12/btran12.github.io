@@ -1,26 +1,32 @@
 <?php
 session_start();
 
+$_SESSION['reg-name'] = "";
+$_SESSION['reg-username'] = "";
+$_SESSION['reg-email'] = "";
+
 include "./service/database.php";
 
 if (!empty($_POST)) {
+    $_SESSION['reg-name']       = $name     = $_POST['name'];
+    $_SESSION['reg-username']   = $username = $_POST['username'];
+    $_SESSION['reg-email']      = $email    = $_POST['email'];
+    $password   = $_POST['password'];
+    $password2  = $_POST['password2'];
+
     // If username doesn't already exist
-    if (!isUsernameValid($_POST['username'])){
-        $name = $_POST['name'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+    if (!isUsernameValid($username) && ($password == $password2)){
         $hash = password_hash($password, PASSWORD_DEFAULT);
-        $email = $_POST['email'];
 
         insertUser($name, $username, $email, $hash, 0);
         $_SESSION['registered'] = true;
         header('Refresh: 0; URL = login.php');
 
     }else {
-        $_SESSION['register_failed'] = "Username already exists";
+        $_SESSION['register_failed'] = "Username is not valid or Passwords do not match!";
     }
 }
-
+if (!isset($_SESSION['registered'])) {
 ?>
 
 <html lang="en">
@@ -46,7 +52,7 @@ if (!empty($_POST)) {
                 position: relative;
                 margin: 5% auto;
                 width: 600px;
-                height: 400px;
+                height: 450px;
                 background: #FFF;
                 border-radius: 2px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -69,6 +75,7 @@ if (!empty($_POST)) {
             }
 
             input[type="text"],
+            input[type="email"],
             input[type="password"] {
                 display: block;
                 box-sizing: border-box;
@@ -85,6 +92,7 @@ if (!empty($_POST)) {
             }
 
             input[type="text"]:focus,
+            input[type="email"]:focus,
             input[type="password"]:focus {
                 border-bottom: 2px solid #16a085;
                 color: #16a085;
@@ -139,7 +147,7 @@ if (!empty($_POST)) {
                 box-sizing: border-box;
                 padding: 40px;
                 width: 300px;
-                height: 400px;
+                height: 450px;
                 background: url('https://goo.gl/YbktSj');
                 background-size: cover;
                 background-position: center;
@@ -197,13 +205,19 @@ if (!empty($_POST)) {
                 <div class="left">
                     <h1>Sign up</h1>
 
-                    <input type="text"      name="name"     placeholder="Your Name" required/>
-                    <input type="text"      name="email"    placeholder="E-mail"     required/>
-                    <input type="text"      name="username" placeholder="Username"  required/>
+                    <input type="text"      name="name"     value="<?php echo $_SESSION['reg-name']; ?>"    placeholder="Your Name" maxlength="65" autofocus required/>
+                    <input type="email"     name="email"    value="<?php echo $_SESSION['reg-email']; ?>"   placeholder="E-mail"     maxlength="65" required/>
+                    <input type="text"      name="username" value="<?php echo $_SESSION['reg-username']; ?>"    placeholder="Username" maxlength="12" required/>
                     <input type="password"  name="password" placeholder="Password"  required/>
                     <input type="password"  name="password2" placeholder="Re-enter Password"  required/>
 
                     <input type="submit" name="signup_submit" value="Sign Up" />
+                    <?php
+                      if (isset($_SESSION['register_failed'])) {
+                        echo "<p style='color:red'>".$_SESSION['register_failed']."</p>";
+                        unset($_SESSION['register_failed']);
+                      }
+                    ?>
                 </div>
 
                 <div class="right">
@@ -221,5 +235,8 @@ if (!empty($_POST)) {
 </html>
 
 <?php
-
+} else {
+    unset($_SESSION['registered']);
+    header('Refresh: 0; URL = login.php');
+}
 ?>
