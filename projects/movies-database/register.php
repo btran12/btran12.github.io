@@ -94,8 +94,8 @@ if (!isset($_SESSION['registered'])) {
             input[type="text"]:focus,
             input[type="email"]:focus,
             input[type="password"]:focus {
-                border-bottom: 2px solid #16a085;
-                color: #16a085;
+                border-bottom: 2px solid #CF000F;
+                color: black;
                 transition: 0.2s ease;
             }
 
@@ -103,7 +103,7 @@ if (!isset($_SESSION['registered'])) {
                 margin-top: 10px;
                 width: 120px;
                 height: 32px;
-                background: #16a085;
+                background: #CF000F;
                 border: none;
                 border-radius: 2px;
                 color: #FFF;
