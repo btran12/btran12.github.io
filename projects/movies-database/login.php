@@ -89,12 +89,9 @@
           border-bottom: 1px solid #757575;
         }
         label {
-          color: #4a89dc;
           font-weight: 400;
           position: absolute;
-          left: -2px;
           top: -20px;
-          transform: scale(.75);
         }
         .bar {
           position: relative;
@@ -151,7 +148,7 @@
           letter-spacing: 1px;
           background: 0 0;
           border: 0;
-          border-bottom: 2px solid #3160B6;
+          border-bottom: 2px solid #353535;
           cursor: pointer;
           transition: all .15s ease;
         }
