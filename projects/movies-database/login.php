@@ -11,6 +11,8 @@
         if (verifyCredentials($username, $password)) {
             $_SESSION['valid'] = true;
             $_SESSION['username'] = $username;
+            header('Refresh: 0; URL = index.php');
+            die();  /* Stops the page from executing again */
         }else {
             $_SESSION['loginErrorMessage'] = "Incorrect credentials, try again.";
         }
@@ -33,7 +35,7 @@
           color: #636363;
         }
         input, label {
-          font-size: 18px;
+          font-size: 14px;
         }
         .highlight, label {
           pointer-events: none
@@ -295,7 +297,7 @@
     }else{
        //If already logged in just redirect
        if (isset($_SESSION['username'])){
-          header('Refresh: 0; URL = add_movie.php');
+          header('Refresh: 0; URL = profile.php');
        } else {
          header('Refresh: 0; URL = index.php');
        }
