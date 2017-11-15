@@ -206,9 +206,9 @@ if (!isset($_SESSION['registered'])) {
                     <h1>Sign up</h1>
 
                     <input type="text"      name="name"     value="<?php echo $_SESSION['reg-name']; ?>"    placeholder="Your Name" maxlength="65" autofocus required/>
-                    <input type="email"     name="email"    value="<?php echo $_SESSION['reg-email']; ?>"   placeholder="E-mail"     maxlength="65" required/>
+                    <input type="email"     name="email"    value="<?php echo $_SESSION['reg-email']; ?>"   placeholder="E-mail"     maxlength="65" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required/>
                     <input type="text"      name="username" value="<?php echo $_SESSION['reg-username']; ?>"    placeholder="Username" maxlength="12" required/>
-                    <input type="password"  name="password" placeholder="Password"  required/>
+                    <input type="password"  name="password" placeholder="Password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
                     <input type="password"  name="password2" placeholder="Re-enter Password"  required/>
 
                     <input type="submit" name="signup_submit" value="Sign Up" />
