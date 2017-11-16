@@ -40,7 +40,7 @@
 
 <body style="position:relative">
 <?php
-  $eleven = "active"; //Set active tab
+  $page_active = 4; //Set active tab
   include "nav-bar.php";
 ?>
 <br>

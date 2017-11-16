@@ -247,7 +247,10 @@
            <button type="submit" name="login" class="button buttonBlue">Login
              <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
            </button>
-           <a href="register.php">Register</a>
+           <div>
+               <a href="register.php">Register</a>
+               <a href="forgot_password.php">Forgot Password</a>
+           </div>
            <?php
              if (isset($_SESSION['loginErrorMessage'])) {
                echo "<p>".$_SESSION['loginErrorMessage']."</p>";

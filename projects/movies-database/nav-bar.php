@@ -4,73 +4,33 @@
 	*	Display a vertical navigation bar
 	**/
 
-	if (!isset($one) && !isset($two) && !isset($three) && !isset($four) && !isset($ten) && !isset($eleven)){
-		$admin_page="active";
-	}
-	$one = isset($one) ? $one : "";
-	$two = isset($two) ? $two : "";
-	$three = isset($three) ? $three : "";
-	$four = isset($four) ? $four : "";
-	$ten = isset($ten) ? $ten : "";
-	$eleven = isset($eleven) ? $eleven : "";
-	$admin_page = isset($admin_page) ? $admin_page : "";
-
-	//The number variables are in the parent file that includes this file.
-	echo "
+	$base_url = "index.php?page=";
+	$nav_pages 	= array("index.php?page=upcoming", "index.php?page=now", "index.php?page=popular", "index.php?page=top", "showtimes.php", "login.php", "dynamic.php", "movie_lookup.php");
+	$icons 		= array("&#xE878;","&#xE87C;","&#xE87D;","&#xE838;","&#xE192;","&#xE853;","&#xE42B;","&#xE8B6;");
+	$page_titles= array("Upcoming", "Now Playing", "Popular", "Most Rated", "Showtimes", "Account", "Dynamic View", "Search");
+?>
 	<div class='navigation-bar'>
+		<div style="width:100%;height:20px"></div>
 		<ul>
 			<li>
-				<p style='font-size:18px;padding-left:10%;padding-top:10%'> Welcome ".$_SESSION['username']." </p>
+				<center><img src="images/profile-icon.png" alt="Placeholder profile image" height="90" width="90" style="border-radius:50%"></center>
 			</li>
-			<li>
-				<a href='index.php?page=upcoming' class='".$one."'>
-					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE878;</i>
-					<span>Upcoming</span>
-				</a>
-			</li>
-			<li>
-				<a href='index.php?page=now' class='".$two."'>
-					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE87C;</i>
-					<span>Now Playing</span>
-				</a>
-			</li>
-			<li>
-				<a href='index.php?page=popular' class='".$three."'>
-					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE87D;</i>
-					<span>Popular</span>
-				</a>
-			</li>
-			<li>
-				<a href='index.php?page=top' class='".$four."'>
-					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE838;</i>
-					<span>Most Rated</span>
-				</a>
-			</li>
-			<li>
-				<a href='showtimes.php' class='".$eleven."'>
-					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE192;</i>
-					<span>Showtimes</span>
-				</a>
-			</li>
-			<li><hr></li>
-			<li>
-				<a href='login.php' class='".$admin_page."'>
-					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE853;</i>
-					<span>Account</span>
-				</a>
-			</li>
-			<li>
-				<a href='dynamic.php'>
-					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE42B;</i>
-					<span>Dynamic View</span>
-				</a>
-			</li>
-			<li>
-				<a href='movie_lookup.php' class='".$ten."'>
-					<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>&#xE8B6;</i>
-					<span>Search</span>
-				</a>
-			</li>";
+			<?php
+				for($x = 0; $x < count($nav_pages); $x++) {
+					if ($x == $page_active)
+						$setActive = "active";
+					else
+						$setActive = "";
+
+					echo "<li>";
+						echo "<a href='".$nav_pages[$x]."' class='$setActive'>";
+							echo "<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>".$icons[$x]."</i>";
+							echo "<span>".$page_titles[$x]."</span>";
+						echo "</a>";
+					echo "</li>";
+				}
+			?>
+<?php
 	//If the user is logged in display a new item with the username
 	if ($_SESSION["valid"]){
 		echo "
@@ -82,7 +42,6 @@
 				</a>
 			</li>";
 	}
-	echo "
+?>
 		<ul>
 	</div>";
-?>

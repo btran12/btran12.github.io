@@ -3,14 +3,8 @@
 	$page = isset($_GET["page"]) ? $_GET["page"] : "";
 	$pageNum = isset($_GET["pageNum"]) ? $_GET["pageNum"] : "1";
 	$page_title = "";
+	$page_active = 0;
 
-	//Shorten the sql command, for better viewability
-	$releaseYear = "SUBSTRING(movie_released_date,1, 4)";
-	$releaseMonth = "SUBSTRING(movie_released_date,6, 2)";
-	$releaseDay = "SUBSTRING(movie_released_date,9, 2)";
-
-	//Values to set link on navigation bar as active
-	$one = $two = $three = $four = $ten = $eleven = "";
 	$visibility = "visible";
 
 	//Popluate different pages with different information
@@ -18,35 +12,29 @@
 
 		case "upcoming":
 			$service_query="upcoming";
-
 			$page_title = "Upcoming";
-			$one = "active";
 			$visibility = "hidden";
+			$page_active = 0;
 			break;
 		case "now":
 			$service_query="now_playing";
-
 			$page_title = "Now Playing";
-			$two = "active";
+			$page_active = 1;
 			break;
 		case "popular":
 			$service_query="popular";
-
 			$page_title = "Popular";
-			$three = "active";
+			$page_active = 2;
 			break;
 		case "top":
 			$service_query="top_rated";
-
 			$page_title = "Top Rated";
-			$four = "active";
-
+			$page_active = 3;
 			break;
 		default: //Same as main
 			$page_title = "Now Playing";
 			$service_query="now_playing";
-			$two = "active";
-
+			$page_active = 1;
 	}//end switch
 
 	//service query is used as an input into request.php

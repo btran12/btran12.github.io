@@ -8,12 +8,12 @@
 <body>
 <?php
 	//Set the search link on the navigation bar as active
-	$ten = "active";
+	$page_active = 7;
 	include "nav-bar.php";
 
 ?>
 	<div class="document">
-	
+
 		<h1><center>Movie Search</center></h1>
 		<hr>
 		<table>
@@ -62,7 +62,7 @@
 						a.appendChild(textNode);
 						li.appendChild(a);
 						document.getElementById("movies-list").appendChild(li);
-						
+
 					}
 
 			    }
@@ -71,12 +71,9 @@
 			xhr.send();
 			/* ============================== */
 
-			
+
 		}
 	</script>
 </body>
 
 </html>
-
-
-
