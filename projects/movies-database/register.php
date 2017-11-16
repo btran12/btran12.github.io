@@ -11,6 +11,7 @@ if (!empty($_POST)) {
     $_SESSION['reg-name']       = $name     = $_POST['name'];
     $_SESSION['reg-username']   = $username = $_POST['username'];
     $_SESSION['reg-email']      = $email    = $_POST['email'];
+
     $password   = $_POST['password'];
     $password2  = $_POST['password2'];
 
@@ -21,8 +22,8 @@ if (!empty($_POST)) {
         insertUser($name, $username, $email, $hash, 0);
         $_SESSION['registered'] = true;
         header('Refresh: 0; URL = login.php');
-
-    }else {
+        die();
+    } else {
         $_SESSION['register_failed'] = "Username is not valid or Passwords do not match!";
     }
 }
@@ -31,7 +32,8 @@ if (!isset($_SESSION['registered'])) {
 
 <html lang="en">
     <head>
-        <title>Sign Up</title>
+        <title>BaoTran - Sign Up</title>
+
         <style>
             @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
             *:focus {
@@ -161,6 +163,10 @@ if (!isset($_SESSION['registered'])) {
                 color: #FFF;
                 text-align: center;
             }
+            .social-signin {
+                width: 220px;
+
+            }
 
             button.social-signin {
                 margin-bottom: 20px;
@@ -221,13 +227,9 @@ if (!isset($_SESSION['registered'])) {
                 </div>
 
                 <div class="right">
-                    <span class="loginwith">Sign in with<br />social network</span>
-
-                    <button class="social-signin facebook">Log in with facebook</button>
-                    <button class="social-signin twitter">Log in with Twitter</button>
-                    <button class="social-signin google">Log in with Google+</button>
+                    <!-- <span class="loginwith">Sign in with<br />social network</span> -->
                 </div>
-                <div class="or">OR</div>
+                <!-- <div class="or">OR</div> -->
             </div>
 
         </form>

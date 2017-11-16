@@ -2,7 +2,6 @@
     // Start storing values for the current session across pages.
    session_start();
 
-
   // Username and Password validation once form is POSTED - so after refresh
     if (!empty($_POST)) {
         $username = $_POST['username'];
@@ -26,7 +25,11 @@
 <html lang = "en">
    <head>
 
-      <title>Sign in</title>
+      <title>BaoTran - Sign in</title>
+
+      <!-- <meta name="google-signin-client_id" content="578652357401-h5onl05mlo9e0o810p2o44kiccok9fon.apps.googleusercontent.com">
+      <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+
       <style>
         form, input {
           background: #fafafa;
@@ -251,6 +254,7 @@
                unset($_SESSION['loginErrorMessage']);
              }
            ?>
+           <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
       </form>
 
          <script>
@@ -289,6 +293,40 @@
               });
 
             });
+         </script>
+
+         <script>
+            //  function onSignIn(googleUser) {
+            //      var id_token = googleUser.getAuthResponse().id_token;
+            //      var profile = googleUser.getBasicProfile();
+             //
+            //      var name = profile.getName();
+            //      var email = profile.getEmail();
+            //      var imageUrl = profile.getImageUrl();
+             //
+            //      postRequest(id_token, name, email, imageUrl);
+            //  }
+             //
+            //  function signOut() {
+            //      var auth2 = gapi.auth2.getAuthInstance();
+            //      auth2.signOut().then(function () {
+            //        console.log('User signed out.');
+            //      });
+            //  }
+             //
+            //  function postRequest(id_token, name, email, imageUrl) {
+            //      var xhr = new XMLHttpRequest();
+            //      xhr.open('POST', 'http://www.baotran.xyz/projects/movies-database/register.php');
+            //      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            //      xhr.onload = function() {
+            //        console.log('Signed in as: ' + xhr.responseText);
+            //      };
+            //      xhr.send(   'username=' + id_token  + '&' +
+            //                  'name='     + name      + '&' +
+            //                  'email='    + email     + '&' +
+            //                  'image-url='+ imageUrl  + '&' +
+            //                  'google-signin=true');
+            //  }
          </script>
    </body>
 </html>
