@@ -12,16 +12,19 @@
 	<div class='navigation-bar'>
 		<div style="width:100%;height:20px"></div>
 		<ul>
-			<li>
-				<center><img src="images/profile-icon.png" alt="Placeholder profile image" height="90" width="90" style="border-radius:50%"></center>
-			</li>
 			<?php
-				for($x = 0; $x < count($nav_pages); $x++) {
-					if ($x == $page_active)
-						$setActive = "active";
-					else
-						$setActive = "";
+				if ($_SESSION["valid"]){
+					echo "<li>
+							<center><img src='images/profile-icon.png' alt='Placeholder profile image' height='90' width='90' style='border-radius:50%'></center>
+						</li>";
+				}
 
+
+				for($x = 0; $x < count($nav_pages); $x++) {
+					$setActive = ($x == $page_active) ? "active" : "";
+					if ($x == 5) {
+						echo "<li><hr></li>"; // Separate views with configurables 
+					}
 					echo "<li>";
 						echo "<a href='".$nav_pages[$x]."' class='$setActive'>";
 							echo "<i class='material-icons' style='position:relative;top:5px;margin-right:20px'>".$icons[$x]."</i>";

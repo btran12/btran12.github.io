@@ -190,6 +190,16 @@
         .ripples.is-active .ripplesCircle {
           animation: ripples .4s ease-in;
         }
+
+        .external-links a{
+            text-decoration: none;
+            color: grey;
+        }
+
+        .external-links a:hover {
+            color: #cf000f;
+        }
+
         @keyframes "ripples" {
           0% {
             opacity: 0;
@@ -247,8 +257,8 @@
            <button type="submit" name="login" class="button buttonBlue">Login
              <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
            </button>
-           <div>
-               <a href="register.php">Register</a>
+           <div class="external-links">
+               <a href="register.php" style="padding-right:130px">Sign up</a>
                <a href="forgot_password.php">Forgot Password</a>
            </div>
            <?php
