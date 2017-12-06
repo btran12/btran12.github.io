@@ -4,6 +4,7 @@ session_start();
 
 //Review formed posted and contains data?
 if (empty($_POST)){
+	$page_active = "";
 	$movie_id = $_GET["id"];
 
 	$service_query = $movie_id;
@@ -28,6 +29,7 @@ if (empty($_POST)){
 	$service_query = $movie_id."/videos";
 	include dirname(__DIR__)."/movies-database/service/request.php";
 	$youtube_video_id = $response->results[0]->key;
+	$video_thumbnail = "http://img.youtube.com/vi/$youtube_video_id/maxresdefault.jpg";
 
 	$service_query = $movie_id."/recommendations";
 	include dirname(__DIR__)."/movies-database/service/request.php";
@@ -46,54 +48,6 @@ if (empty($_POST)){
 		<link rel="stylesheet" href="assets/owl.carousel.css">
 		<link rel="stylesheet" href="assets/owl.theme.default.min.css">
 		<title><?php echo $title; ?></title>
-		<!-- JQuery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
-		<script>
-			$(document).ready(function(){
-				// Function to open and close the add a review form.
-			    $("#open-review-container").click(function(){
-			        $("#write-review-container").slideToggle();
-			    });
-
-					$(".owl-carousel").owlCarousel({
-						loop:true,
-				    margin:10,
-				    nav:false,
-				    dots:false,
-						autoplay:true,
-						lazyLoad:true,
-						autoplayHoverPause:true,
-				    responsive:{	//The number of items to display based on screen size
-				        0:{
-				            items:1,
-				            slideBy:1
-				        },
-				        600:{
-				            items:3,
-				            slideBy:3
-				        },
-				        1000:{
-				            items:5,
-				            slideBy:5
-				        },
-				        1200:{
-				        	items:6,
-				        	slideBy:6
-				        },
-				        1400:{
-				        	items:7,
-				        	slideBy:7
-				        },
-				        1500:{
-				        	items:8,
-				        	slideBy:8
-				        }
-				    }
-					});
-			});
-
-		</script>
 	</head>
 
 <body>
@@ -124,7 +78,7 @@ if (empty($_POST)){
 				</td>
 				<td align="center">
 					<div class="video" onclick="openPlayer()">
-					    <img id="video-thumbnail" src="">
+					    <img id="video-thumbnail" src="<?php echo $video_thumbnail ?>">
 					    <span></span><!-- play button image on top of video thumbnail -->
 					</div>
 				</td>
@@ -196,59 +150,101 @@ if (empty($_POST)){
 		<div class="user-reviews">
 			<table width="80%">
 			<?php
-				include "connect_server.php";
-				//Get Reviews Information linked by movie id
-				$QUERY = "SELECT * FROM btran6291_REVIEW WHERE movie_id = " . $movie_id ." ORDER BY Review_date desc";
-				$q = $conn->prepare($QUERY);
-				$q->execute();
-				$q->setFetchMode(PDO::FETCH_BOTH);
-
-				// Print all the available reviews for this particular movie
-				while($r=$q->fetch()){
-					echo "<tr>
-						<td colspan='3' height='10'>
-						<hr style='background-image:none;'>";
-
-					//Review Update and Delete options will only show up if it's the admin
-					$tmp_user = isset($_SESSION['username']) ? $_SESSION['username'] : "";
-
-					if (isset($_SESSION['valid']) && ($tmp_user == 'btran')){
-						echo "<a href='update_review.php?id=".$r["ID"]."'>Edit</a>
-						<a href='delete_review.php?id=".$r["ID"]."&movieid=".$movie_id."' style='margin-left:50px;color:red'>Remove</a>";
-					}
-					echo "</td>
-						</tr>";
-					echo "<tr>";
-					echo "<td width='100px'>
-							<p>By: <font color='#0099ff'>". $r["reviewer_name"]  ."</font></p>
-						</td>";
-					echo "<td width='100px'>
-							<p>Rating: <font color='#ff8c1a'>". $r["Review_rating"] . "</font></p>
-						</td>";
-					echo "<td>
-							<p><b>Posted on</b>: ". $r["Review_date"] ."</p>
-						</td>";
-					echo "</tr>";
-					echo "<tr>";
-					echo "<td colspan='3']>
-						<p>". $r["Reviewer_review"]."</p>";
-					echo "</td>
-						</tr>";
-				}
+				// include "connect_server.php";
+				// //Get Reviews Information linked by movie id
+				// $QUERY = "SELECT * FROM btran6291_REVIEW WHERE movie_id = " . $movie_id ." ORDER BY Review_date desc";
+				// $q = $conn->prepare($QUERY);
+				// $q->execute();
+				// $q->setFetchMode(PDO::FETCH_BOTH);
+                //
+				// // Print all the available reviews for this particular movie
+				// while($r=$q->fetch()){
+				// 	echo "<tr>
+				// 		<td colspan='3' height='10'>
+				// 		<hr style='background-image:none;'>";
+                //
+				// 	//Review Update and Delete options will only show up if it's the admin
+				// 	$tmp_user = isset($_SESSION['username']) ? $_SESSION['username'] : "";
+                //
+				// 	if (isset($_SESSION['valid']) && ($tmp_user == 'btran')){
+				// 		echo "<a href='update_review.php?id=".$r["ID"]."'>Edit</a>
+				// 		<a href='delete_review.php?id=".$r["ID"]."&movieid=".$movie_id."' style='margin-left:50px;color:red'>Remove</a>";
+				// 	}
+				// 	echo "</td>
+				// 		</tr>";
+				// 	echo "<tr>";
+				// 	echo "<td width='100px'>
+				// 			<p>By: <font color='#0099ff'>". $r["reviewer_name"]  ."</font></p>
+				// 		</td>";
+				// 	echo "<td width='100px'>
+				// 			<p>Rating: <font color='#ff8c1a'>". $r["Review_rating"] . "</font></p>
+				// 		</td>";
+				// 	echo "<td>
+				// 			<p><b>Posted on</b>: ". $r["Review_date"] ."</p>
+				// 		</td>";
+				// 	echo "</tr>";
+				// 	echo "<tr>";
+				// 	echo "<td colspan='3']>
+				// 		<p>". $r["Reviewer_review"]."</p>";
+				// 	echo "</td>
+				// 		</tr>";
+				// }
 			?>
 			</table>
 		</div>
 	</div>
 
+	<!-- Owl Carousel Plugin -->
+	<script src="js/owl.carousel.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
 	<script>
+		$(document).ready(function(){
+			// Function to open and close the add a review form.
+			$("#open-review-container").click(function(){
+				$("#write-review-container").slideToggle();
+			});
+
+			$('.owl-carousel').owlCarousel({
+				loop:true,
+				margin:10,
+				nav:false,
+				dots:false,
+				autoplay:true,
+				lazyLoad:true,
+				autoplayHoverPause:true,
+				responsive:{	//The number of items to display based on screen size
+					0:{
+						items:1,
+						slideBy:1
+					},
+					600:{
+						items:3,
+						slideBy:3
+					},
+					1000:{
+						items:5,
+						slideBy:5
+					},
+					1200:{
+						items:6,
+						slideBy:6
+					},
+					1400:{
+						items:7,
+						slideBy:7
+					},
+					1500:{
+						items:8,
+						slideBy:8
+					}
+				}
+			});
+		});
 
 		// Video embed link with video ID
 		var videoSrc = "https://www.youtube.com/embed/" + <?php echo '"'.$youtube_video_id.'"'; ?> + "?rel=0&iv_load_policy=3&amp;showinfo=0&autoplay=1";
-
-		// Video thumbnail link with video ID
-		var videoThumbnail = "http://img.youtube.com/vi/" + <?php echo '"'.$youtube_video_id.'"'; ?> + "/maxresdefault.jpg";
-
-		document.getElementById('video-thumbnail').src = videoThumbnail;
 
 		/**
 		*	Show the div on top of the current document and autoplay Youtube video
@@ -265,10 +261,8 @@ if (empty($_POST)){
 			document.getElementById('videoPopup').style.display = "none";
 			document.getElementById('youtube-frame').src = "";
 		}
+
 	</script>
-	<!-- Owl Carousel Plugin -->
-	<script src="js/owl.carousel.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
 
 </body>
 </html>

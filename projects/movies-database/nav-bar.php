@@ -4,6 +4,7 @@
 	*	Display a vertical navigation bar
 	**/
 
+	$_SESSION["valid"] = isset($_SESSION["valid"]) ? $_SESSION["valid"] : "";
 	$base_url = "index.php?page=";
 	$nav_pages 	= array("index.php?page=upcoming", "index.php?page=now", "index.php?page=popular", "index.php?page=top", "showtimes.php", "login.php", "dynamic.php", "movie_lookup.php");
 	$icons 		= array("&#xE878;","&#xE87C;","&#xE87D;","&#xE838;","&#xE192;","&#xE853;","&#xE42B;","&#xE8B6;");
@@ -23,7 +24,7 @@
 				for($x = 0; $x < count($nav_pages); $x++) {
 					$setActive = ($x == $page_active) ? "active" : "";
 					if ($x == 5) {
-						echo "<li><hr></li>"; // Separate views with configurables 
+						echo "<li><hr></li>"; // Separate views with configurables
 					}
 					echo "<li>";
 						echo "<a href='".$nav_pages[$x]."' class='$setActive'>";
