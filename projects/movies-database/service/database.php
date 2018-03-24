@@ -3,7 +3,7 @@ function connect() {
     //Database Configurations
     $dbtype = "mysql";
     $dbhost = "mysql.hostinger.com";
-    $dbname = "id1442644_baotranxyz";
+    $dbname = "u604891846_main";
     $dbuser = "u604891846_btran";
     $dbpass = "^N3R!Y1ph#]E";
 
