@@ -2,10 +2,10 @@
 function connect() {
     //Database Configurations
     $dbtype = "mysql";
-    $dbhost = "localhost";
+    $dbhost = "mysql.hostinger.com";
     $dbname = "id1442644_baotranxyz";
-    $dbuser = "id1442644_admin";
-    $dbpass = "tran1340";
+    $dbuser = "u604891846_btran";
+    $dbpass = "^N3R!Y1ph#]E";
 
     //set up connection
     $db = new mysqli($dbhost,$dbuser,$dbpass,$dbname);
