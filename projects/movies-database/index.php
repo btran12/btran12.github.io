@@ -92,7 +92,7 @@
 						<img src='". $poster_url ."' style='width:250px;height:350px;' alt='".$movie_title."' class='imgBox'>
 						</a>
 					</td>
-					<td width='65%' style='vertical-align:bottom;'>
+					<td width='65%' style='vertical-align:bottom;padding-left:15px'>
 						<div class='movie_title' style='display:inline'>
 							". $movie_title ."
 						</div>
@@ -104,7 +104,7 @@
 						</p>
 					</td>
 					<td width='15%' align='center'>
-						<div class='movie_rating' style='visibility:".$visibility."'>
+						<div class='movie_rating' style='visibility:".$visibility.";font-size:40px'>
 							". $movie_rating . "
 						</div>
 					</td>
