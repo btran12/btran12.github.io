@@ -1,0 +1,4 @@
+[15-Jul-2019 23:10:53 UTC] PHP Warning:  mysqli_query(): MySQL server has gone away in /home/u604891846/public_html/blogs/wp-includes/wp-db.php on line 2007
+[15-Jul-2019 23:10:53 UTC] PHP Warning:  mysqli_query(): Error reading result set's header in /home/u604891846/public_html/blogs/wp-includes/wp-db.php on line 2007
+[20-Jul-2019 12:55:06 UTC] PHP Warning:  mysqli_query(): MySQL server has gone away in /home/u604891846/public_html/blogs/wp-includes/wp-db.php on line 2007
+[20-Jul-2019 12:55:06 UTC] PHP Warning:  mysqli_query(): Error reading result set's header in /home/u604891846/public_html/blogs/wp-includes/wp-db.php on line 2007
