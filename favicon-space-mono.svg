@@ -1,0 +1,15 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&amp;display=swap');
+    </style>
+  </defs>
+  <polygon points="80,0 512,0 512,432 432,512 0,512 0,80" fill="#1a1a1a"/>
+  <text x="268" y="365"
+    font-family="'Space Mono', Courier, monospace"
+    font-size="270"
+    font-weight="700"
+    fill="#ffffff"
+    text-anchor="middle">B</text>
+  <circle cx="418" cy="94" r="28" fill="#e8b84b"/>
+</svg>
