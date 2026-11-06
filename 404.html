@@ -1,132 +1,42 @@
-
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>404 Encountered</title>
-	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-	<style>
-		body{
-			background-color: #404040;
-			color: #ffffff;
-			font-size: 300%;
-			font-family: "Roboto", sans-serif;
-			width: 70%;
-			line-height: 70px;
-		}
-
-		span{
-			position: absolute;
-			top: 70%;
-			left: 10%;
-			text-align: left;
-		}
-		/*The 404 object*/
-		.object{
-		    background-color: transparent;
-		    width: 200px;
-		    height: 200px;
-		    border-radius: 50%;
-		    border: 20px solid #2574A9;
-		    border-top: 20px solid #22313F;
-		    box-shadow: 0px 0px 2px 2px lightgray;
-		    position: absolute;
-		    left: 45%;
-		    top: 30%;
-		    animation: alive 3s infinite;
-		    -webkit-animation: alive 3s infinite;
-		    -moz-animation: alive 3s infinite;
-
-		    transition: border-color 1000ms ease;
-		}
-		.object:hover{
-			border-color: #fff;
-			border-top: 20px solid #22313F;
-			cursor: pointer;
-		}
-		@keyframes alive{
-			0% { box-shadow: 0px 0px 20px 15px lightgray }
-			50% { box-shadow: 0px 0px 2px 2px lightgray }
-			100% { box-shadow: 0px 0px 20px 15px lightgray }
-		}
-		@-webkit-keyframes alive{
-			0% { box-shadow: 0px 0px 20px 15px lightgray }
-			50% { box-shadow: 0px 0px 2px 2px lightgray }
-			100% { box-shadow: 0px 0px 20px 15px lightgray }
-		}
-		@-moz-keyframes alive{
-			0% { box-shadow: 0px 0px 20px 15px lightgray }
-			50% { box-shadow: 0px 0px 2px 2px lightgray }
-			100% { box-shadow: 0px 0px 20px 15px lightgray }
-		}
-
-		.typed-cursor{
-		    opacity: 1;
-		    -webkit-animation: blink 1s infinite;
-		    -moz-animation: blink 1s infinite;
-		    animation: blink 1s infinite;
-		}
-		@keyframes blink{
-		    0% { opacity:1; }
-		    50% { opacity:0; }
-		    100% { opacity:1; }
-		}
-		@-webkit-keyframes blink{
-		    0% { opacity:1; }
-		    50% { opacity:0; }
-		    100% { opacity:1; }
-		}
-		@-moz-keyframes blink{
-		    0% { opacity:1; }
-		    50% { opacity:0; }
-		    100% { opacity:1; }
-		}
-	</style>
-<head>
-
-<body align="center">
-
-	<div class="object" onclick="redirect()"></div>
-	<span class="element"></span>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="js/typed.js"></script>
-
-	<script>
-		function redirect(){
-			window.open("http://www.baotran.xyz", "_self");
-		}
-	</script>
-	<script>
-		//http://stackoverflow.com/questions/15653801/rotating-object-to-face-mouse-pointer-on-mousemove
-		var box=$(".object");
-		var boxCenter=[box.offset().left+box.width()/2, box.offset().top+box.height()/2];
-
-		$(document).mousemove(function(e){   
-			var angle = Math.atan2(e.pageX- boxCenter[0],- (e.pageY- boxCenter[1]) )*(180/Math.PI);
-
-			setTimeout(function () {
-				box.css({ '-webkit-transform': 'rotate(' + angle + 'deg)'});    
-			    box.css({ '-moz-transform': 'rotate(' + angle + 'deg)'});
-			    box.css({ 'transform': 'rotate(' + angle + 'deg)'});
-			    // This property will smooth out the transition, but the rotation will not be correct
-			    // box.css({ 'transition': '500ms linear all' });
-			}, 500); 
-
-		});
-
-	</script>
-
-	<script>
-	  $(function(){
-	      $(".element").typed({
-	        strings: ["Hello!^2000 <br> Are you lost?^3000 <br> Click me and I'll redirect you."],
-	        startDelay: 1000,
-	        backDelay: 800,
-	        showCursor: false,
-	        cursorChar: "|",
-	        typeSpeed: 40
-	      });
-	  });
-	</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found | Bao Tran</title>
+  <meta name="description" content="The page you requested could not be found.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #0d0d0f; --text: #e8e4dc; --muted: #9d9aa5; --accent: #e8a020; --border: rgba(255,255,255,0.08); --font-display: 'Syne', sans-serif; --font-mono: 'IBM Plex Mono', monospace; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-display); line-height: 1.6; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+    a { color: inherit; text-decoration: none; }
+    .box { max-width: 620px; width: 100%; }
+    .code { font-family: var(--font-mono); font-size: clamp(4rem, 18vw, 9rem); line-height: 0.9; color: var(--accent); letter-spacing: -0.06em; }
+    h1 { font-size: clamp(1.6rem, 5vw, 2.5rem); line-height: 1.1; margin: 1rem 0 0.75rem; }
+    p { color: var(--muted); max-width: 50ch; margin-bottom: 1.5rem; }
+    .links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .btn { display: inline-block; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 6px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .btn--primary { background: var(--accent); border-color: var(--accent); color: #0d0d0f; font-weight: 600; }
+    .btn:hover { border-color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="code">404</div>
+    <h1>This page took a wrong turn.</h1>
+    <p>The link may be old, or the page may have moved. Try one of these instead:</p>
+    <div class="links">
+      <a class="btn btn--primary" href="/">Home</a>
+      <a class="btn" href="/projects/">Projects</a>
+      <a class="btn" href="/demos/">Demos</a>
+      <a class="btn" href="/index/">Demo index</a>
+      <a class="btn" href="/resume/">Resume</a>
+    </div>
+  </div>
 </body>
 </html>

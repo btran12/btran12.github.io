@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | Bao Tran</title>
+  <meta name="description" content="Resume of Bao Tran, a full-stack software engineer with 9+ years of experience in React, Java, Spring, and AWS.">
+  <link rel="canonical" href="https://baoservis.com/resume/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://baoservis.com/resume/">
+  <meta property="og:title" content="Resume | Bao Tran">
+  <meta property="og:description" content="Resume of Bao Tran, a full-stack software engineer with 9+ years of experience in React, Java, Spring, and AWS.">
+  <meta property="og:image" content="https://baoservis.com/android-chrome-512x512.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FGL76TVB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4FGL76TVB5');
+  </script>
+  <style>
+    :root {
+      --bg: #0d0d0f;
+      --surface: #131316;
+      --border: rgba(255,255,255,0.08);
+      --text: #e8e4dc;
+      --muted: #9d9aa5;
+      --accent: #e8a020;
+      --font-display: 'Syne', sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-display);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+    header { padding: 3rem 0 1.5rem; }
+    .back { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .back:hover { color: var(--accent); }
+    h1 { font-size: clamp(2rem, 6vw, 3.5rem); line-height: 1.05; margin: 1.25rem 0 0.75rem; }
+    h1 span { color: var(--accent); }
+    p.lead { color: var(--muted); max-width: 60ch; }
+    .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1.75rem 0 2rem; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.8rem 1.1rem; border-radius: 6px;
+      font-family: var(--font-mono); font-size: 0.78rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border: 1px solid var(--border);
+    }
+    .btn--primary { background: var(--accent); color: #0d0d0f; border-color: var(--accent); font-weight: 600; }
+    .btn:hover { border-color: var(--accent); }
+    .viewer {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 3rem;
+    }
+    .viewer iframe { width: 100%; height: 80vh; border: 0; display: block; background: #fff; }
+    footer { border-top: 1px solid var(--border); padding: 1.5rem 0 3rem; color: var(--muted); font-family: var(--font-mono); font-size: 0.72rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="back" href="/">← Back to baoservis.com</a>
+      <h1>Resume<span>.</span></h1>
+      <p class="lead">Full-stack software engineer with 9+ years of experience building web applications, cloud systems, and APIs with React, Java/Spring, and AWS.</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="resume.pdf" target="_blank" rel="noopener">Open PDF ↗</a>
+        <a class="btn" href="resume.pdf" download>Download PDF ↓</a>
+        <a class="btn" href="/">View portfolio</a>
+      </div>
+    </header>
+
+    <main class="viewer">
+      <iframe src="resume.pdf" title="Bao Tran resume PDF"></iframe>
+    </main>
+
+    <footer>
+      <p>© 2026 Bao Tran · <a href="/">baoservis.com</a></p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,3 +1,13 @@
 User-agent: *
 Allow: /
+
+# Legacy and non-public paths
+Disallow: /blogs/
+Disallow: /dashboard0/
+Disallow: /oldView.html
+Disallow: /projects/movies-database/
+Disallow: /applications/sendMailImproved.php
+Disallow: /applications/send-mail/mail.php
+Disallow: /info.php
+
 Sitemap: https://baoservis.com/sitemap.xml

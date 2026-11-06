@@ -1,0 +1,52 @@
+name: Regenerate sitemap
+
+on:
+  push:
+    branches: [master]
+    paths-ignore:
+      - sitemap.xml
+  schedule:
+    # Every Monday at 06:17 UTC
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sitemap
+  cancel-in-progress: true
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          # Full history lets the generator use the real last-modified date
+          # for each page. Drop this to 1 if repository size becomes a problem.
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate sitemap.xml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/generate-sitemap.mjs
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- sitemap.xml; then
+            echo "sitemap.xml is unchanged"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git commit -m "chore: regenerate sitemap.xml"
+          git push
