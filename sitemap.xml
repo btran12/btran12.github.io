@@ -198,4 +198,8 @@
   <url>
     <loc>https://baoservis.com/weather/</loc>
   </url>
+  <url>
+    <loc>https://baoservis.com/projects/directory/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
 </urlset>
