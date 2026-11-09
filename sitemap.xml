@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://baoservis.com/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://baoservis.com/ada/</loc>
@@ -21,6 +21,9 @@
   </url>
   <url>
     <loc>https://baoservis.com/blackdeck/</loc>
+  </url>
+  <url>
+    <loc>https://baoservis.com/connecticut-tax-search/</loc>
   </url>
   <url>
     <loc>https://baoservis.com/CoPilot/</loc>
@@ -42,6 +45,9 @@
   </url>
   <url>
     <loc>https://baoservis.com/echelon/</loc>
+  </url>
+  <url>
+    <loc>https://baoservis.com/free-dupr/</loc>
   </url>
   <url>
     <loc>https://baoservis.com/gallery.html</loc>
@@ -143,11 +149,15 @@
   </url>
   <url>
     <loc>https://baoservis.com/projects/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://baoservis.com/projects/Digit.html</loc>
     <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://baoservis.com/projects/directory.html</loc>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://baoservis.com/projects/Escape/</loc>
@@ -179,7 +189,7 @@
   </url>
   <url>
     <loc>https://baoservis.com/showcase/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://baoservis.com/spanishvivo/</loc>
@@ -197,9 +207,5 @@
   </url>
   <url>
     <loc>https://baoservis.com/weather/</loc>
-  </url>
-  <url>
-    <loc>https://baoservis.com/projects/directory/</loc>
-    <lastmod>2026-11-09</lastmod>
   </url>
 </urlset>
